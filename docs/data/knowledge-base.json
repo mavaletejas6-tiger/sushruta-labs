@@ -1,0 +1,2584 @@
+{
+  "_notice": "SYNTHETIC DEMO KNOWLEDGE BASE v2 - general wellness education text for an offline assistant. It cannot diagnose, prescribe or replace a clinician. Emergency numbers in India: 112 (national), 108 (ambulance), Tele-MANAS 14416 (mental health).",
+  "version": 2,
+  "refusalTriggers": [
+    "prescribe",
+    "change my dose",
+    "should i stop taking",
+    "give me a prescription",
+    "increase my dose"
+  ],
+  "refusalAnswer": "I cannot prescribe medicines or change your dose. Please see your prescribing doctor or pharmacist with your prescription and reports. For emergencies call 112/108 in India.",
+  "entries": [
+    {
+      "id": "kb-hba1c",
+      "keywords": [
+        "hba1c",
+        "a1c",
+        "glycated",
+        "ha1c"
+      ],
+      "question": "What is HbA1c?",
+      "answer": {
+        "en": "HbA1c is a laboratory estimate of the average blood glucose over roughly the past three months. Clinicians often use it as one of several markers when reviewing glucose control. This demo app shows only synthetic example values and cannot interpret your result - please discuss any real result with a qualified healthcare professional.",
+        "hi": "HbA1c पिछले लगभग तीन महीनों के औसत रक्त शर्करा का प्रयोगशाला अनुमान है। यह डेमो ऐप केवल कृत्रिम उदाहरण मान दिखाता है और आपके वास्तविक परिणाम की व्याख्या नहीं कर सकता।",
+        "mr": "HbA1c म्हणजे मागील साधारण तीन महिन्यांच्या सरासरी रक्तशर्करेचा प्रयोगशाळेतील अंदाज. हा डेमो अ‍ॅप केवळ नमुना माहिती दाखवतो आणि तुमच्या खऱ्या निकालाचे विश्लेषण करू शकत नाही."
+      }
+    },
+    {
+      "id": "kb-sleep",
+      "keywords": [
+        "sleep",
+        "insomnia",
+        "rest",
+        "sleeping",
+        "झोप",
+        "नींद"
+      ],
+      "question": "Why is sleep important?",
+      "answer": {
+        "en": "Sleep is when the body rests and recovers. Many people find that short or poor sleep is linked with lower energy, higher stress feelings and less activity the next day. The demo wellness score gives sleep a 40% weight purely as a demonstration rule. This is general information, not medical advice.",
+        "hi": "नींद के दौरान शरीर आराम और ठीक होता है। कम या खराब नींद का संबंध अगले दिन कम ऊर्जा और अधिक तनाव से देखा जाता है। यह सामान्य जानकारी है, चिकित्सकीय सलाह नहीं।",
+        "mr": "झोपेत शरीर विश्रांती घेते आणि पुरवठा भरतो. कमी किंवा खराब झोपेचा संबंध पुढच्या दिवशी कमी ऊर्जा आणि जास्त तणावाशी असतो. ही सामान्य माहिती आहे, वैद्यकीय सल्ला नाही."
+      }
+    },
+    {
+      "id": "kb-bp",
+      "keywords": [
+        "blood pressure",
+        "bp",
+        "systolic",
+        "diastolic",
+        "ब्लड प्रेशर",
+        "रक्तदाब"
+      ],
+      "question": "What is blood pressure?",
+      "answer": {
+        "en": "Blood pressure is a measure of the force of blood against artery walls, recorded as two numbers (for example 120/80). It varies through the day with activity, stress, caffeine and sleep. Trends are usually reviewed by a clinician over multiple readings. This demo uses synthetic readings only and does not interpret real values.",
+        "hi": "रक्तचाप धमनियों की दीवारों पर रक्त के दबाव का माप है, दो संख्याओं में लिखा जाता है (जैसे 120/80)। यह डेमो केवल कृत्रिम रीडिंग उपयोग करता है।",
+        "mr": "रक्तदाब म्हणजे रक्तनलिकांच्या भिंतींवर रक्ताचा दाब, दोन आकड्यांनी (उदा. 120/80) नोंद केला जातो. हा डेमो केवळ नमुना रीडिंग वापरतो."
+      }
+    },
+    {
+      "id": "kb-meds",
+      "keywords": [
+        "medicine",
+        "medication",
+        "tablet",
+        "dose",
+        "reminder",
+        "on time",
+        "दवा",
+        "औषध"
+      ],
+      "question": "Why should I take medicines on time?",
+      "answer": {
+        "en": "Many medicines are designed to keep a steady level in the body, so timing can matter. Missing doses or taking them late can reduce that steady level. Only your prescriber should change a dose or stop a medicine. This demo app records simulated adherence for demonstration only.",
+        "hi": "कई दवाएँ शरीर में स्थिर स्तर बनाए रखने के लिए बनी हैं, इसलिए समय महत्वपूर्ण हो सकता है। केवल आपका चिकित्सक ही खुराक बदल सकता है। यह डेमो ऐप केवल सिम्युलेटेड रिकॉर्ड रखता है।",
+        "mr": "अनेक औषधे शरीरात स्थिर पातळी ठेवण्यासाठी असतात, म्हणून वेळेचे महत्त्व असू शकते. फक्त तुमचा डॉक्टरच डोस बदलू शकतो. हा डेमो अ‍ॅप केवळ नमुना नोंदी ठेवतो."
+      }
+    },
+    {
+      "id": "kb-spo2",
+      "keywords": [
+        "spo2",
+        "oxygen",
+        "saturation",
+        "पल्स ऑक्सीजन"
+      ],
+      "question": "What does SpO2 mean?",
+      "answer": {
+        "en": "SpO2 is an estimate of the percentage of haemoglobin carrying oxygen in the blood, usually measured by a finger sensor or wearable. Consumer wearables are less accurate than medical devices. This demo shows synthetic values and cannot assess your real oxygen level - use a validated device and a clinician for real concerns.",
+        "hi": "SpO2 रक्त में ऑक्सीजन ले जाने वाली हीमोग्लोबिन का अनुमानित प्रतिशत है। यह डेमो कृत्रिम मान दिखाता है - वास्तविक चिंता के लिए मान्यता प्राप्त डिवाइस और चिकित्सक से संपर्क करें।",
+        "mr": "SpO2 म्हणजे रक्तातील ऑक्सिजन घेणाऱ्या हीमोग्लोबिनचा अंदाजित टक्केवारी धरून चालणारा मान. हा डेमो नमुना मूल्ये दाखवतो - खऱ्या काळजीसाठी प्रमाणित उपकरण व डॉक्टरांचा सल्ला घ्या."
+      }
+    },
+    {
+      "id": "kb-unwell",
+      "keywords": [
+        "unwell",
+        "feel sick",
+        "worse",
+        "what should i do",
+        "symptoms",
+        "बीमार"
+      ],
+      "question": "What should I do if I feel unwell?",
+      "answer": {
+        "en": "If you feel unwell, rest, keep fluids handy, and monitor how symptoms change. If symptoms are severe, sudden, or worsening - for example chest pressure, severe breathlessness, confusion, or fainting - contact a qualified healthcare professional or local emergency services immediately. This demo app cannot assess you and must not be used for emergency decisions.",
+        "hi": "अस्वस्थ महसूस होने पर आराम करें और लक्षणों पर नज़र रखें। गंभीर या अचानक लक्षणों के लिए तुरंत योग्य चिकित्सक या स्थानीय आपातकालीन सेवा से संपर्क करें। यह डेमो ऐप आपातकालीन निर्णयों के लिए उपयोग नहीं किया जाना चाहिए।",
+        "mr": "बेतबीण वाटल्यास विश्रांती घ्या आणि लक्षणांवर लक्ष ठेवा. गंभीर किंवा अचानक लक्षण असल्यास लगेच पात्र आरोग्यव्यावसायिकाचा किंवा स्थानिक आणीबाणी सेवेशी संपर्क साधा. हा डेमो अ‍ॅप आणीबाणी निर्णयांसाठी वापरू नये."
+      }
+    },
+    {
+      "id": "kb-steps",
+      "keywords": [
+        "steps",
+        "walk",
+        "exercise",
+        "activity",
+        "चालणे",
+        "व्यायाम"
+      ],
+      "question": "How much should I walk?",
+      "answer": {
+        "en": "Walking advice depends on your age, joints, heart and lung health, and current fitness. Many general wellness guidelines suggest building activity gradually, but the right amount for you should come from a qualified professional who knows your history. This demo app is an educational prototype.",
+        "hi": "चलने की सलाह आपकी उम्र, जोड़ों, हृदय और फेफड़ों की स्थिति पर निर्भर करती है। सही मात्रा किसी योग्य पेशेवर से प्राप्त करें। यह डेमो केवल एक सरल प्रदर्शन नियम उपयोग करता है।",
+        "mr": "चालण्यासंबंधीचा सल्ला तुमच्या वय, सांध्यांची, हृदय व फुफ्फुसांच्यी स्थितीवर अवलंबून असतो. योग्य प्रमाण जाणणाऱ्या व्यावसायिकाकडून घ्या. हा डेमो केवळ सोपा प्रदर्शन नियम वापरतो."
+      }
+    },
+    {
+      "id": "kb-wellness",
+      "keywords": [
+        "wellness score",
+        "score",
+        "how is wellness",
+        "स्कोर"
+      ],
+      "question": "How is the wellness score calculated?",
+      "answer": {
+        "en": "The demo wellness score = 40% sleep + 30% activity + 20% HRV + 10% inverse stress, each normalised to 0-100 using fixed demonstration thresholds. It is a transparent demo formula, not a clinical measurement and not a validated medical index.",
+        "hi": "डेमो वेलनेस स्कोर = 40% नींद + 30% गतिविधि + 20% HRV + 10% तनाव (उल्टा), प्रत्येक को 0-100 पर सामान्यीकृत किया गया है। यह एक पारदर्शी डेमो सूत्र है, नैदानिक माप नहीं।",
+        "mr": "डेमो वेलनेस स्कोर = ४०% झोप + ३०% हालचाल + २०% HRV + १०% तणाव (उलट), प्रत्येक घटक ०-१०० अंकांमध्ये मोडला जातो. हा स्पष्ट डेमो सूत्र आहे, वैद्यकीय माप नाही."
+      }
+    },
+    {
+      "id": "kb-risk",
+      "keywords": [
+        "risk",
+        "how does risk work",
+        "risk engine",
+        "जोखीम"
+      ],
+      "question": "How does the risk engine work?",
+      "answer": {
+        "en": "This prototype uses deterministic JavaScript rules over synthetic wearable and EHR values. It does NOT use a clinically validated machine-learning model. Each score lists the contributing factors so you can see exactly why it changed. Purpose: education and prototype demonstration only.",
+        "hi": "यह प्रोटोटाइप कृत्रिम वियरेबल और EHR मानों पर निर्धारित JavaScript नियमों का उपयोग करता है। यह नैदानिक रूप से मान्य मशीन-लर्निंग मॉडल नहीं है। उद्देश्य: केवल शिक्षा और प्रोटोटाइप प्रदर्शन।",
+        "mr": "हा प्रोटोटाइप नमुना वियरेबल व EHR मूल्यांवर निश्चित JavaScript नियम वापरतो. हा नैदान्यिकीदृष्ट्या मान्य मशीन-लर्निंग मॉडेल नाही. उद्देश्य: केवळ शिक्षण व प्रोटोटाइप प्रदर्शन."
+      }
+    },
+    {
+      "id": "kb-emergency",
+      "keywords": [
+        "emergency",
+        "sos",
+        "help me",
+        "ambulance",
+        "आपत्कालीन"
+      ],
+      "question": "This is an emergency - what should I do?",
+      "answer": {
+        "en": "This demo cannot contact emergency services. For a real emergency, call your local emergency number or go to the nearest hospital immediately. In the app you can press the SOS button, which only creates a simulated local alert for the demo doctor dashboard.",
+        "hi": "यह डेमो आपातकालीन सेवाओं को नहीं बुला सकता। वास्तविक आपात स्थिति में स्थानीय आपातकालीन नंबर पर कॉल करें या निकटतम अस्पताल जाएँ। ऐप का SOS बटन केवल डेमो अलर्ट बनाता है।",
+        "mr": "हा डेमो आणीबाणी सेवा कॉल करू शकत नाही. खऱ्या आपत्कालीन स्थितीत स्थानिक आणीबाणी क्रमांकावर कॉल करा किंवा जवळच्या रुग्णालयात जा. अ‍ॅपमधील SOS बटन केवळ डेमो अलर्ट तयार करते."
+      }
+    },
+    {
+      "id": "kb-diabetes-gen",
+      "keywords": [
+        "diabetes",
+        "sugar",
+        "glucose",
+        "मधुमेह",
+        "शुगर"
+      ],
+      "question": "What is diabetes?",
+      "answer": {
+        "en": "Diabetes is a group of conditions in which blood glucose runs higher than the normal range over time. It is diagnosed and managed by qualified healthcare professionals using history, examination and laboratory tests. This demo shows only synthetic data, cannot tell you whether you have diabetes, and must not be used for diagnosis.",
+        "hi": "मधुमेह स्थितियों का समूह है जिसमें समय के साथ रक्त शर्करा सामान्य सीमा से ऊपर चलती है। इसका निदान योग्य चिकित्सक करते हैं। यह डेमो केवल कृत्रिम डेटा दिखाता है और निदान के लिए उपयोग नहीं किया जाना चाहिए।",
+        "mr": "मधुमेह हा समूह आहे ज्यात कालांतरी रक्तशर्करा सामान्य मर्यादेवर असते. त्याचे निदान पात्र आरोग्यव्यावसायिक करतात. हा डेमो केवळ नमुना डेटा दाखवतो व निदानासाठी वापरता येत नाही."
+      }
+    },
+    {
+      "id": "kb-fever-worry",
+      "keywords": [
+        "fever",
+        "temperature",
+        "worry",
+        "100.4",
+        "38c"
+      ],
+      "question": "I have a fever. When should I worry?",
+      "answer": {
+        "en": "General info, not a diagnosis: Most fevers settle in 2-3 days with rest and fluids. See a doctor for fever over 103F, lasting 3+ days, or with breathing difficulty, stiff neck, confusion, vomiting, rash, or dehydration. Emergency: call 112/108 for danger signs."
+      }
+    },
+    {
+      "id": "kb-baby-fever",
+      "keywords": [
+        "baby",
+        "infant",
+        "3 months",
+        "newborn",
+        "fever"
+      ],
+      "question": "My baby under 3 months has a fever. What should I do?",
+      "answer": {
+        "en": "Any fever 100.4F/38C or higher in a baby under 3 months needs same-day emergency care. Do not wait at home or give medicine unless a doctor advises. Continue breastfeeding, keep baby comfortable, and go to hospital or call 108/112 immediately."
+      }
+    },
+    {
+      "id": "kb-dengue",
+      "keywords": [
+        "dengue",
+        "body ache",
+        "rash",
+        "mosquito",
+        "platelet"
+      ],
+      "question": "I have fever, severe body ache, and rash. Is it dengue?",
+      "answer": {
+        "en": "General info, not a diagnosis: These can occur in dengue and other viral fevers; only a blood test (NS1/IgM) confirms it. Avoid aspirin/ibuprofen; paracetamol only as directed. Emergency 112/108 for severe belly pain, vomiting, bleeding, black stools, or extreme tiredness."
+      }
+    },
+    {
+      "id": "kb-malaria-typhoid",
+      "keywords": [
+        "malaria",
+        "typhoid",
+        "tested",
+        "test",
+        "wait"
+      ],
+      "question": "How long should I wait before getting tested for malaria or typhoid?",
+      "answer": {
+        "en": "General info: Do not delay care for persistent fever. Malaria tests can be done as soon as chills/sweats appear; typhoid blood culture is best in week 1. See a doctor within 24-48 hrs of persistent fever, sooner if high fever or weakness. Carry fever duration and travel details."
+      }
+    },
+    {
+      "id": "kb-burning-urine",
+      "keywords": [
+        "burning",
+        "urination",
+        "urine",
+        "uti",
+        "dysuria"
+      ],
+      "question": "I have burning urination. What should I do?",
+      "answer": {
+        "en": "General info, not a diagnosis: Burning often suggests urine infection, with frequency or lower-belly pain. Drink water, do not hold urine. See a doctor promptly for a urine test; most UTIs need prescribed antibiotics. Urgent care for fever, back pain, blood in urine, or pregnancy."
+      }
+    },
+    {
+      "id": "kb-night-tb",
+      "keywords": [
+        "chills",
+        "sweating",
+        "night",
+        "tb",
+        "tuberculosis"
+      ],
+      "question": "I have chills and sweating at night. Is it TB?",
+      "answer": {
+        "en": "General info: Night sweats occur in TB and many other infections. Cough over 2 weeks, weight loss, evening fever, or TB contact raise suspicion. Only sputum/X-ray confirms. Visit a doctor or TB centre promptly. Emergency 112/108 for breathlessness or coughing blood."
+      }
+    },
+    {
+      "id": "kb-chest-pain",
+      "keywords": [
+        "chest",
+        "pain",
+        "heart",
+        "angina",
+        "pressure"
+      ],
+      "question": "I have chest pain. Is it my heart?",
+      "answer": {
+        "en": "Chest pain can come from heart, lungs, acidity, or muscles. Pressure/heaviness spreading to arm/neck/jaw with sweating or breathlessness may be heart-related. Treat sudden or severe chest pain as emergency: call 112/108 immediately. Do not drive yourself."
+      }
+    },
+    {
+      "id": "kb-racing-heart",
+      "keywords": [
+        "racing",
+        "fluttering",
+        "palpitation",
+        "pulse",
+        "heart racing"
+      ],
+      "question": "My heart is racing or fluttering. Is it dangerous?",
+      "answer": {
+        "en": "General info: Palpitations can come from caffeine, alcohol, anxiety, thyroid, anaemia, or rhythm issues. Rest and avoid stimulants. Urgent care 112/108 for fainting, chest pain, breathlessness, or very fast/irregular pulse lasting minutes."
+      }
+    },
+    {
+      "id": "kb-high-bp",
+      "keywords": [
+        "bp",
+        "blood pressure",
+        "high",
+        "hypertension"
+      ],
+      "question": "My BP reading is high. What should I do right now?",
+      "answer": {
+        "en": "Sit quietly 5 min and recheck; avoid tea/coffee/smoking 30 min before. If above 180/120 or with chest pain, breathlessness, vision change, or confusion, call 112/108 now. Otherwise see a doctor same day. Do not double or stop medicines suddenly."
+      }
+    },
+    {
+      "id": "kb-ankle-swelling",
+      "keywords": [
+        "ankles",
+        "swollen",
+        "swelling",
+        "edema",
+        "feet"
+      ],
+      "question": "My ankles are swollen. What does it mean?",
+      "answer": {
+        "en": "General info: Swelling can come from standing long, heat, salt, some BP medicines, or heart/kidney/liver/thyroid issues. Raise legs, cut salt, move regularly. See a doctor promptly for one-sided painful swelling, breathlessness, low urine, or rapid weight gain."
+      }
+    },
+    {
+      "id": "kb-breathless-stairs",
+      "keywords": [
+        "breathless",
+        "stairs",
+        "climbing",
+        "shortness"
+      ],
+      "question": "I get breathless on climbing stairs. Should I worry?",
+      "answer": {
+        "en": "General info: New breathlessness on exertion can signal heart, lung, anaemia, or thyroid issues. Note stairs count and any chest pain, wheeze, swelling, or dizziness. See a doctor promptly. Emergency 112/108 for breathlessness at rest, chest pressure, or fainting."
+      }
+    },
+    {
+      "id": "kb-dizzy-standing",
+      "keywords": [
+        "dizzy",
+        "stand",
+        "standing",
+        "lightheaded"
+      ],
+      "question": "I feel dizzy when I stand up. Why?",
+      "answer": {
+        "en": "General info: Often dehydration, sudden posture change, anaemia, low standing BP, or medicines. Stand slowly, drink water, review medicines with doctor. Seek care for fainting or frequent episodes. Emergency 112/108 for one-sided weakness or slurred speech."
+      }
+    },
+    {
+      "id": "kb-cough-2weeks",
+      "keywords": [
+        "cough",
+        "2 weeks",
+        "persistent",
+        "tuberculosis"
+      ],
+      "question": "My cough has lasted more than 2 weeks. What should I do?",
+      "answer": {
+        "en": "General info: Cough beyond 2 weeks needs evaluation: post-viral, allergy/asthma, acidity, smoking, or TB. Wear a mask, avoid smoke/dust, visit a doctor for exam and sputum/X-ray if advised. Urgent 112/108 for breathlessness, chest pain, or blood."
+      }
+    },
+    {
+      "id": "kb-cough-blood",
+      "keywords": [
+        "coughing",
+        "blood",
+        "haemoptysis",
+        "bleeding"
+      ],
+      "question": "I'm coughing up blood. Is it an emergency?",
+      "answer": {
+        "en": "Yes, treat any coughed blood as emergency. Sit upright, stay calm, note amount, and call 112/108 or go to hospital now. Do not smoke. Only urgent X-ray/CT evaluation can find the source."
+      }
+    },
+    {
+      "id": "kb-wheezing",
+      "keywords": [
+        "wheezing",
+        "inhaler",
+        "asthma",
+        "pump"
+      ],
+      "question": "I'm wheezing and my inhaler isn't helping. What next?",
+      "answer": {
+        "en": "If wheeze persists after prescribed puffs, you cannot speak full sentences, or lips turn blue, call 112/108 now. Sit upright, stay calm, take medicines only as prescribed. Carry your asthma action plan for review."
+      }
+    },
+    {
+      "id": "kb-cold-antibiotics",
+      "keywords": [
+        "cold",
+        "sore throat",
+        "antibiotics",
+        "viral"
+      ],
+      "question": "I have a cold and sore throat. Do I need antibiotics?",
+      "answer": {
+        "en": "General info: Most colds are viral and improve in 5-7 days without antibiotics. Rest, warm fluids, salt gargles help. See a doctor for high fever 3+ days, trouble swallowing/breathing, or symptoms beyond 10 days. Antibiotics need prescription."
+      }
+    },
+    {
+      "id": "kb-cold-flu-covid",
+      "keywords": [
+        "cold",
+        "flu",
+        "covid",
+        "difference"
+      ],
+      "question": "How do I tell a cold, flu, and COVID apart?",
+      "answer": {
+        "en": "General info: Colds bring runny nose/sneezing; flu starts suddenly with high fever and body ache; COVID resembles either and needs a test. Isolate if feverish, mask, rest, hydrate. Seek care for breathlessness or persistent high fever."
+      }
+    },
+    {
+      "id": "kb-loose-motions",
+      "keywords": [
+        "loose motions",
+        "diarrhoea",
+        "diarrhea",
+        "dehydration"
+      ],
+      "question": "I have loose motions. When do I need a doctor?",
+      "answer": {
+        "en": "General info: Mild cases settle in 1-2 days; sip ORS often. See a doctor same day for 6-8+ watery stools/day, blood/mucus, high fever, no urine 6-8 hrs, dizziness, or if infant/elderly/pregnant. Emergency 112/108 for fainting or bloody stools with fever."
+      }
+    },
+    {
+      "id": "kb-vomiting",
+      "keywords": [
+        "vomiting",
+        "vomit",
+        "repeatedly",
+        "nausea"
+      ],
+      "question": "I'm vomiting repeatedly. What should I do?",
+      "answer": {
+        "en": "General info: Sip small frequent ORS/water; avoid oily food and alcohol. Same-day care for blood in vomit, severe belly pain, high fever, dehydration signs, or if diabetic/pregnant. Emergency 112/108 for vomit with chest pain, confusion, or after poisoning."
+      }
+    },
+    {
+      "id": "kb-acidity",
+      "keywords": [
+        "acidity",
+        "burning",
+        "chest",
+        "reflux",
+        "gerd"
+      ],
+      "question": "I have acidity and burning in my chest. Is it serious?",
+      "answer": {
+        "en": "General info: Burning after meals often suggests reflux, but pressure-like pain with sweating or breathlessness needs emergency care 112/108. For acidity: smaller meals, avoid late-night/spicy food, alcohol, smoking. See a doctor for frequent symptoms or trouble swallowing."
+      }
+    },
+    {
+      "id": "kb-appendicitis",
+      "keywords": [
+        "abdomen",
+        "lower right",
+        "appendicitis",
+        "appendix"
+      ],
+      "question": "I have severe pain in the lower right abdomen. Is it appendicitis?",
+      "answer": {
+        "en": "General info: Pain shifting to lower-right with fever, nausea, or pain on movement can occur in appendicitis; only exam and ultrasound confirm. Do not press hard or take laxatives. Seek same-day emergency care, 112/108 if severe."
+      }
+    },
+    {
+      "id": "kb-black-stools",
+      "keywords": [
+        "black stools",
+        "blood",
+        "stool",
+        "bleeding"
+      ],
+      "question": "I'm passing black stools or blood. Is it an emergency?",
+      "answer": {
+        "en": "Black tarry stools or visible blood can signal GI bleeding: seek same-day emergency care, 112/108 if large bleed, dizziness, vomiting blood, or severe pain. Note medicines like painkillers or blood thinners. Do not start/stop thinners alone."
+      }
+    },
+    {
+      "id": "kb-jaundice",
+      "keywords": [
+        "yellow",
+        "eyes",
+        "skin",
+        "jaundice",
+        "hepatitis"
+      ],
+      "question": "My eyes and skin look yellow. What should I do?",
+      "answer": {
+        "en": "General info: Yellow eyes/skin suggests liver or bile issues and needs prompt testing. Avoid alcohol and unnecessary medicines. See a doctor within 24 hrs. Emergency 112/108 for confusion, vomiting blood, severe pain, or high fever."
+      }
+    },
+    {
+      "id": "kb-constipation",
+      "keywords": [
+        "constipation",
+        "stool",
+        "bowel",
+        "constipated",
+        "fibre"
+      ],
+      "question": "I have constipation that won't go away. What helps?",
+      "answer": {
+        "en": "General info: Drink water, eat fibre, walk daily, keep a regular routine. Avoid routine laxative overuse. See a doctor for 3+ weeks, blood in stool, severe pain, vomiting, or weight loss."
+      }
+    },
+    {
+      "id": "kb-headache",
+      "keywords": [
+        "headache",
+        "bad",
+        "dangerous",
+        "migraine"
+      ],
+      "question": "I have a bad headache. When is it dangerous?",
+      "answer": {
+        "en": "General info: Most headaches ease with rest and hydration. Emergency 112/108 for sudden worst-ever headache, after injury, with fever and stiff neck, confusion, seizure, vision loss, or weakness/speech change."
+      }
+    },
+    {
+      "id": "kb-stroke",
+      "keywords": [
+        "face",
+        "drooping",
+        "speech",
+        "slurred",
+        "stroke"
+      ],
+      "question": "My face is drooping and my speech is slurred. What do I do?",
+      "answer": {
+        "en": "Possible stroke emergency: call 112/108 now and go to stroke-ready hospital. Note exact start time. FAST: Face droop, Arm weakness, Speech difficulty, Time to call. Do not give food or medicines while waiting."
+      }
+    },
+    {
+      "id": "kb-vertigo",
+      "keywords": [
+        "dizzy",
+        "room spins",
+        "vertigo",
+        "spinning"
+      ],
+      "question": "I feel dizzy and the room spins. Is it serious?",
+      "answer": {
+        "en": "General info: Spinning vertigo often comes from inner ear, dehydration, or BP/sugar issues. Emergency 112/108 for double vision, slurred speech, weakness, severe headache, or fainting. Otherwise see a doctor promptly. Avoid driving during episodes."
+      }
+    },
+    {
+      "id": "kb-seizure",
+      "keywords": [
+        "seizure",
+        "fit",
+        "convulsion",
+        "epilepsy"
+      ],
+      "question": "I had a seizure. What should I do?",
+      "answer": {
+        "en": "After a first seizure seek same-day evaluation; 112/108 if over 5 min, repeats, breathing trouble, injury, or pregnancy. During: lay person on side, clear sharp objects, nothing in mouth. Note duration. Avoid driving alone until cleared."
+      }
+    },
+    {
+      "id": "kb-numbness",
+      "keywords": [
+        "numbness",
+        "tingling",
+        "hands",
+        "feet",
+        "neuropathy"
+      ],
+      "question": "I have numbness or tingling in my hands and feet. What does it mean?",
+      "answer": {
+        "en": "General info: Can come from nerve pressure, diabetes, B12 deficiency, thyroid, or neck/back issues. Note symmetry, weakness, and diabetes history. See a doctor promptly. Emergency 112/108 for sudden one-sided numbness, weakness, or speech change."
+      }
+    },
+    {
+      "id": "kb-migraine-scan",
+      "keywords": [
+        "migraine",
+        "scan",
+        "mri",
+        "headache"
+      ],
+      "question": "I keep getting migraines. Do I need a scan?",
+      "answer": {
+        "en": "General info: Typical migraine often needs no scan. Scans are advised for changed pattern, worst-ever headache, with seizure/weakness/vision loss, after injury, or new onset after 50. Track triggers and frequency. See a doctor for frequent attacks."
+      }
+    },
+    {
+      "id": "kb-sugar-300",
+      "keywords": [
+        "sugar",
+        "300",
+        "high",
+        "glucose"
+      ],
+      "question": "My sugar is above 300. What should I do?",
+      "answer": {
+        "en": "Reading above 300 is high: recheck meter, drink water, avoid sweets, contact doctor same day with readings and medicines. Emergency 112/108 for vomiting, belly pain, rapid breathing, fruity breath, or confusion. Never adjust insulin alone."
+      }
+    },
+    {
+      "id": "kb-sugar-low",
+      "keywords": [
+        "sugar",
+        "low",
+        "shaky",
+        "hypoglycemia",
+        "hypo"
+      ],
+      "question": "My sugar is low and I'm shaky. What should I take?",
+      "answer": {
+        "en": "Take 15g fast sugar: 3-4 glucose tablets or half cup juice, recheck in 15 min, repeat if low, then a snack. If confused or unable to swallow, call 112/108; do not give food/drink. Inform doctor same day."
+      }
+    },
+    {
+      "id": "kb-thirst-diabetes",
+      "keywords": [
+        "thirsty",
+        "urinating",
+        "often",
+        "diabetes"
+      ],
+      "question": "I'm very thirsty and urinating often. Do I have diabetes?",
+      "answer": {
+        "en": "General info: These can occur in diabetes but only fasting/PP sugar and HbA1c plus a doctor confirm it. Avoid sugary drinks, note family history, get tested promptly. Emergency 112/108 for vomiting or drowsiness with high sugar."
+      }
+    },
+    {
+      "id": "kb-foot-wound",
+      "keywords": [
+        "diabetic",
+        "foot",
+        "wound",
+        "heal",
+        "ulcer"
+      ],
+      "question": "My diabetic foot wound won't heal. Should I worry?",
+      "answer": {
+        "en": "Yes, see a doctor within 24 hrs: infection risk is higher. Keep wound clean and covered, do not walk barefoot, avoid home cutting. Emergency 112/108 for spreading redness, swelling, foul smell, black colour, or fever."
+      }
+    },
+    {
+      "id": "kb-weight-loss",
+      "keywords": [
+        "losing weight",
+        "weight loss",
+        "without trying"
+      ],
+      "question": "I'm losing weight without trying. Why?",
+      "answer": {
+        "en": "General info: Unintentional loss over 5% in 6-12 months needs evaluation: thyroid, diabetes, TB, gut, liver/kidney, or mood issues. Note appetite, fever, cough, bowel change. See a doctor promptly with weight records."
+      }
+    },
+    {
+      "id": "kb-tired",
+      "keywords": [
+        "tired",
+        "fatigue",
+        "exhausted",
+        "tests"
+      ],
+      "question": "I feel tired all the time. What tests do I need?",
+      "answer": {
+        "en": "General info: Fatigue has many causes: anaemia, thyroid, diabetes, sleep apnoea, depression, or medicines. Doctor reviews sleep, diet, stress, then may advise haemoglobin, TSH, sugar/HbA1c, B12/D. Seek care for chest pain, breathlessness, or weight loss."
+      }
+    },
+    {
+      "id": "kb-back-mri",
+      "keywords": [
+        "back pain",
+        "mri",
+        "spine",
+        "slipped"
+      ],
+      "question": "I have back pain. When do I need an MRI?",
+      "answer": {
+        "en": "General info: Most back pain improves in 2-6 weeks with activity and posture care. MRI usually only for leg weakness, bladder/bowel issues, fever, cancer/TB history, major injury, or pain beyond 6 weeks. Emergency 112/108 for new weakness or bladder loss."
+      }
+    },
+    {
+      "id": "kb-back-weakness",
+      "keywords": [
+        "back pain",
+        "leg weakness",
+        "numbness",
+        "cauda"
+      ],
+      "question": "My back pain comes with leg weakness. Is it an emergency?",
+      "answer": {
+        "en": "Yes: back pain with new leg weakness, saddle numbness, or trouble passing urine/stool needs emergency care. Call 112/108 now. Avoid heavy lifting. Note when weakness started."
+      }
+    },
+    {
+      "id": "kb-joint-hot",
+      "keywords": [
+        "joints",
+        "swollen",
+        "red",
+        "hot",
+        "arthritis"
+      ],
+      "question": "My joints are swollen, red, and hot. What should I do?",
+      "answer": {
+        "en": "General info: A single hot painful joint with fever needs same-day care for infection or gout. Rest it, avoid hard massage. Emergency 112/108 for severe pain with fever or inability to move it."
+      }
+    },
+    {
+      "id": "kb-injury-xray",
+      "keywords": [
+        "injured",
+        "weight",
+        "x-ray",
+        "xray",
+        "sprain"
+      ],
+      "question": "I injured myself and can't put weight on it. Do I need an X-ray?",
+      "answer": {
+        "en": "General info: Inability to bear weight, deformity, severe swelling, or numbness usually needs same-day X-ray. Rest, wrap ice 15 min, elevate. Emergency 112/108 for open wound, deformity, or pale/cold limb."
+      }
+    },
+    {
+      "id": "kb-knee-pain",
+      "keywords": [
+        "knees",
+        "hurt",
+        "climbing",
+        "stairs",
+        "arthritis"
+      ],
+      "question": "My knees hurt when I climb stairs. Is it arthritis?",
+      "answer": {
+        "en": "General info: Pain on stairs often comes from early osteoarthritis or kneecap pain, worse with squatting or stiffness. Keep healthy weight, strengthen legs as advised, avoid deep squats. See a doctor for locking, swelling, or night pain."
+      }
+    },
+    {
+      "id": "kb-heavy-periods",
+      "keywords": [
+        "periods",
+        "heavy",
+        "bleeding",
+        "menstruation"
+      ],
+      "question": "My periods are very heavy. When is it an emergency?",
+      "answer": {
+        "en": "Emergency 112/108 for pad every hour 2+ hrs, large clots with dizziness, severe pain, or bleeding with pregnancy symptoms. Otherwise see a doctor promptly for flooding, periods over 7 days, or tiredness. Track pads and cycle dates."
+      }
+    },
+    {
+      "id": "kb-irregular-pcos",
+      "keywords": [
+        "periods",
+        "irregular",
+        "pcos",
+        "late"
+      ],
+      "question": "My periods are irregular. Is it PCOS?",
+      "answer": {
+        "en": "General info: Irregularity can come from stress, weight change, thyroid, or PCOS. PCOS often has acne, excess hair, weight gain. Only exam, ultrasound, and hormones confirm. See a gynaecologist for cycles under 21 or over 35 days."
+      }
+    },
+    {
+      "id": "kb-missed-period",
+      "keywords": [
+        "missed",
+        "period",
+        "pregnant",
+        "pregnancy test"
+      ],
+      "question": "I missed my period. What should I do?",
+      "answer": {
+        "en": "General info: If sexually active, take a home urine test with morning urine after a week delay. Note stress, weight change, medicines. See a doctor for positive test or absence beyond 2-3 months. Emergency 112/108 for severe one-sided pain or heavy bleed with positive test."
+      }
+    },
+    {
+      "id": "kb-preg-bleeding",
+      "keywords": [
+        "pregnant",
+        "bleeding",
+        "pregnancy",
+        "spotting"
+      ],
+      "question": "I'm pregnant and bleeding. What should I do?",
+      "answer": {
+        "en": "Any bleeding in pregnancy needs same-day emergency care. Call 112/108 for heavy bleed, severe pain, dizziness, fluid gush, or reduced movements. Rest, note weeks and amount, carry antenatal records. Do not wait at home."
+      }
+    },
+    {
+      "id": "kb-less-movements",
+      "keywords": [
+        "baby",
+        "moving",
+        "less",
+        "pregnancy",
+        "fetal"
+      ],
+      "question": "My baby is moving less in pregnancy. Is it dangerous?",
+      "answer": {
+        "en": "Reduced movements after 28 weeks need same-day emergency check: go to hospital now. Lie on left side after a light meal and count while arranging transport. Call 112/108 if no movements, bleeding, fluid leak, or severe headache."
+      }
+    },
+    {
+      "id": "kb-breast-lump",
+      "keywords": [
+        "lump",
+        "breast",
+        "cancer",
+        "tumour"
+      ],
+      "question": "I found a lump in my breast. Is it cancer?",
+      "answer": {
+        "en": "General info: Most lumps are benign, but any new persistent lump, skin dimpling, or nipple discharge needs prompt exam plus ultrasound/mammogram. Note timing, pain, family history. See a doctor within days. Do monthly self-exams."
+      }
+    },
+    {
+      "id": "kb-white-discharge",
+      "keywords": [
+        "white discharge",
+        "itching",
+        "vaginal",
+        "yeast"
+      ],
+      "question": "I have white discharge with itching. What should I do?",
+      "answer": {
+        "en": "General info: Itchy white discharge often suggests fungal infection; only exam confirms. Keep area dry, wear cotton, avoid scented washes. See a doctor for proper treatment. Urgent care for foul/green/bloody discharge, severe pain, fever, or pregnancy."
+      }
+    },
+    {
+      "id": "kb-child-fever",
+      "keywords": [
+        "child",
+        "fever",
+        "worry",
+        "temperature"
+      ],
+      "question": "My child has a fever. When should I worry?",
+      "answer": {
+        "en": "Worry signs: under 3 months any fever is emergency; over 104F, 3+ days, breathing trouble, vomiting, non-fading rash, seizure, drowsiness, no urine 6+ hrs. Give fluids, correct paracetamol dose only if advised. Emergency 112/108 for danger signs."
+      }
+    },
+    {
+      "id": "kb-child-breathing",
+      "keywords": [
+        "child",
+        "breathing",
+        "fast",
+        "pneumonia"
+      ],
+      "question": "My child is breathing fast. Is it an emergency?",
+      "answer": {
+        "en": "Yes: fast/noisy breathing, chest indrawing, grunting, blue lips, inability to drink, or sleepiness can signal pneumonia. Call 112/108 now. Keep child upright, avoid smoke, no cough syrups without prescription."
+      }
+    },
+    {
+      "id": "kb-child-swallowed",
+      "keywords": [
+        "child",
+        "swallowed",
+        "coin",
+        "battery",
+        "button"
+      ],
+      "question": "My child swallowed a coin or battery. What do I do?",
+      "answer": {
+        "en": "Button batteries are emergency: call 112/108 now, go to hospital, do not induce vomiting or give food. For coins: same-day emergency if drooling, vomiting, chest pain, breathing trouble, or belly pain. Note what, when, and size. Keep packaging for doctor."
+      }
+    },
+    {
+      "id": "kb-child-rash",
+      "keywords": [
+        "child",
+        "rash",
+        "doesnt fade",
+        "glass test",
+        "meningitis"
+      ],
+      "question": "My child has a rash that doesn't fade when pressed. What is it?",
+      "answer": {
+        "en": "A non-fading rash (stays under a pressed glass) with fever, sleepiness, stiff neck, or vomiting can signal serious infection. Call 112/108 or go to hospital immediately. Note fever, behaviour, and recent illness. Do not wait at home."
+      }
+    },
+    {
+      "id": "kb-child-drowsy",
+      "keywords": [
+        "child",
+        "drinking",
+        "drowsy",
+        "dehydration",
+        "sleepy"
+      ],
+      "question": "My child isn't drinking and seems drowsy. What should I do?",
+      "answer": {
+        "en": "Refusal to drink with drowsiness, low urine, dry mouth, sunken eyes, or fast breathing suggests dehydration or serious illness: seek same-day emergency care, 112/108 if floppy, hard to wake, or breathing trouble. Offer small frequent sips if alert. Note fever, vomits, and stools."
+      }
+    },
+    {
+      "id": "kb-paracetamol-dose",
+      "keywords": [
+        "paracetamol",
+        "dose",
+        "child",
+        "safe",
+        "crocin"
+      ],
+      "question": "How much paracetamol can I safely give my child?",
+      "answer": {
+        "en": "General info: Dose is by weight, usually 10-15 mg per kg per dose, max every 4-6 hrs and max 4-5 doses in 24 hrs, using the syringe provided. Confirm exact dose with your doctor or pharmacist; never guess or combine cold medicines. Seek care for overdose, persistent fever 3+ days, or danger signs."
+      }
+    },
+    {
+      "id": "kb-allergy-swelling",
+      "keywords": [
+        "rash",
+        "lip",
+        "face swelling",
+        "allergy",
+        "anaphylaxis"
+      ],
+      "question": "I have a sudden rash with lip or face swelling. Is it an allergy?",
+      "answer": {
+        "en": "Yes, sudden rash with lip/face swelling can be serious allergy. Emergency 112/108 for throat tightness, breathing trouble, voice change, dizziness, or vomiting. Avoid the trigger, do not drive. If prescribed, use adrenaline auto-injector as trained and go to hospital."
+      }
+    },
+    {
+      "id": "kb-mole-cancer",
+      "keywords": [
+        "mole",
+        "changing",
+        "skin cancer",
+        "melanoma"
+      ],
+      "question": "A mole on my skin is changing. Could it be skin cancer?",
+      "answer": {
+        "en": "General info: Watch ABCDE: Asymmetry, Border change, Colour change, Diameter over 6mm, Evolving. Any changing, bleeding, itchy, or non-healing mole needs prompt skin exam and dermoscopy. Avoid picking or home removal. Note sun exposure and family history."
+      }
+    },
+    {
+      "id": "kb-vision-loss",
+      "keywords": [
+        "vision loss",
+        "flashes",
+        "light",
+        "retina",
+        "emergency"
+      ],
+      "question": "I have sudden vision loss or flashes of light. What do I do?",
+      "answer": {
+        "en": "Sudden vision loss, curtain over vision, many new floaters with flashes, or eye injury/chemical splash needs emergency eye care: go to hospital now, 112/108 if after injury or with severe headache/weakness. Do not rub; rinse chemicals with clean water. Note onset and medicines."
+      }
+    },
+    {
+      "id": "kb-red-eye",
+      "keywords": [
+        "eye",
+        "red",
+        "painful",
+        "conjunctivitis"
+      ],
+      "question": "My eye is red and painful. Do I need to see a doctor?",
+      "answer": {
+        "en": "General info: Mild redness without pain often settles; see a doctor same day for eye pain, vision change, light sensitivity, discharge, after injury, contact-lens wear, or beyond 2-3 days. Do not share towels or use steroid drops alone. Emergency for sudden vision loss or chemical injury."
+      }
+    },
+    {
+      "id": "kb-ear-discharge",
+      "keywords": [
+        "ear",
+        "pain",
+        "discharge",
+        "hearing",
+        "otitis"
+      ],
+      "question": "I have ear pain and discharge. What should I do?",
+      "answer": {
+        "en": "General info: Ear pain with discharge, fever, or hearing loss suggests infection needing exam. Keep ear dry, do not insert buds/oil, avoid swimming. See a doctor promptly; urgent for severe pain, swelling behind ear, dizziness, or facial weakness. Note cold, water entry, and injury."
+      }
+    },
+    {
+      "id": "kb-itchy-rash",
+      "keywords": [
+        "itchy",
+        "rash",
+        "eczema",
+        "dermatitis",
+        "recurring"
+      ],
+      "question": "I have an itchy rash that keeps coming back. Is it eczema?",
+      "answer": {
+        "en": "General info: Recurring itchy red patches in folds often suggest eczema, but fungal, allergy, and other causes mimic it. Only exam confirms. Moisturise, avoid harsh soaps and scratching, trim nails. See a doctor for spreading, oozing, or sleep-disturbing itch; avoid long steroid use without advice."
+      }
+    },
+    {
+      "id": "kb-depression",
+      "keywords": [
+        "sad",
+        "hopeless",
+        "depression",
+        "weeks",
+        "mood"
+      ],
+      "question": "I feel sad and hopeless for weeks. Is it depression?",
+      "answer": {
+        "en": "General info: Low mood, loss of interest, sleep/appetite change, and hopelessness beyond 2 weeks deserve care and may suggest depression; only a professional can diagnose. Talk to a trusted person and see a doctor/counsellor soon. For self-harm thoughts call Tele-MANAS 14416 or 112 now. You are not alone."
+      }
+    },
+    {
+      "id": "kb-panic",
+      "keywords": [
+        "panic",
+        "attacks",
+        "anxiety",
+        "breathless",
+        "palpitation"
+      ],
+      "question": "I get panic attacks. What should I do?",
+      "answer": {
+        "en": "General info: During panic: sit safely, slow breathe in 4-hold 4-out 6, relax shoulders, remind yourself it peaks and passes. Avoid caffeine/alcohol. See a doctor/counsellor for repeated attacks or avoidance of places. Emergency 112/108 for first-time chest pain, fainting, or suicidal thoughts; Tele-MANAS 14416 for support."
+      }
+    },
+    {
+      "id": "kb-self-harm",
+      "keywords": [
+        "harming",
+        "myself",
+        "suicide",
+        "self harm",
+        "help"
+      ],
+      "question": "I'm having thoughts of harming myself. Where do I get help?",
+      "answer": {
+        "en": "Please reach out now: call Tele-MANAS 14416 (India mental-health helpline) or 112/108, or go to the nearest hospital. Tell a trusted person and stay with someone. If you have harmed yourself, seek emergency care immediately. Help is available and you matter."
+      }
+    },
+    {
+      "id": "kb-insomnia",
+      "keywords": [
+        "sleep",
+        "insomnia",
+        "cant sleep",
+        "weeks"
+      ],
+      "question": "I can't sleep for weeks. What should I do?",
+      "answer": {
+        "en": "General info: Keep fixed wake time, daylight walk, no caffeine after noon, screens off 1 hr before bed, cool dark room. Avoid alcohol/sleep pills without advice. See a doctor for 3+ weeks, daytime sleepiness, snoring with gasps, or low mood. Urgent care for chest pain or severe anxiety with sleeplessness."
+      }
+    },
+    {
+      "id": "kb-forgetting",
+      "keywords": [
+        "forgetting",
+        "memory",
+        "dementia",
+        "alzheimer"
+      ],
+      "question": "I keep forgetting things. Is it dementia?",
+      "answer": {
+        "en": "General info: Occasional forgetfulness differs from dementia, which affects daily tasks, language, and judgment. Causes include sleep, B12, thyroid, depression, and medicines. Note examples and medicines. See a doctor promptly for worsening memory, getting lost, or personality change; sudden confusion is emergency 112/108."
+      }
+    },
+    {
+      "id": "kb-flank-pain",
+      "keywords": [
+        "flank",
+        "pain",
+        "kidney stone",
+        "side pain"
+      ],
+      "question": "I have severe flank pain. Is it a kidney stone?",
+      "answer": {
+        "en": "General info: Severe side/back pain moving to groin with nausea, burning urine, or blood can occur in kidney stones; only exam and ultrasound confirm. Drink water if able, avoid holding urine. Same-day care; emergency 112/108 for fever with pain, vomiting, inability to urinate, or unbearable pain."
+      }
+    },
+    {
+      "id": "kb-blood-urine",
+      "keywords": [
+        "blood",
+        "urine",
+        "haematuria",
+        "red urine"
+      ],
+      "question": "I see blood in my urine. What should I do?",
+      "answer": {
+        "en": "General info: Visible blood always needs prompt testing: infection, stone, prostate, or other causes. Note colour, clots, pain, fever, medicines. Avoid strenuous exercise and self-medicines. See a doctor within 24 hrs; emergency 112/108 for clots blocking urine, severe pain, fever, or heavy bleeding."
+      }
+    },
+    {
+      "id": "kb-low-urine",
+      "keywords": [
+        "urine",
+        "output",
+        "dropped",
+        "kidney failure",
+        "oliguria"
+      ],
+      "question": "My urine output has dropped. Is it kidney failure?",
+      "answer": {
+        "en": "General info: Low urine with swelling, breathlessness, tiredness, or confusion needs same-day evaluation; causes include dehydration, medicines, obstruction, or kidney issues. Note fluids, vomits/diarrhoea, medicines, and swelling. Emergency 112/108 for no urine 8+ hrs, breathlessness, chest pain, or confusion."
+      }
+    },
+    {
+      "id": "kb-recurrent-uti",
+      "keywords": [
+        "uti",
+        "again",
+        "recurrent",
+        "urine infection"
+      ],
+      "question": "I get UTIs again and again. Why?",
+      "answer": {
+        "en": "General info: Recurrence links to holding urine, low fluids, constipation, stones, diabetes, menopause, or incomplete treatment. Drink water, void regularly and after intercourse, treat constipation. See a doctor for urine culture, sugar test, and ultrasound if advised. Urgent for fever, back pain, or blood."
+      }
+    },
+    {
+      "id": "kb-foamy-urine",
+      "keywords": [
+        "urine",
+        "foamy",
+        "frothy",
+        "protein",
+        "kidney"
+      ],
+      "question": "My urine is foamy. Should I worry?",
+      "answer": {
+        "en": "General info: Occasional foam from forceful stream is common; persistent froth with swelling, tiredness, diabetes, or high BP needs urine protein and kidney tests. Note medicines and fluid intake. See a doctor promptly if persistent or with swelling/breathlessness."
+      }
+    },
+    {
+      "id": "kb-overdose",
+      "keywords": [
+        "too much medicine",
+        "overdose",
+        "mistake",
+        "poison"
+      ],
+      "question": "I took too much medicine by mistake. What should I do?",
+      "answer": {
+        "en": "Call 112/108 or go to hospital immediately; carry the strip/bottle and note dose and time. Do not induce vomiting or wait for symptoms. If drowsy, keep person on side. Call poison control if available. Time matters even if feeling well."
+      }
+    },
+    {
+      "id": "kb-poison",
+      "keywords": [
+        "poison",
+        "chemical",
+        "swallowed",
+        "pesticide"
+      ],
+      "question": "I swallowed poison or a chemical. What should I do?",
+      "answer": {
+        "en": "Call 112/108 now. Do not induce vomiting or give milk/water unless advised. Carry the container/label. For skin/eye exposure rinse with clean water and remove clothes. Note amount and time. Go to hospital immediately."
+      }
+    },
+    {
+      "id": "kb-bite",
+      "keywords": [
+        "snake",
+        "dog bite",
+        "bitten",
+        "rabies",
+        "antivenom"
+      ],
+      "question": "I was bitten by a snake or dog. What should I do?",
+      "answer": {
+        "en": "Snake: call 112/108, keep limb still, remove rings, go to hospital for antivenom; no cutting/sucking/tourniquet. Dog: wash wound 15 min with soap-water, apply antiseptic, go for rabies vaccine and tetanus same day. Note animal and time. Emergency for breathing trouble or uncontrolled bleed."
+      }
+    },
+    {
+      "id": "kb-collapsed",
+      "keywords": [
+        "collapsed",
+        "unresponsive",
+        "faint",
+        "cpr",
+        "unconscious"
+      ],
+      "question": "Someone collapsed and is unresponsive. What do I do?",
+      "answer": {
+        "en": "Check response and breathing, call 112/108 now. If trained, start chest compressions (100-120/min). If breathing, lay on side. Do not give food/water. Note pulse, medicines, and events. Stay until help arrives."
+      }
+    },
+    {
+      "id": "kb-burn",
+      "keywords": [
+        "burn",
+        "severe",
+        "blister",
+        "scald"
+      ],
+      "question": "I have a severe burn. What should I do?",
+      "answer": {
+        "en": "Cool with clean running water 20 min, remove jewellery, cover loosely with clean cloth. Do not apply ice, toothpaste, or oil. Call 112/108 for large/deep burns, face/hands/joints, or breathing trouble. Note cause and tetanus status."
+      }
+    },
+    {
+      "id": "kb-sting-throat",
+      "keywords": [
+        "stung",
+        "throat tight",
+        "bee",
+        "wasp",
+        "sting"
+      ],
+      "question": "I was stung and my throat feels tight. What should I do?",
+      "answer": {
+        "en": "Throat tightness after a sting can signal severe allergy: call 112/108 now. Sit upright, avoid scratching, remove stinger by scraping. If prescribed, use adrenaline injector and go to hospital. Note insect and time."
+      }
+    },
+    {
+      "id": "kb-lump-growing",
+      "keywords": [
+        "lump",
+        "growing",
+        "tumour",
+        "swelling",
+        "node"
+      ],
+      "question": "I have a lump that is growing. Should I see a doctor?",
+      "answer": {
+        "en": "General info: Yes, see a doctor promptly for any growing, hard, painless, or non-moving lump, or with fever, weight loss, or night sweats. Note onset, size change, pain, and injury. Only exam and tests like ultrasound/biopsy confirm cause."
+      }
+    },
+    {
+      "id": "kb-night-sweats-glands",
+      "keywords": [
+        "night sweats",
+        "swollen glands",
+        "lymph",
+        "node"
+      ],
+      "question": "I have night sweats and swollen glands. What could it be?",
+      "answer": {
+        "en": "General info: These occur in infections including TB, thyroid, autoimmune, and other causes; only evaluation confirms. Note fever, cough, weight loss, gland size, and contact history. See a doctor promptly. Emergency 112/108 for breathing trouble or rapidly enlarging painful glands."
+      }
+    },
+    {
+      "id": "kb-hair-loss",
+      "keywords": [
+        "hair",
+        "clumps",
+        "losing",
+        "alopecia"
+      ],
+      "question": "I'm losing hair in clumps. Why?",
+      "answer": {
+        "en": "General info: Clump loss can follow stress, fever, childbirth, crash diets, thyroid, anaemia, PCOS, or medicines. Note shedding pattern, itch, dandruff, and family history. Avoid harsh chemicals and tight styles. See a dermatologist for patchy loss, scarring, or beyond 3 months."
+      }
+    },
+    {
+      "id": "kb-bruise-bleed",
+      "keywords": [
+        "bruise",
+        "bleed easily",
+        "platelet",
+        "clotting"
+      ],
+      "question": "I bruise or bleed easily. Is something wrong?",
+      "answer": {
+        "en": "General info: Easy bruising/bleeding can come from low platelets, clotting issues, liver problems, or medicines like aspirin/thinners. Note nose/gum bleeds, heavy periods, and medicines. See a doctor promptly for CBC/platelet tests. Emergency 112/108 for uncontrolled bleed or head injury on thinners."
+      }
+    },
+    {
+      "id": "kb-sore-throat-long",
+      "keywords": [
+        "sore throat",
+        "wont go away",
+        "tonsillitis",
+        "throat pain"
+      ],
+      "question": "I have a sore throat that won't go away. Could it be tonsillitis?",
+      "answer": {
+        "en": "General info: Sore throat beyond 1-2 weeks with swollen tonsils, pain on swallowing, or fever can suggest tonsillitis or other causes; only exam confirms. Gargle salt water, avoid smoke, drink warm fluids. See a doctor for 2+ weeks, one-sided severe pain, breathing trouble, or lumps in neck."
+      }
+    },
+    {
+      "id": "kb-blocked-nose",
+      "keywords": [
+        "nose blocked",
+        "sinusitis",
+        "allergy",
+        "congestion"
+      ],
+      "question": "My nose is blocked all the time. Is it sinusitis or allergy?",
+      "answer": {
+        "en": "General info: Persistent block with sneezing/itch suggests allergy; with facial pain, thick discharge, and fever suggests sinusitis. Avoid dust/smoke, rinse with saline if advised. See a doctor for beyond 12 weeks, bloody discharge, one-sided block, or loss of smell."
+      }
+    },
+    {
+      "id": "kb-nosebleed",
+      "keywords": [
+        "nosebleeds",
+        "nose bleed",
+        "epistaxis",
+        "bleeding nose"
+      ],
+      "question": "I get frequent nosebleeds. Should I worry?",
+      "answer": {
+        "en": "General info: Frequent bleeds can come from dry air, nose-picking, high BP, or clotting/medicine issues. Pinch nose 15 min leaning forward, avoid blowing. See a doctor for frequent, long (>20 min), both-nostril, or with bruising. Emergency 112/108 for heavy bleed or after head injury."
+      }
+    },
+    {
+      "id": "kb-ringing-ears",
+      "keywords": [
+        "ringing",
+        "ears",
+        "tinnitus",
+        "buzzing"
+      ],
+      "question": "I have ringing in my ears. Is it serious?",
+      "answer": {
+        "en": "General info: Ringing (tinnitus) often links to loud noise, earwax, ear infection, BP, or some medicines. Avoid loud sound, limit earphones, note medicines. See a doctor promptly for one-sided, with hearing loss, dizziness, or after head injury."
+      }
+    },
+    {
+      "id": "kb-hearing-loss",
+      "keywords": [
+        "cant hear",
+        "hearing",
+        "one ear",
+        "deaf",
+        "sudden"
+      ],
+      "question": "I suddenly can't hear well in one ear. What should I do?",
+      "answer": {
+        "en": "Sudden hearing loss in one ear needs same-day ENT evaluation; early treatment matters. Do not insert buds or drops. Note noise, cold, dizziness, and medicines. Emergency 112/108 if with facial droop, slurred speech, or severe dizziness."
+      }
+    },
+    {
+      "id": "kb-hoarse",
+      "keywords": [
+        "voice",
+        "hoarse",
+        "weeks",
+        "larynx"
+      ],
+      "question": "My voice has been hoarse for weeks. When should I see a doctor?",
+      "answer": {
+        "en": "General info: See a doctor promptly for hoarseness beyond 3 weeks, especially with smoking, breathing trouble, coughing blood, neck lump, or pain. Rest voice, avoid smoke and shouting. Note reflux, cold, and inhaler use."
+      }
+    },
+    {
+      "id": "kb-mouth-ulcers",
+      "keywords": [
+        "mouth ulcers",
+        "again",
+        "aphthous",
+        "canker"
+      ],
+      "question": "I have mouth ulcers again and again. Why?",
+      "answer": {
+        "en": "General info: Recurrence links to stress, sharp teeth, vitamin B12/iron/folate deficiency, or gut issues. Avoid tobacco, spicy food; maintain oral hygiene. See a doctor for ulcers beyond 2 weeks, very large, or with fever, joint pain, or genital sores."
+      }
+    },
+    {
+      "id": "kb-bleeding-gums",
+      "keywords": [
+        "gums bleed",
+        "brushing",
+        "vitamin",
+        "gingivitis"
+      ],
+      "question": "My gums bleed when I brush. Is it a vitamin deficiency?",
+      "answer": {
+        "en": "General info: Most often gum inflammation from plaque, not vitamins alone; deficiency, diabetes, smoking, or blood thinners can worsen it. Brush twice softly, floss, avoid tobacco. See a dentist for persistent bleed, swelling, loose teeth, or bad breath."
+      }
+    },
+    {
+      "id": "kb-snoring",
+      "keywords": [
+        "snore",
+        "loudly",
+        "tired",
+        "sleep apnea",
+        "apnoea"
+      ],
+      "question": "I snore loudly and wake up tired. Is it sleep apnea?",
+      "answer": {
+        "en": "General info: Loud snoring with gasps, daytime sleepiness, morning headache, or high BP can suggest sleep apnoea; only a sleep study confirms. Keep healthy weight, avoid alcohol/sedatives at night, sleep on side. See a doctor promptly; urgent for falling asleep while driving."
+      }
+    },
+    {
+      "id": "kb-toothache",
+      "keywords": [
+        "toothache",
+        "facial swelling",
+        "dental",
+        "tooth pain"
+      ],
+      "question": "I have a toothache with facial swelling. Is it an emergency?",
+      "answer": {
+        "en": "Swelling with tooth pain, fever, or trouble opening mouth/swallowing can signal spreading infection: seek same-day emergency dental care, 112/108 for breathing trouble, eye swelling, or high fever. Do not press or heat heavily. Note injury and medicines."
+      }
+    },
+    {
+      "id": "kb-blurry-vision",
+      "keywords": [
+        "vision blurry",
+        "glasses",
+        "diabetes",
+        "blur"
+      ],
+      "question": "My vision is getting blurry. Do I need glasses or is it diabetes?",
+      "answer": {
+        "en": "General info: Blurry vision can come from refractive error, cataract, high sugar, BP, or eye disease; only eye exam plus sugar tests tell. Note onset, night vision, and diabetes history. See an eye doctor promptly; emergency for sudden loss or flashes."
+      }
+    },
+    {
+      "id": "kb-floaters",
+      "keywords": [
+        "floaters",
+        "eyes",
+        "spots",
+        "flashes"
+      ],
+      "question": "I see floaters in my eyes. Are they dangerous?",
+      "answer": {
+        "en": "General info: Few stable floaters are often harmless with age; danger signs are sudden shower of floaters, flashes, curtain/shadow, or after injury. See an eye doctor promptly for new or worsening floaters; emergency for curtain-like loss."
+      }
+    },
+    {
+      "id": "kb-dry-eyes",
+      "keywords": [
+        "eyes dry",
+        "itchy",
+        "dryness",
+        "tears"
+      ],
+      "question": "My eyes are dry and itchy. What helps?",
+      "answer": {
+        "en": "General info: Blink often, follow 20-20-20 screen rule, avoid smoke/dust, use preservative-free lubricants only if advised. See a doctor for pain, vision change, discharge, or beyond 2 weeks. Do not use steroid drops without prescription."
+      }
+    },
+    {
+      "id": "kb-eye-check",
+      "keywords": [
+        "how often",
+        "eyes checked",
+        "eye test",
+        "screening"
+      ],
+      "question": "How often should I get my eyes checked?",
+      "answer": {
+        "en": "General info: Adults: every 1-2 years; yearly if diabetic, hypertensive, over 40, or wearing glasses. Children: before school and if squinting or headaches. Earlier checks for family glaucoma, injury, or vision change. Carry glasses and medicine list."
+      }
+    },
+    {
+      "id": "kb-cataract",
+      "keywords": [
+        "cataract",
+        "surgery",
+        "lens",
+        "cloudy"
+      ],
+      "question": "Do I have a cataract, and when do I need surgery?",
+      "answer": {
+        "en": "General info: Cataract is clouding of the lens causing glare and blur; only slit-lamp exam confirms. Surgery is advised when vision limits daily life despite glasses. Wear sunglasses, control sugar. See an eye doctor for evaluation; emergency only for sudden painful red eye after surgery."
+      }
+    },
+    {
+      "id": "kb-glaucoma",
+      "keywords": [
+        "glaucoma",
+        "preventable",
+        "pressure",
+        "eye pressure"
+      ],
+      "question": "Is glaucoma preventable? How would I know I have it?",
+      "answer": {
+        "en": "General info: Early glaucoma often has no symptoms; later tunnel vision appears. Family history, age over 40, diabetes, and steroid use raise risk. Regular eye-pressure and optic-nerve checks detect it early. Treatment controls pressure; see an eye doctor yearly if at risk."
+      }
+    },
+    {
+      "id": "kb-adult-acne",
+      "keywords": [
+        "acne",
+        "adult",
+        "pimples",
+        "treatment"
+      ],
+      "question": "I have acne as an adult. What treatment works?",
+      "answer": {
+        "en": "General info: Adult acne links to hormones, stress, cosmetics, and medicines. Wash gently twice daily, avoid picking, use non-comedogenic products. A dermatologist may advise retinoids, benzoyl peroxide, or hormonal review. See a doctor for painful cysts, scarring, or with excess hair/irregular periods."
+      }
+    },
+    {
+      "id": "kb-white-patches",
+      "keywords": [
+        "white patches",
+        "vitiligo",
+        "fungal",
+        "leucoderma"
+      ],
+      "question": "I have white patches on my skin. Is it vitiligo or a fungal infection?",
+      "answer": {
+        "en": "General info: Scaly itchy patches suggest fungal; smooth non-scaly spreading patches suggest vitiligo; only Wood's lamp exam/scraping confirms. Do not bleach or mix creams. See a dermatologist promptly; note onset, spread, and family history."
+      }
+    },
+    {
+      "id": "kb-fungal-return",
+      "keywords": [
+        "fungal",
+        "keeps returning",
+        "ringworm",
+        "itch"
+      ],
+      "question": "I have a fungal infection that keeps returning. Why?",
+      "answer": {
+        "en": "General info: Recurrence comes from stopping creams early, sharing towels, tight sweaty wear, diabetes, or steroid-mix creams. Keep area dry, change clothes, complete full course as prescribed. See a doctor for nail/scalp involvement or diabetes check."
+      }
+    },
+    {
+      "id": "kb-dandruff",
+      "keywords": [
+        "dandruff",
+        "itchy scalp",
+        "flakes",
+        "seborrheic"
+      ],
+      "question": "I have dandruff and an itchy scalp. What should I use?",
+      "answer": {
+        "en": "General info: Use an anti-dandruff shampoo 2-3 times weekly as directed, rinse well, avoid sharing combs. See a doctor for thick scales, hair loss, spreading rash, or beyond 4 weeks. Note stress, oil use, and other skin patches."
+      }
+    },
+    {
+      "id": "kb-neck-dark",
+      "keywords": [
+        "dark patches",
+        "neck",
+        "diabetes",
+        "acanthosis"
+      ],
+      "question": "I have dark patches on my neck. Is it diabetes?",
+      "answer": {
+        "en": "General info: Velvety dark neck patches can occur with insulin resistance, weight gain, or PCOS, but only sugar tests confirm risk. Note weight, thirst, family history. See a doctor for testing; manage weight, activity, and diet."
+      }
+    },
+    {
+      "id": "kb-dry-skin",
+      "keywords": [
+        "skin dry",
+        "itchy",
+        "xerosis",
+        "moisturiser"
+      ],
+      "question": "My skin is very dry and itchy. What should I do?",
+      "answer": {
+        "en": "General info: Moisturise after bathing, use mild soaps, lukewarm water, drink enough fluids. See a doctor for cracks, bleeding, oozing, or with thyroid/kidney issues. Avoid hot baths and harsh scrubs."
+      }
+    },
+    {
+      "id": "kb-boils",
+      "keywords": [
+        "boils",
+        "again",
+        "abscess",
+        "pus"
+      ],
+      "question": "I have boils again and again. Why?",
+      "answer": {
+        "en": "General info: Recurrent boils link to nose carriage of bacteria, shaving trauma, diabetes, or low immunity. Do not squeeze; warm compress, hygiene. See a doctor for large, facial, fever with boil, or diabetes check."
+      }
+    },
+    {
+      "id": "kb-hives",
+      "keywords": [
+        "hives",
+        "often",
+        "urticaria",
+        "welts"
+      ],
+      "question": "I get hives often. What is the cause?",
+      "answer": {
+        "en": "General info: Hives come from foods, medicines, infections, heat/cold, or unknown causes. Note triggers, timing, and medicines. Antihistamines only as advised. Emergency 112/108 for lip/throat swelling or breathing trouble."
+      }
+    },
+    {
+      "id": "kb-warts",
+      "keywords": [
+        "warts",
+        "contagious",
+        "removed",
+        "verruca"
+      ],
+      "question": "Are warts contagious, and how are they removed?",
+      "answer": {
+        "en": "General info: Warts are viral and can spread by touch; avoid picking and sharing towels. Doctors remove by freezing, acids, or minor procedures. See a doctor for facial/genital warts, rapid growth, or bleeding. Do not cut at home."
+      }
+    },
+    {
+      "id": "kb-burn-blister",
+      "keywords": [
+        "burn blister",
+        "pop",
+        "blister",
+        "scald"
+      ],
+      "question": "I have a burn blister. Should I pop it?",
+      "answer": {
+        "en": "No, do not pop burn blisters; they protect healing skin. Cool with running water 20 min, cover loosely. See a doctor for large, infected (pus, redness, fever), or face/hand burns."
+      }
+    },
+    {
+      "id": "kb-hypothyroid",
+      "keywords": [
+        "gaining weight",
+        "feeling cold",
+        "thyroid",
+        "hypothyroid"
+      ],
+      "question": "I'm gaining weight and feeling cold. Is it my thyroid?",
+      "answer": {
+        "en": "General info: Weight gain with cold intolerance, tiredness, constipation, and dry skin can occur in hypothyroidism; only TSH/T4 tests confirm. Note family history and medicines. See a doctor for testing; take thyroid medicine as prescribed."
+      }
+    },
+    {
+      "id": "kb-hyperthyroid",
+      "keywords": [
+        "losing weight",
+        "sweating",
+        "anxious",
+        "hyperthyroidism"
+      ],
+      "question": "I'm losing weight, sweating, and anxious. Could it be hyperthyroidism?",
+      "answer": {
+        "en": "General info: These with tremor, palpitations, and heat intolerance can occur in hyperthyroidism; only thyroid tests confirm. Avoid excess caffeine. See a doctor promptly; emergency 112/108 for chest pain, very fast pulse, or breathlessness."
+      }
+    },
+    {
+      "id": "kb-thyroid-morning",
+      "keywords": [
+        "thyroid medicine",
+        "before breakfast",
+        "levothyroxine",
+        "empty stomach"
+      ],
+      "question": "Do I need to take thyroid medicine before breakfast?",
+      "answer": {
+        "en": "General info: Thyroid tablets are usually taken on an empty stomach 30-60 min before breakfast with water, same time daily. Calcium/iron and some foods reduce absorption. Confirm timing with your doctor; never adjust dose without TSH review."
+      }
+    },
+    {
+      "id": "kb-neck-lump",
+      "keywords": [
+        "lump neck",
+        "thyroid nodule",
+        "swelling neck"
+      ],
+      "question": "I have a lump in my neck. Is it a thyroid nodule?",
+      "answer": {
+        "en": "General info: Neck lumps can be thyroid, lymph nodes, or other causes; only exam and ultrasound confirm. Note growth, pain, voice change, swallowing trouble, fever. See a doctor promptly for 2+ weeks, hard, or growing lumps."
+      }
+    },
+    {
+      "id": "kb-facial-hair",
+      "keywords": [
+        "facial hair",
+        "acne",
+        "pcos",
+        "hirsutism"
+      ],
+      "question": "I have excess facial hair and acne. Is it PCOS?",
+      "answer": {
+        "en": "General info: These with irregular periods or weight gain can occur in PCOS or other hormonal causes; only exam plus hormone/ultrasound tests confirm. Track cycles and weight. See a gynaecologist or dermatologist for evaluation."
+      }
+    },
+    {
+      "id": "kb-testosterone",
+      "keywords": [
+        "low testosterone",
+        "fatigue",
+        "libido",
+        "men"
+      ],
+      "question": "Is my low testosterone causing my fatigue?",
+      "answer": {
+        "en": "General info: Low testosterone can link to fatigue, low mood, and reduced libido, but sleep, thyroid, anaemia, and depression are also common. Only morning blood tests plus exam confirm. Avoid self-injections. See a doctor for evaluation."
+      }
+    },
+    {
+      "id": "kb-haemoglobin-low",
+      "keywords": [
+        "hemoglobin",
+        "haemoglobin",
+        "low",
+        "iron",
+        "anaemia"
+      ],
+      "question": "My hemoglobin is low. Do I need iron tablets or injections?",
+      "answer": {
+        "en": "General info: Low haemoglobin needs cause-finding: diet, bleeding, periods, piles, or absorption issues. Iron tablets help deficiency; injections only if prescribed. Take iron with vitamin C, avoid tea with dose. See a doctor for tests and stool check if needed."
+      }
+    },
+    {
+      "id": "kb-anemia-iron",
+      "keywords": [
+        "anemia",
+        "anaemia",
+        "iron",
+        "still low"
+      ],
+      "question": "Why do I get anemia even after taking iron?",
+      "answer": {
+        "en": "General info: Causes include missed doses, tea/coffee with tablets, ongoing bleeding, piles, heavy periods, worms, or poor absorption (thyroid, gut issues). Bring tablets, diet, and bleeding history. See a doctor for review; do not double dose alone."
+      }
+    },
+    {
+      "id": "kb-platelet-low",
+      "keywords": [
+        "platelet",
+        "low",
+        "count",
+        "thrombocytopenia"
+      ],
+      "question": "My platelet count is low. Should I worry?",
+      "answer": {
+        "en": "General info: Mild low counts can follow viral fevers including dengue; persistent low counts with bleeding, rash spots, or bruising need urgent review. Avoid NSAIDs and alcohol. See a doctor promptly; emergency 112/108 for active bleeding."
+      }
+    },
+    {
+      "id": "kb-wbc-high",
+      "keywords": [
+        "white blood cell",
+        "wbc",
+        "high",
+        "infection"
+      ],
+      "question": "My white blood cell count is high. What does it mean?",
+      "answer": {
+        "en": "General info: High WBC often signals infection or inflammation, sometimes stress, steroids, or smoking. Only clinical context plus repeat test interprets it. Note fever, symptoms, medicines. See a doctor promptly; emergency for high fever with confusion or breathlessness."
+      }
+    },
+    {
+      "id": "kb-immunity",
+      "keywords": [
+        "infections often",
+        "immunity weak",
+        "immune",
+        "sick frequently"
+      ],
+      "question": "I get infections often. Is my immunity weak?",
+      "answer": {
+        "en": "General info: Frequent infections can link to diabetes, smoking, poor sleep, medicines, or other conditions. Note diabetes, weight loss, and medicines. Control sugar, sleep well, vaccinate as advised. See a doctor for testing if 4+ infections yearly."
+      }
+    },
+    {
+      "id": "kb-esr-crp",
+      "keywords": [
+        "esr",
+        "crp",
+        "high",
+        "inflammation"
+      ],
+      "question": "What does a high ESR or CRP mean?",
+      "answer": {
+        "en": "General info: ESR/CRP are inflammation markers, raised in infections, arthritis, TB, and other conditions; they do not name a disease alone. Only symptoms plus specific tests interpret them. Carry reports and fever/weight history to your doctor."
+      }
+    },
+    {
+      "id": "kb-dust-allergy",
+      "keywords": [
+        "allergies",
+        "dust",
+        "pollen",
+        "cured",
+        "sneezing"
+      ],
+      "question": "I have allergies to dust and pollen. Can they be cured?",
+      "answer": {
+        "en": "General info: Allergies can be controlled, rarely cured permanently. Reduce dust, wash bedding hot, use masks, keep windows closed in pollen season. Saline rinse and prescribed sprays help. See a doctor for testing and immunotherapy options if severe."
+      }
+    },
+    {
+      "id": "kb-allergy-test",
+      "keywords": [
+        "allergy test",
+        "need",
+        "ige",
+        "skin prick"
+      ],
+      "question": "Do I need an allergy test?",
+      "answer": {
+        "en": "General info: Tests help if triggers are unclear, asthma/eczema coexists, or reactions are severe. Note foods, dust, medicines, and timing. An allergist may advise skin-prick or IgE. Emergency 112/108 for lip/throat swelling or breathing trouble."
+      }
+    },
+    {
+      "id": "kb-night-urine",
+      "keywords": [
+        "night",
+        "urinate",
+        "prostate",
+        "nocturia",
+        "frequency"
+      ],
+      "question": "I get up several times at night to urinate. Is it my prostate?",
+      "answer": {
+        "en": "General info: In older men frequent night urination often links to prostate enlargement, but diabetes, sleep apnoea, evening fluids, and medicines also cause it. Note stream strength, urgency, and diabetes. See a doctor for PSA/exam and sugar test as advised."
+      }
+    },
+    {
+      "id": "kb-weak-stream",
+      "keywords": [
+        "weak urine stream",
+        "slow",
+        "dribbling",
+        "prostate"
+      ],
+      "question": "I have a weak urine stream. What should I do?",
+      "answer": {
+        "en": "General info: Weak/slow stream in men often suggests prostate or stricture; in all, infection or medicines. Do not strain hard. Note burning, blood, and medicines. See a doctor promptly; emergency for inability to pass urine with pain."
+      }
+    },
+    {
+      "id": "kb-bladder-control",
+      "keywords": [
+        "bladder",
+        "control",
+        "leak",
+        "incontinence",
+        "treatable"
+      ],
+      "question": "I have difficulty controlling my bladder. Is it treatable?",
+      "answer": {
+        "en": "General info: Yes, most leakage is treatable: pelvic-floor exercises, timed voids, fluid/caffeine review, and medicines or procedures if needed. Note cough/sneeze leaks vs urgency. See a doctor; carry pad count and medicines."
+      }
+    },
+    {
+      "id": "kb-uric-acid",
+      "keywords": [
+        "uric acid",
+        "high",
+        "medicine",
+        "gout"
+      ],
+      "question": "My uric acid is high. Do I need medicine?",
+      "answer": {
+        "en": "General info: High uric acid without gout often needs diet, weight, and alcohol review first; medicines are advised for recurrent gout, stones, or very high levels. Limit red meat, beer, sugary drinks. See a doctor with kidney reports; do not self-start allopurinol."
+      }
+    },
+    {
+      "id": "kb-gout-toe",
+      "keywords": [
+        "gout",
+        "big toe",
+        "pain",
+        "joint"
+      ],
+      "question": "I have gout pain in my big toe. What should I do?",
+      "answer": {
+        "en": "General info: Sudden severe big-toe pain with swelling suggests gout flare; only uric-acid and exam confirm. Rest, ice, elevate, avoid alcohol and purine foods. See a doctor promptly for anti-inflammatory and preventive plan; emergency for fever with hot joint."
+      }
+    },
+    {
+      "id": "kb-water-stones",
+      "keywords": [
+        "how much water",
+        "kidney stones",
+        "prevent",
+        "hydration"
+      ],
+      "question": "How much water should I drink to prevent kidney stones?",
+      "answer": {
+        "en": "General info: Most adults need enough water for pale-yellow urine, often 2-3 litres daily in heat, more with sweating. Limit cola, excess salt, and high-oxalate binges. People with heart/kidney failure need personalised limits. Ask your doctor for your target."
+      }
+    },
+    {
+      "id": "kb-face-swelling",
+      "keywords": [
+        "swollen face",
+        "morning",
+        "kidneys",
+        "puffy"
+      ],
+      "question": "I have a swollen face in the morning. Is it my kidneys?",
+      "answer": {
+        "en": "General info: Morning facial puffiness can occur in kidney, thyroid, allergy, or high salt/alcohol, plus poor sleep. Note urine change, leg swelling, weight gain, and BP. See a doctor promptly for urine and kidney/thyroid tests; emergency for breathlessness or very low urine."
+      }
+    },
+    {
+      "id": "kb-erectile",
+      "keywords": [
+        "erectile",
+        "difficulty",
+        "heart disease",
+        "ed"
+      ],
+      "question": "I have erectile difficulty. Is it a sign of heart disease?",
+      "answer": {
+        "en": "General info: It can link to diabetes, BP, cholesterol, smoking, stress, or medicines, sometimes appearing before heart symptoms. Note sugar, BP, smoking, and medicines. See a doctor for heart-risk review; avoid unprescribed pills. Urgent for chest pain with exertion."
+      }
+    },
+    {
+      "id": "kb-testicle-pain",
+      "keywords": [
+        "testicle",
+        "pain",
+        "swelling",
+        "torsion",
+        "emergency"
+      ],
+      "question": "I have pain or swelling in my testicle. Is it an emergency?",
+      "answer": {
+        "en": "Sudden severe testicle pain, especially in teens, can be torsion needing emergency surgery within hours: go to hospital now, 112/108. For gradual swelling with fever or burning urine, seek same-day care. Note injury, fever, and urinary symptoms."
+      }
+    },
+    {
+      "id": "kb-sperm-count",
+      "keywords": [
+        "sperm count",
+        "low",
+        "treatable",
+        "fertility men"
+      ],
+      "question": "Is my low sperm count treatable?",
+      "answer": {
+        "en": "General info: Often yes, depending on cause: infections, varicocele, hormones, heat, smoking, alcohol, or medicines. Semen analysis plus exam guides care. Avoid heat, tobacco, excess alcohol. See a urologist/fertility doctor with reports."
+      }
+    },
+    {
+      "id": "kb-prostate-check",
+      "keywords": [
+        "prostate check",
+        "age",
+        "psa",
+        "screening"
+      ],
+      "question": "At what age should I get a prostate check?",
+      "answer": {
+        "en": "General info: Discuss from age 50, or 45 with family history or urinary symptoms. Doctor decides PSA plus exam based on risk. Note night urination, weak stream, and family prostate cancer. See a doctor for new urinary symptoms at any age."
+      }
+    },
+    {
+      "id": "kb-liver-enzymes",
+      "keywords": [
+        "liver enzymes",
+        "high",
+        "sgpt",
+        "sgot",
+        "alt"
+      ],
+      "question": "My liver enzymes are high. What does it mean?",
+      "answer": {
+        "en": "General info: Raised ALT/SGPT often signals fatty liver, alcohol, medicines, or hepatitis; only repeat tests plus ultrasound confirm. Avoid alcohol and unnecessary medicines. Note weight, diabetes, and medicines. See a doctor promptly for review."
+      }
+    },
+    {
+      "id": "kb-hepatitis",
+      "keywords": [
+        "hepatitis",
+        "spread",
+        "jaundice",
+        "liver"
+      ],
+      "question": "Do I have hepatitis, and how is it spread?",
+      "answer": {
+        "en": "General info: Hepatitis means liver inflammation, often viral: A/E via contaminated food-water, B/C via blood, needles, or unsafe sex. Only blood tests confirm type. Avoid alcohol, get tested if jaundice or exposure. Ask about vaccination for contacts."
+      }
+    },
+    {
+      "id": "kb-hepb-vaccine",
+      "keywords": [
+        "hepatitis b",
+        "vaccinated",
+        "vaccine",
+        "hep b"
+      ],
+      "question": "Should I get vaccinated for hepatitis B?",
+      "answer": {
+        "en": "General info: Yes, most adults benefit, especially healthcare workers, diabetics on shared devices, travellers, and people with liver disease or multiple partners. Three doses give long protection. Ask your doctor or vaccination centre; carry prior records."
+      }
+    },
+    {
+      "id": "kb-bloating",
+      "keywords": [
+        "bloated",
+        "every meal",
+        "gas",
+        "digestion"
+      ],
+      "question": "I feel bloated after every meal. Why?",
+      "answer": {
+        "en": "General info: Bloating links to fast eating, gas-forming foods, constipation, lactose, or reflux/IBS. Eat slowly, chew well, note milk/wheat triggers, bowel habit. See a doctor for weight loss, blood in stool, vomiting, or persistent pain."
+      }
+    },
+    {
+      "id": "kb-swallowing",
+      "keywords": [
+        "trouble swallowing",
+        "dysphagia",
+        "serious",
+        "food stuck"
+      ],
+      "question": "I have trouble swallowing. When is it serious?",
+      "answer": {
+        "en": "General info: See a doctor promptly for food sticking, pain on swallowing, weight loss, voice change, or beyond 2 weeks. Emergency 112/108 for drooling, inability to swallow saliva, or breathing trouble. Note solids vs liquids and heartburn."
+      }
+    },
+    {
+      "id": "kb-piles",
+      "keywords": [
+        "hemorrhoids",
+        "piles",
+        "surgery",
+        "bleeding anus"
+      ],
+      "question": "I have hemorrhoids (piles). Do I need surgery?",
+      "answer": {
+        "en": "General info: Most piles improve with fibre, water, sitz baths, and no straining; surgery is only for severe, prolapsed, or bleeding cases. Avoid chronic laxatives. See a surgeon for bleeding, black stools, or lump that stays out."
+      }
+    },
+    {
+      "id": "kb-anal-tear",
+      "keywords": [
+        "tear anus",
+        "fissure",
+        "painful",
+        "bleeding"
+      ],
+      "question": "I have a painful tear near my anus. How is it treated?",
+      "answer": {
+        "en": "General info: Anal fissures cause sharp pain and bright bleeding on passing stool. Soften stools with fibre/water, warm sitz baths, no straining. See a doctor for prescribed ointments and exam; urgent for heavy bleed or pus/fever."
+      }
+    },
+    {
+      "id": "kb-lactose-gluten",
+      "keywords": [
+        "lactose",
+        "gluten",
+        "intolerant",
+        "milk",
+        "wheat"
+      ],
+      "question": "Am I lactose or gluten intolerant?",
+      "answer": {
+        "en": "General info: Bloating or diarrhoea after milk suggests lactose; after wheat with weight loss or anaemia suggests gluten issues. Only elimination trials plus tests confirm. Keep a food-symptom diary. See a doctor before cutting major food groups."
+      }
+    },
+    {
+      "id": "kb-hernia",
+      "keywords": [
+        "hernia",
+        "operation",
+        "bulge",
+        "groin"
+      ],
+      "question": "I have a hernia. Do I need an operation right away?",
+      "answer": {
+        "en": "General info: Most hernias need planned surgery; emergency 112/108 for sudden severe pain, vomiting, non-reducible bulge, or red/blue colour (possible strangulation). Avoid heavy lifting and straining. See a surgeon promptly for evaluation."
+      }
+    },
+    {
+      "id": "kb-neck-pain",
+      "keywords": [
+        "neck pain",
+        "stiffness",
+        "cervical",
+        "spondylosis"
+      ],
+      "question": "I have neck pain and stiffness. Is it cervical spondylosis?",
+      "answer": {
+        "en": "General info: Neck stiffness with age, posture, or phone use often suggests cervical strain/spondylosis; only exam/X-ray confirms. Improve posture, take breaks, do gentle mobility as advised. See a doctor for arm numbness, weakness, or pain beyond weeks."
+      }
+    },
+    {
+      "id": "kb-shoulder-pain",
+      "keywords": [
+        "shoulder pain",
+        "lift arm",
+        "frozen",
+        "rotator"
+      ],
+      "question": "I have shoulder pain and can't lift my arm. What is it?",
+      "answer": {
+        "en": "General info: Inability to lift can come from frozen shoulder, rotator injury, or arthritis; only exam/ultrasound confirms. Rest painful moves, apply ice/heat, avoid heavy lifting. See a doctor promptly; emergency for post-injury deformity or chest pain with shoulder pain."
+      }
+    },
+    {
+      "id": "kb-heel-pain",
+      "keywords": [
+        "heel pain",
+        "morning",
+        "plantar",
+        "fasciitis"
+      ],
+      "question": "I have heel pain in the morning. Is it plantar fasciitis?",
+      "answer": {
+        "en": "General info: Sharp morning heel pain easing after steps often suggests plantar fasciitis. Wear cushioned footwear, stretch calves, avoid barefoot hard floors, manage weight. See a doctor for swelling, numbness, or beyond weeks."
+      }
+    },
+    {
+      "id": "kb-carpal",
+      "keywords": [
+        "tingling fingers",
+        "night",
+        "carpal tunnel",
+        "wrist"
+      ],
+      "question": "I have tingling in my fingers at night. Is it carpal tunnel?",
+      "answer": {
+        "en": "General info: Night tingling in thumb/index/middle fingers often suggests carpal tunnel; only nerve tests confirm. Avoid wrist bending, take breaks, wear a night splint if advised. See a doctor for weakness or persistent numbness."
+      }
+    },
+    {
+      "id": "kb-slipped-disc",
+      "keywords": [
+        "slipped disc",
+        "surgery",
+        "sciatica",
+        "disc"
+      ],
+      "question": "I have a slipped disc. Do I need surgery?",
+      "answer": {
+        "en": "General info: Most slipped discs improve with medicines, physio, and activity; surgery is for weakness, bladder issues, or persistent severe pain. Avoid bed rest over 1-2 days and heavy lifting. Emergency 112/108 for leg weakness or bladder loss."
+      }
+    },
+    {
+      "id": "kb-exercise-arthritis",
+      "keywords": [
+        "exercise",
+        "arthritis",
+        "safe",
+        "joint pain"
+      ],
+      "question": "Is it safe to exercise with arthritis?",
+      "answer": {
+        "en": "General info: Yes, low-impact activity like walking, cycling, and swimming protects joints; avoid high-impact or painful extremes. Strengthen muscles, warm up, manage weight. Ask a physiotherapist for a personal plan; stop and review for hot swollen joints."
+      }
+    },
+    {
+      "id": "kb-exercise-week",
+      "keywords": [
+        "how much exercise",
+        "each week",
+        "150 minutes",
+        "activity"
+      ],
+      "question": "How much exercise do I need each week?",
+      "answer": {
+        "en": "General info: Adults: at least 150 min moderate walk/cycle weekly plus 2 days muscle strength, plus daily steps. Start slow if inactive, heart disease, or pregnant. Ask your doctor for a personal target."
+      }
+    },
+    {
+      "id": "kb-cramps-night",
+      "keywords": [
+        "muscle cramps",
+        "night",
+        "legs",
+        "calf"
+      ],
+      "question": "I get muscle cramps at night. Why?",
+      "answer": {
+        "en": "General info: Night cramps link to dehydration, overuse, low magnesium/potassium, thyroid, or medicines like diuretics/statins. Stretch calves, hydrate, review medicines. See a doctor for frequent, severe, or with weakness/swelling."
+      }
+    },
+    {
+      "id": "kb-calcium-vitd",
+      "keywords": [
+        "calcium",
+        "vitamin d",
+        "supplements",
+        "bones"
+      ],
+      "question": "Should I take calcium and vitamin D supplements?",
+      "answer": {
+        "en": "General info: Many adults get enough from diet and sunlight; supplements help if deficient, postmenopausal, or low dairy. Excess calcium can harm kidneys. Test vitamin D if at risk, eat dairy/ragi/greens. Ask your doctor before starting."
+      }
+    },
+    {
+      "id": "kb-preg-tests",
+      "keywords": [
+        "tests",
+        "pregnancy",
+        "antenatal",
+        "trimester"
+      ],
+      "question": "What tests do I need during pregnancy?",
+      "answer": {
+        "en": "General info: Usual: blood group, haemoglobin, sugar, thyroid, HIV/hepatitis/syphilis, urine, ultrasound, and BP/weight each visit. Doctor adds tests by risk. Start folic acid early, attend all antenatal visits. Carry records always."
+      }
+    },
+    {
+      "id": "kb-preg-nausea",
+      "keywords": [
+        "nausea",
+        "vomiting",
+        "pregnancy",
+        "morning sickness"
+      ],
+      "question": "Is nausea and vomiting in pregnancy normal?",
+      "answer": {
+        "en": "General info: Mild nausea in first trimester is common and often eases by week 14. Eat small frequent meals, sip fluids, rest. See a doctor promptly for weight loss, dehydration, no urine, or vomiting beyond mid-pregnancy."
+      }
+    },
+    {
+      "id": "kb-preg-foods",
+      "keywords": [
+        "foods avoid",
+        "pregnant",
+        "diet",
+        "pregnancy food"
+      ],
+      "question": "Which foods should I avoid while pregnant?",
+      "answer": {
+        "en": "General info: Avoid raw/undercooked meat, eggs, fish high in mercury, unpasteurised milk, alcohol, and excess caffeine. Wash fruits well, eat cooked fresh food, take iron/folic acid as prescribed. Ask your doctor for a diet chart."
+      }
+    },
+    {
+      "id": "kb-preg-travel",
+      "keywords": [
+        "travel",
+        "exercise",
+        "pregnant",
+        "safe",
+        "flight"
+      ],
+      "question": "Is it safe to travel or exercise while pregnant?",
+      "answer": {
+        "en": "General info: Normal pregnancies often allow walking, gentle yoga, and travel with precautions; avoid contact sports, long exhausting trips, and travel after 36 weeks. Wear seatbelts, walk often, carry records. Ask your doctor for personal clearance."
+      }
+    },
+    {
+      "id": "kb-delivery-mode",
+      "keywords": [
+        "normal delivery",
+        "c-section",
+        "caesarean",
+        "birth"
+      ],
+      "question": "Do I need a normal delivery or a C-section?",
+      "answer": {
+        "en": "General info: Most pregnancies aim for vaginal birth; C-section is advised for distress, breech, placenta issues, or prior complications. Only your obstetrician decides by scans and labour progress. Discuss birth plan early and choose a equipped hospital."
+      }
+    },
+    {
+      "id": "kb-after-miscarriage",
+      "keywords": [
+        "pregnant",
+        "miscarriage",
+        "after",
+        "conceive"
+      ],
+      "question": "How soon can I get pregnant after a miscarriage?",
+      "answer": {
+        "en": "General info: Doctors often advise waiting one normal cycle, longer after complications or molar pregnancy. Allow physical and emotional recovery, take folic acid, review cause. See your doctor for preconception check and support."
+      }
+    },
+    {
+      "id": "kb-trying-conceive",
+      "keywords": [
+        "trying conceive",
+        "year",
+        "infertility",
+        "pregnant"
+      ],
+      "question": "I have been trying to conceive for a year. What should I do?",
+      "answer": {
+        "en": "General info: See a fertility doctor after 12 months under 35, or 6 months over 35. Both partners need tests: semen analysis, ovulation, tubes, thyroid. Track cycles, maintain weight, avoid tobacco/alcohol. Early review improves options."
+      }
+    },
+    {
+      "id": "kb-breastfeeding-meds",
+      "keywords": [
+        "breastfeeding",
+        "medicines",
+        "safe",
+        "lactation"
+      ],
+      "question": "Is breastfeeding possible with my medicines?",
+      "answer": {
+        "en": "General info: Many medicines are compatible, some are not; only your doctor decides by drug and baby age. Never stop prescribed medicines alone. Carry medicine list to paediatrician; note baby sleepiness, rash, or poor feeding."
+      }
+    },
+    {
+      "id": "kb-postpartum-dep",
+      "keywords": [
+        "postpartum",
+        "depression",
+        "baby blues",
+        "sad after delivery"
+      ],
+      "question": "How do I know if I have postpartum depression?",
+      "answer": {
+        "en": "General info: Baby blues ease in 2 weeks; persistent sadness, guilt, bonding trouble, or hopelessness beyond 2 weeks needs care. Talk to family and doctor early. For self-harm thoughts call Tele-MANAS 14416 or 112 now. Support and treatment help."
+      }
+    },
+    {
+      "id": "kb-child-cold",
+      "keywords": [
+        "child",
+        "cough cold",
+        "again",
+        "normal",
+        "recurrent"
+      ],
+      "question": "My child has a cough and cold again and again. Is it normal?",
+      "answer": {
+        "en": "General info: 6-8 colds yearly in young children is common, especially in school. See a doctor for breathing trouble, ear pain, fever 3+ days, or poor weight gain. Avoid smoke, complete vaccines, teach handwash. No antibiotics without prescription."
+      }
+    },
+    {
+      "id": "kb-child-weight",
+      "keywords": [
+        "child",
+        "gaining weight",
+        "growth",
+        "malnutrition"
+      ],
+      "question": "My child isn't gaining weight. What should I do?",
+      "answer": {
+        "en": "General info: Track growth chart, diet diversity, worms, anaemia, and thyroid. Offer varied home foods, continue milk appropriately, deworm as advised. See a paediatrician promptly for falling percentiles, tiredness, or frequent illness."
+      }
+    },
+    {
+      "id": "kb-child-loose",
+      "keywords": [
+        "child",
+        "loose motions",
+        "diarrhoea",
+        "dehydration"
+      ],
+      "question": "My child has loose motions. When do I need a doctor?",
+      "answer": {
+        "en": "General info: Give ORS after every stool, continue feeding/breastmilk. Same-day care for blood/mucus, high fever, sunken eyes, no urine 4-6 hrs, or unusual sleepiness. Emergency 112/108 for floppy or hard-to-wake child."
+      }
+    },
+    {
+      "id": "kb-bedwetting",
+      "keywords": [
+        "wets bed",
+        "bedwetting",
+        "enuresis",
+        "night"
+      ],
+      "question": "My child wets the bed at night. Is it a problem?",
+      "answer": {
+        "en": "General info: Bedwetting is common under 5-6 years and often resolves. Limit evening fluids, toilet before bed, praise dry nights, avoid punishment. See a doctor after 6 years, with daytime leaks, burning, thirst, or snoring."
+      }
+    },
+    {
+      "id": "kb-teen-mood",
+      "keywords": [
+        "teenager",
+        "moody",
+        "withdrawn",
+        "depression",
+        "adolescent"
+      ],
+      "question": "My teenager is moody and withdrawn. Could it be depression?",
+      "answer": {
+        "en": "General info: Persistent sadness, withdrawal, falling grades, sleep/appetite change beyond 2 weeks deserves care. Talk kindly, keep routines, limit screens. See a counsellor/doctor early. For self-harm talk call Tele-MANAS 14416 or 112 now."
+      }
+    },
+    {
+      "id": "kb-puberty",
+      "keywords": [
+        "puberty",
+        "changes",
+        "normal",
+        "teen",
+        "periods"
+      ],
+      "question": "When do puberty changes start, and what is normal?",
+      "answer": {
+        "en": "General info: Usually 8-13 in girls, 9-14 in boys: growth spurt, body odour, hair, voice/breast changes, periods. Wide variation is normal. See a doctor for no changes by 14, very early changes under 8, or distress."
+      }
+    },
+    {
+      "id": "kb-child-ear",
+      "keywords": [
+        "child",
+        "ear infection",
+        "antibiotics",
+        "ear pain"
+      ],
+      "question": "My child has an ear infection. Does he need antibiotics?",
+      "answer": {
+        "en": "General info: Many mild ear infections improve without antibiotics; severe pain, high fever, discharge, or under-2 with both ears may need them. Only a doctor decides after seeing the eardrum. Relieve pain as advised, keep ear dry."
+      }
+    },
+    {
+      "id": "kb-child-speech",
+      "keywords": [
+        "child",
+        "speaking",
+        "speech delay",
+        "talk"
+      ],
+      "question": "My child isn't speaking yet. Should I worry?",
+      "answer": {
+        "en": "General info: See a paediatrician if no babbling by 12 months, no words by 16 months, no phrases by 2 years, or loss of speech. Check hearing, limit screens, talk/read daily. Early therapy helps most."
+      }
+    },
+    {
+      "id": "kb-parent-falls",
+      "keywords": [
+        "parent",
+        "falling",
+        "falls",
+        "prevent",
+        "elderly"
+      ],
+      "question": "My parent keeps falling. How do we prevent it?",
+      "answer": {
+        "en": "General info: Review vision, medicines, BP, footwear, home lighting, rails, and clutter. Strength/balance exercises help. See a doctor for dizziness, fainting, or head injury. Emergency 112/108 for fracture or head strike with confusion."
+      }
+    },
+    {
+      "id": "kb-parent-confusion",
+      "keywords": [
+        "parent",
+        "confused suddenly",
+        "delirium",
+        "emergency"
+      ],
+      "question": "My parent is confused suddenly. Is it an emergency?",
+      "answer": {
+        "en": "Yes, sudden confusion can signal infection, low sugar/sodium, stroke, or medicines: seek emergency care 112/108. Note fever, urine change, medicines, and onset. Do not leave alone."
+      }
+    },
+    {
+      "id": "kb-memory-loss",
+      "keywords": [
+        "memory loss",
+        "parent",
+        "tests",
+        "dementia"
+      ],
+      "question": "My parent has memory loss. What tests are needed?",
+      "answer": {
+        "en": "General info: Doctors review medicines, sleep, B12, thyroid, sugar, depression, then memory tests and scans if needed. Bring examples and medicine list. Prompt review matters; sudden confusion is emergency."
+      }
+    },
+    {
+      "id": "kb-many-medicines",
+      "keywords": [
+        "too many medicines",
+        "polypharmacy",
+        "reduced",
+        "elderly"
+      ],
+      "question": "My parent has too many medicines. Can they be reduced?",
+      "answer": {
+        "en": "General info: Yes, doctors regularly deprescribe duplicates or risky drugs in elderly. Never stop alone. Carry all strips, note falls, dizziness, sleep. Ask for a medicine review each visit."
+      }
+    },
+    {
+      "id": "kb-bedsores",
+      "keywords": [
+        "bedsores",
+        "bedridden",
+        "pressure sore",
+        "ulcer"
+      ],
+      "question": "How do I prevent bedsores for a bedridden patient?",
+      "answer": {
+        "en": "General info: Turn every 2 hrs, keep skin clean/dry, use pillows and air mattress, ensure protein and fluids. Check heels, hips, back daily. See a nurse/doctor for redness that stays, blisters, or odour."
+      }
+    },
+    {
+      "id": "kb-elderly-sleep",
+      "keywords": [
+        "trouble sleeping",
+        "eating",
+        "parent",
+        "elderly",
+        "appetite"
+      ],
+      "question": "My parent has trouble sleeping and eating. What can we do?",
+      "answer": {
+        "en": "General info: Keep daytime light and walks, fixed meals, soft tasty foods, dentures check, and medicines review. Note weight, mood, and pain. See a doctor for loss over weeks, choking, or low mood."
+      }
+    },
+    {
+      "id": "kb-checkups-year",
+      "keywords": [
+        "health checkups",
+        "each year",
+        "annual",
+        "screening"
+      ],
+      "question": "What health checkups should I do each year?",
+      "answer": {
+        "en": "General info: Yearly: BP, weight, sugar/HbA1c, lipids, kidney/liver, urine, eye, dental; age-based: cervical/breast/prostate, TB/diabetes if at risk. Carry prior reports. Ask your doctor for a personal list."
+      }
+    },
+    {
+      "id": "kb-quit-tobacco",
+      "keywords": [
+        "quit smoking",
+        "tobacco",
+        "gutka",
+        "cessation"
+      ],
+      "question": "How do I quit smoking or tobacco?",
+      "answer": {
+        "en": "General info: Set a quit date, remove triggers, tell family, use walks and water for cravings. Nicotine replacement and counselling double success. Call national quitline 1800-112-356. See a doctor for a quit plan."
+      }
+    },
+    {
+      "id": "kb-alcohol-safe",
+      "keywords": [
+        "how much alcohol",
+        "safe",
+        "drinking",
+        "limit"
+      ],
+      "question": "How much alcohol is safe?",
+      "answer": {
+        "en": "General info: Less is safer; no amount is fully safe. If drinking, keep minimal and avoid daily use, binge, driving, and pregnancy. Seek help for cravings or liver symptoms. Ask your doctor for de-addiction support."
+      }
+    },
+    {
+      "id": "kb-heart-diet",
+      "keywords": [
+        "diet",
+        "heart",
+        "best",
+        "food"
+      ],
+      "question": "What diet is best for my heart?",
+      "answer": {
+        "en": "General info: Vegetables, fruits, whole grains, dals, nuts, and low salt/oil; limit fried, sweets, red meat, and alcohol. Control portions and weight. Ask your doctor/dietitian for a personal plan."
+      }
+    },
+    {
+      "id": "kb-belly-fat",
+      "keywords": [
+        "lose belly fat",
+        "weight",
+        "obesity",
+        "fat"
+      ],
+      "question": "How do I lose belly fat?",
+      "answer": {
+        "en": "General info: Daily brisk walk 30-45 min, strength twice weekly, smaller portions, less sweets/oil/alcohol, good sleep. Track waist and weight. See a doctor for thyroid/sugar check if no loss."
+      }
+    },
+    {
+      "id": "kb-multivitamin",
+      "keywords": [
+        "multivitamin",
+        "need",
+        "supplement",
+        "vitamins"
+      ],
+      "question": "Do I need a multivitamin?",
+      "answer": {
+        "en": "General info: Balanced diets often suffice; deficiency, pregnancy, elderly, or restricted diets may need them. Avoid megadoses. Test B12/D if at risk. Ask your doctor before starting."
+      }
+    },
+    {
+      "id": "kb-adult-vaccines",
+      "keywords": [
+        "vaccines",
+        "adults",
+        "immunisation",
+        "shots"
+      ],
+      "question": "Which vaccines should adults take?",
+      "answer": {
+        "en": "General info: Yearly flu, tetanus booster 10-yearly, plus hepatitis B, pneumococcal, shingles, and COVID as per age/risk. Carry records. Ask your doctor or vaccination centre for your schedule."
+      }
+    },
+    {
+      "id": "kb-cancer-risk",
+      "keywords": [
+        "lower risk",
+        "cancer",
+        "prevent",
+        "screening"
+      ],
+      "question": "How do I lower my risk of cancer?",
+      "answer": {
+        "en": "General info: Avoid tobacco/alcohol, keep healthy weight, eat vegetables/fruits, stay active, vaccinate (HPV, Hep B), and do age-based screenings. See a doctor early for lumps, non-healing sores, or abnormal bleeding."
+      }
+    }
+  ],
+  "emergencyNote": "Emergency numbers in India: 112 (national emergency), 108 (ambulance), Tele-MANAS 14416 (mental health helpline). This is general guidance, not a diagnosis."
+}

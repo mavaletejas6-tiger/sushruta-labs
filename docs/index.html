@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="sushruta labs - offline-first healthcare demo with synthetic data. Demo for education only, not medical advice.">
+  <meta name="theme-color" content="#111111">
+  <title>sushruta labs </title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility-fixes.css">
+</head>
+
+<body data-page="index">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- Global safety notice (dismissible for the demo, always in the footer) -->
+  <div class="notice-bar" id="globalNotice" role="note">
+    
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="Sushruta Labs logo" height="34">
+      <span>sushruta labs<span class="brand-sub">Connected wellness intelligence for patients and care
+          teams.</span></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="conn-badge" data-connection aria-live="polite"> Connected</span>
+      <span class="sync-status" data-sync-status aria-live="polite"></span>
+      <span class="pending-sync" data-pending-sync hidden></span>
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme"
+        aria-label="Toggle colour theme">Dark</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-install hidden>Install app</button>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- ============================================================ HERO -->
+    <section class="hero">
+      
+      <h1>sushruta labs</h1>
+      <p class="sub">Connected wellness intelligence for patients and care teams. A synthetic, explainable,
+        offline-first demonstration of EHR + wearable data, rule-based risk scoring, doctor workflows and treatment
+        certificates.</p>
+      <div class="btn-row" style="justify-content:center">
+        <button type="button" class="btn btn-lg btn-warn" data-action="run-demo">▶ RUN DIGITAL TWIN DEMO</button>
+        <a class="btn btn-lg btn-ghost" href="#credentials" style="color:#fff;border-color:rgba(255,255,255,.6)">Demo
+          accounts</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge">🟢 Green · 🟡 Yellow · 🔴 Red</span>
+        <span class="hero-badge">Explainable rule engine</span>
+        <span class="hero-badge">Works offline after first load</span>
+      
+      </div>
+    </section>
+
+    <!-- ====================================================== LOG-IN TILES -->
+    <section class="main" style="max-width:1100px;margin:0 auto;padding-top:1.6rem" aria-labelledby="enterTitle">
+      <div class="section-head">
+        <h2 id="enterTitle">Enter the demonstration</h2>
+        
+      </div>
+      <div class="login-tiles">
+        <article class="login-tile">
+          <span class="tile-ico" aria-hidden="true"></span>
+          <h3 data-i18n="patientLogin">Patient Login</h3>
+          <p>Onboarding, consent, today's vitals, medicines, timeline, continuity of care, ABHA demo and SOS.</p>
+          <a class="btn btn-primary btn-block" href="signin.html?role=patient">Open patient app</a>
+        </article>
+        <article class="login-tile">
+          <span class="tile-ico" aria-hidden="true">🩺</span>
+          <h3 data-i18n="doctorLogin">Doctor Login</h3>
+          <p>Patient Story summary, triage, continuity of care, follow-ups, ABDM-aligned record, advice approval and certificates.</p>
+          <a class="btn btn-primary btn-block" href="signin.html?role=doctor">Open doctor dashboard</a>
+        </article>
+        <article class="login-tile">
+          <span class="tile-ico" aria-hidden="true">🤝</span>
+          <h3 data-i18n="caregiverAccess">Caregiver Access</h3>
+          <p>Consent-gated view: medicines, appointments, emergency alerts and basic wellness only.</p>
+          <a class="btn btn-primary btn-block" href="caregiver.html">Open caregiver view</a>
+        </article>
+        <article class="login-tile">
+          <span class="tile-ico" aria-hidden="true"></span>
+          <h3 data-i18n="demoMode">Demo Mode</h3>
+          <p>Jump straight into any of the 10 synthetic patients with one click — no password.</p>
+          <button type="button" class="btn btn-warn btn-block" id="demoModeBtn">Choose a demo patient</button>
+        </article>
+      </div>
+
+      <!-- =============================================== DEMO CREDENTIALS -->
+      <div class="card section-gap" id="credentials">
+        <div class="card-title">
+          <h2>Demo account credentials</h2><span class="tag tag-syn">SYNTHETIC DEMO DATA</span>
+        </div>
+        
+        <div class="table-wrap">
+          <table class="tbl cred-table">
+            <thead>
+              <tr>
+                <th scope="col">Role</th>
+                <th scope="col">ID</th>
+                <th scope="col">Secret</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Doctor</td>
+                <td>DOC-1001</td>
+                <td>PIN 1234</td>
+                <td>Dr. Asha Sharma — full triage, advice approval, certificates</td>
+              </tr>
+              <tr>
+                <td>Nurse / health worker</td>
+                <td>NUR-1001</td>
+                <td>PIN 5678</td>
+                <td>Nurse Kavya Rao — vitals, follow-ups, escalation only</td>
+              </tr>
+              <tr>
+                <td>Caregiver</td>
+                <td>Patient-linked</td>
+                <td>No PIN (demo)</td>
+                <td>Requires the patient's caregiver consent to see data</td>
+              </tr>
+              <tr>
+                <td>Patient</td>
+                <td>PT-1001 … PT-1010</td>
+                <td>No password (demo mode)</td>
+                <td>10 synthetic patients covering diabetes, hypertension, heart, asthma, COPD, healthy, elderly, stable
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <details class="disclosure" style="margin-top:.9rem">
+          <summary>WebAuthn / passkey status</summary>
+          <p class="small muted" id="webauthnStatus">Checking…</p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-ghost btn-sm" id="passkeyCreate">Create demo passkey (doctor)</button>
+            <button type="button" class="btn btn-ghost btn-sm" id="passkeyTest">Test passkey sign-in</button>
+          </div>
+          <p class="fineprint">Passkeys depend on browser, device and security context. If they are unavailable we say
+            so and fall back to the demo PIN. This app never claims a biometric check succeeded when it did not.</p>
+        </details>
+      </div>
+
+      <!-- ============================================== CONSULTATION FEATURES -->
+      <div class="card" id="consultFeatures">
+        <div class="card-title">
+          <h2>Consultation-ready features</h2><span class="tag tag-demo">NEW</span>
+        </div>
+        <div class="grid grid-3" style="margin-top:.9rem">
+          <div class="stat-card">
+            <div class="stat-head">📋 Ready-to-Use Patient Story</div>
+            <div class="small">At the start of every consultation the doctor instantly sees a structured, complete clinical summary — problems, vitals, medicines, adherence, visits, alerts, pending follow-ups and latest instructions — with copy/print support.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-head">🔗 Continuity of Care</div>
+            <div class="small">Tracks medications, previous instructions and follow-ups with due dates and done-states, shared between the doctor dashboard, patient app and history timeline.</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-head">🇮🇳 ABDM-aligned (demo)</div>
+            <div class="small">ABHA ID demo field plus consent-aware portable JSON export. No real ABDM network call — everything stays in this browser. A real deployment would use ABHA login, Consent Manager and HIP/HIU gateways.</div>
+          </div>
+        </div>
+        <p class="fineprint" style="margin-top:.7rem">Open the doctor dashboard → select a patient → see “Patient Story”, “Continuity of Care” and “ABDM / ABHA” cards at the top. Patients see “My ongoing care” and “My ABHA / ABDM” cards on their dashboard.</p>
+      </div>
+
+      <!-- ================================================== RISK ENGINE -->
+      <div class="card" id="howRisk">
+        <div class="card-title">
+          <h2 data-i18n="howRiskWorks">patient flag</h2><span class="tag tag-demo">risk detection </span>
+        </div>
+        <pre class="info-box" style="white-space:pre-wrap;font-family:inherit;margin:0" id="riskHowText"></pre>
+        <div class="grid grid-3" style="margin-top:.9rem">
+          <div class="stat-card">
+            <div class="stat-head">🟢 GREEN</div>
+            <div class="stat-value">0–39</div>
+            <div class="stat-foot">Stable (demo band)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-head">🟡 YELLOW</div>
+            <div class="stat-value">40–69</div>
+            <div class="stat-foot">Watch (demo band)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-head">🔴 RED</div>
+            <div class="stat-value">70–100</div>
+            <div class="stat-foot">Act Now (demo band)</div>
+          </div>
+        </div>
+        <p class="fineprint" style="margin-top:.7rem">Every score lists its contributing factors, e.g. “Risk Score: 87 —
+          Contributing factors: + elevated BP, + reduced HRV, + poor medication adherence, + reduced sleep → Demo
+          recommendation: doctor review suggested.” </p>
+      </div>
+
+      <!-- ==================================================== TEST MODE -->
+      <div class="card" id="testMode">
+        <div class="card-title">
+          <h2>Test mode</h2><span class="tag">SYNTHETIC EVENTS</span>
+        </div>
+        <p class="card-sub">Each button generates a synthetic event and updates the patient dashboard, risk engine and
+          doctor dashboard immediately.</p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-ghost" data-test="highGlucose">Generate high glucose event</button>
+          <button type="button" class="btn btn-ghost" data-test="highBP">Generate high BP event</button>
+          <button type="button" class="btn btn-ghost" data-test="lowSpo2">Generate low SpO2 event</button>
+          <button type="button" class="btn btn-ghost" data-test="missedMed">Generate missed medicine</button>
+          <button type="button" class="btn btn-ghost" data-test="emergency">Generate emergency phrase</button>
+          <button type="button" class="btn btn-ghost" data-toggle-offline="1">Go offline / Return online</button>
+          <button type="button" class="btn btn-ghost" data-sync-now="1">Flush sync queue</button>
+          <button type="button" class="btn btn-danger" data-action="reset-demo">Reset demo</button>
+        </div>
+        <p class="fineprint" style="margin-top:.6rem">Events are applied to Synthetic Patient 04 (PT-1004) by default.
+          Offline mode is simulated in this browser — no data ever leaves your device in this demo.</p>
+      </div>
+
+      <!-- =================================================== DEMO SCRIPT -->
+      <div class="card" id="demoScript">
+        <div class="card-title">
+          <h2>fast demo sprint ->(3–5 minutes)</h2>
+        </div>
+        <div class="split">
+          <ol class="steps-list">
+            <li>Open sushruta labs  → <strong>▶ RUN DIGITAL TWIN DEMO</strong></li>
+            <li>Select <strong>Demo Mode</strong> → pick Synthetic Patient 04</li>
+            <li>Show synthetic <strong>EHR</strong> (diagnoses, labs, medicines, visits, payments)</li>
+            <li>Show <strong>30-day wearable data</strong> charts (glucose, BP, HR, sleep, SpO2)</li>
+            <li>Trigger a <strong>high-risk event</strong> (test mode)</li>
+            <li>Risk engine changes status to <strong>🔴 RED</strong> with reasons</li>
+            <li>Open the <strong>doctor dashboard</strong> → alert appears in triage</li>
+            <li>Open the patient → <strong>explain why risk increased</strong></li>
+            <li><strong>Approve &amp; Send</strong> the suggested advice (human approval required)</li>
+            <li>Patient receives <strong>“New advice from Dr. Asha Sharma”</strong></li>
+            <li>Demonstrate <strong>medicine adherence</strong></li>
+            <li>Demonstrate the <strong>SOS</strong> countdown (simulated)</li>
+            <li>Generate a <strong>treatment certificate</strong> → print/PDF</li>
+            <li>Scan the <strong>QR code</strong> → open the verification page</li>
+            <li>Turn internet off → <strong>offline mode</strong> still works</li>
+            <li>Turn internet on → <strong>pending sync</strong> flushes</li>
+          </ol>
+          <div class="stack">
+            
+            
+              
+            <div class="card" style="margin:0">
+              <h3>PWA install</h3>
+              <p class="small">1. Deploy to an HTTPS host (or use localhost).<br>2. Open the site in Android
+                Chrome.<br>3. Menu → <strong>Install app</strong> / <strong>Add to Home screen</strong>.<br>4. Launch
+                and test offline mode.<br>5. Browser support for WebAuthn, notifications, speech and install
+                prompts varies by browser and OS.</p>
+              <button type="button" class="btn btn-ghost btn-sm" data-install>Install app</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================== ABOUT -->
+      <div class="card" id="about">
+        <div class="card-title">
+          <h2 data-i18n="about">About</h2>
+        </div>
+        <p>sushruta labs  is an offline-first, frontend-only demonstration that combines synthetic
+          <strong>EHR data</strong> (demographics, diagnoses, labs, medicines, visits, notes, payments) with synthetic
+          <strong>wearable data</strong> (heart rate, HRV, steps, sleep, SpO2, BP, blood sugar, respiratory rate,
+          symptoms) to produce an explainable digital representation of a patient.</p>
+        <p>It demonstrates: consent and privacy flows, patient onboarding, wellness scoring, rule-based risk assessment
+          with visible reasons, doctor triage and advice approval, nurse escalation, caregiver consent scoping,
+          medication logging, voice assistant, audit logging, mock
+          payments, teleconsultation, treatment certificates with QR verification, simulated offline sync and PWA
+          installation.</p>
+        
+      </div>
+
+      <!-- ========================================================= PRIVACY -->
+      <div class="card" id="privacy">
+        <div class="card-title">
+          <h2 data-i18n="privacy">Privacy</h2><span class="tag">DESIGN PRINCIPLES</span>
+        </div>
+        <p class="card-sub">India-focused data protection discussion points. These are <strong>design principles for
+            discussion, not legal certification</strong>. This demo claims no HIPAA / GDPR / DPDP compliance.</p>
+        <ul>
+          <li><strong>Consent</strong> — explicit accept/decline before onboarding continues; consent is viewable,
+            changeable and revocable in Settings.</li>
+          <li><strong>Purpose limitation</strong> — data is used only to drive this demonstration's features.</li>
+          <li><strong>Data minimisation</strong> — only synthetic fields are stored; microphone runs on-device
+            and only when started by the user.</li>
+          <li><strong>Access control</strong> — role-based UI (patient / doctor / nurse / caregiver) with caregiver
+            scoping limited to the granted consent items.</li>
+          <li><strong>Auditability</strong> — every important action creates an audit event (actor, role, action,
+            patient, message).</li>
+          <li><strong>Data deletion</strong> — “Delete My Data” removes locally stored demo data after confirmation.
+          </li>
+          <li><strong>Data export</strong> — “Export Demo Data” downloads a JSON copy of your local synthetic records.
+          </li>
+        </ul>
+        <p class="fineprint">A real healthcare deployment requires a secure backend, encryption, identity management,
+          access control, regulatory compliance, professional security testing and secure infrastructure.</p>
+      </div>
+
+      <!-- ==================================================== LIMITATIONS -->
+      <div class="card" id="limitations">
+        <div class="card-title">
+          <h2 data-i18n="limitations">Limitations</h2>
+        </div>
+        <ul>
+          <li><strong>Wake phrase</strong> — the Web Speech API is not equivalent to a dedicated always-on wake-word
+            engine.</li>
+          <li><strong>Risk engine</strong> — simple deterministic rules, not validated clinical AI; thresholds are
+            demonstration values.</li>
+          <li><strong>Wearable data / EHR</strong> — synthetic data only.</li>
+          <li><strong>Payments</strong> — mock only; no banking or payment systems are connected.</li>
+          <li><strong>SMS / calls</strong> — simulated only; nothing is sent to a real phone.</li>
+          <li><strong>Doctor authentication</strong> — WebAuthn availability depends on browser, device and security
+            context; a demo PIN fallback is provided and status is reported honestly.</li>
+          <li><strong>Ollama</strong> — optional and dependent on a local installation and network permissions; the app
+            works without it.</li>
+          <li><strong>Offline sync</strong> — a simulated local queue without a real backend; nothing is uploaded to a
+            hospital server.</li>
+          <li><strong>Medical use</strong> — this prototype must not be used to diagnose, treat, or make emergency
+            medical decisions.</li>
+        </ul>
+      </div>
+
+      <!-- ===================================================== DISCLAIMER -->
+      <div class="card" id="disclaimer">
+        <div class="card-title">
+          <h2>Disclaimer</h2>
+        </div>
+        <div class="disclaimer-box">
+         
+          <p><strong>This prototype uses synthetic patient data and demonstration-only risk rules.</strong>
+          </p>
+        
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <strong>sushruta labs </strong>
+        <p>Connected wellness intelligence for patients and care teams. Offline-first PWA .</p>
+      </div>
+    
+      <div>
+        <strong>Quick links</strong>
+        <p>
+          <a href="patient.html">Patient</a> · <a href="doctor.html">Doctor</a> · <a
+            href="caregiver.html">Caregiver</a><br>
+          <a href="#privacy">Privacy</a> · <a href="#about">About</a> · <a href="#limitations">Limitations</a> · <a
+            href="#disclaimer">Disclaimer</a><br>
+          <a href="verification.html?id=CERT-1001">Verify demo certificate</a>
+        </p>
+      </div>
+      <div>
+        <strong>Status</strong>
+        <p>
+          <span class="conn-badge" data-connection>🟢 Connected</span><br>
+          <span class="sync-status" data-sync-status></span>
+          <span class="pending-sync" data-pending-sync hidden></span><br>
+          <span class="small muted" id="storeStatus"></span>
+        </p>
+      </div>
+      <div>
+        <strong>Legal (drafts)</strong>
+        <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p>
+      </div>
+      <div>
+        <strong>Business details</strong>
+        <p>[PLACEHOLDER: legal name]<br>[PLACEHOLDER: address]<br>[PLACEHOLDER: email] · [PLACEHOLDER: phone]</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AI Floating Assistant removed from index.html on request.
+       Full 180+ question assistant remains in patient.html Ask tab. -->
+
+  <div id="reminderHost" aria-live="polite"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/sync.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var qs = new URLSearchParams(window.location.search);
+      App.boot('index').then(function (patients) {
+        Sync.init();
+        document.getElementById('riskHowText').textContent = Risk.HOW_IT_WORKS;
+        document.getElementById('storeStatus').textContent = 'Storage: ' + App.storeMode();
+        updateWebAuthnStatus();
+        App.DemoFlow.continueOnLoad('index');
+        if (qs.get('demo') === '1') App.DemoFlow.continueOnLoad('index');
+      });
+
+      document.getElementById('langPick').value = App.lang() || 'en';
+      document.getElementById('langPick').addEventListener('change', function (e) {
+        App.setLanguage(e.target.value);
+        document.getElementById('langPick').value = e.target.value;
+      });
+      document.addEventListener('vpdt:lang', function () {
+        document.getElementById('langPick').value = App.lang() || 'en';
+      });
+
+      function updateWebAuthnStatus() {
+        var el = document.getElementById('webauthnStatus');
+        if (!el) return;
+        if (!Auth.supportsWebAuthn()) {
+          el.textContent = 'WebAuthn: NOT supported in this browser/context. PIN fallback will be used.';
+          return;
+        }
+        Auth.platformAuthenticatorAvailable().then(function (ok) {
+          el.textContent = 'WebAuthn: supported. Platform authenticator (biometric/passkey): ' +
+            (ok ? 'available' : 'not available') +
+            '. Passkey stored for this demo: ' + (Auth.hasPasskey() ? 'yes' : 'no') +
+            '. Success is only reported after a real WebAuthn assertion.';
+        });
+      }
+
+      document.getElementById('passkeyCreate').addEventListener('click', function () {
+        Auth.registerPasskey('DOC-1001').then(function () {
+          App.toast('Demo passkey created in this browser (real WebAuthn registration).', 'success');
+          updateWebAuthnStatus();
+        }).catch(function (e) {
+          App.toast('Passkey creation not available: ' + (e && e.message ? e.message : e.name || 'unknown') + '. PIN fallback remains available.', 'error');
+          updateWebAuthnStatus();
+        });
+      });
+      document.getElementById('passkeyTest').addEventListener('click', function () {
+        Auth.loginWithPasskey().then(function () {
+          App.toast('Passkey verified - WebAuthn assertion succeeded.', 'success');
+        }).catch(function (e) {
+          App.toast('Passkey sign-in failed: ' + (e && e.message ? e.message : e.name || 'unknown') + '. Use the demo PIN instead.', 'error');
+        });
+      });
+
+      /* demo patient picker */
+      document.getElementById('demoModeBtn').addEventListener('click', async function () {
+        var patients = await Storage.getAllPatients();
+        var body = document.createElement('div');
+        var rows = patients.filter(function (p) { return (p.status || 'active') !== 'archived'; }).map(function (p) {
+          return '<li style="border-bottom:1px solid var(--line);padding:.5rem 0">' +
+            '<div class="li-main"><span class="li-title">' + App.esc(p.name) + '</span> ' +
+            '<span class="li-sub mono">' + App.esc(p.id) + ' · ' + App.esc(String(p.age)) + ' · ' + App.esc(p.condition || 'Stable') + '</span></div>' +
+            '<button type="button" class="btn btn-primary btn-sm" data-open="' + App.esc(p.id) + '">Open</button></li>';
+        }).join('');
+        body.innerHTML =
+          '<p class="small">SYNTHETIC DEMO DATA — no password needed in demo mode.</p>' +
+          '<ul class="list">' + rows + '</ul>';
+        App.modal({ title: 'Demo Mode · choose a synthetic patient', bodyNode: body, actions: [{ label: 'Close', value: false }] });
+        body.addEventListener('click', async function (e) {
+          var b = e.target.closest('[data-open]');
+          if (!b) return;
+          var res = await Auth.loginPatient(b.getAttribute('data-open'));
+          if (res.ok) window.location.href = 'patient.html';
+          else App.toast(res.message, 'error');
+        });
+      });
+
+      /* test buttons */
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-test]');
+        if (b) App.triggerDemoEvent(b.getAttribute('data-test'));
+      });
+
+      /* install buttons are handled centrally in app.js via [data-install] */
+      })();
+
+      /* AI Assistant Integration removed from index.html on request.
+         The assistant (js/assistant.js) is still loaded by patient.html + signin.html. */
+    </script>
+
+</body>
+
+</html>

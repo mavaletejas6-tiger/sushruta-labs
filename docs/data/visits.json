@@ -1,0 +1,20 @@
+{
+  "_notice": "SYNTHETIC DEMO DATA - visits for demonstration only.",
+  "visits": [
+    { "id": "VIS-1001-1", "patientId": "PT-1001", "daysAgo": 46, "department": "General Medicine", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. Advised diet review and regular glucose monitoring.", "outcome": "Follow up in 6 weeks", "fee": 600 },
+    { "id": "VIS-1001-2", "patientId": "PT-1001", "daysAgo": 12, "department": "Endocrinology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. HbA1c reviewed, dose continued.", "outcome": "Continue medicines", "fee": 700 },
+    { "id": "VIS-1002-1", "patientId": "PT-1002", "daysAgo": 34, "department": "Cardiology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. BP reviewed, salt reduction advised.", "outcome": "Repeat BP in 4 weeks", "fee": 800 },
+    { "id": "VIS-1003-1", "patientId": "PT-1003", "daysAgo": 21, "department": "Cardiology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. Lipids reviewed, walking plan discussed.", "outcome": "Continue medicines, review in 6 weeks", "fee": 1200 },
+    { "id": "VIS-1004-1", "patientId": "PT-1004", "daysAgo": 30, "department": "Endocrinology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. HbA1c 8.9% discussed, adherence concerns noted.", "outcome": "Review glucose diary in 4 weeks", "fee": 700 },
+    { "id": "VIS-1004-2", "patientId": "PT-1004", "daysAgo": 10, "department": "Endocrinology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. Dose unchanged, lifestyle advice given.", "outcome": "Follow up", "fee": 700 },
+    { "id": "VIS-1005-1", "patientId": "PT-1005", "daysAgo": 25, "department": "Pulmonology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. Inhaler technique reviewed.", "outcome": "Continue inhaler", "fee": 550 },
+    { "id": "VIS-1006-1", "patientId": "PT-1006", "daysAgo": 18, "department": "Pulmonology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. Spirometry discussed, smoking cessation reinforced.", "outcome": "Review if symptoms worsen", "fee": 900 },
+    { "id": "VIS-1007-1", "patientId": "PT-1007", "daysAgo": 14, "department": "General Medicine", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. BP 166/102 recorded, medicines reviewed.", "outcome": "Urgent follow-up advised (demo)", "fee": 650 },
+    { "id": "VIS-1007-2", "patientId": "PT-1007", "daysAgo": 60, "department": "Endocrinology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit: initial treatment started.", "outcome": "Started treatment", "fee": 700 },
+    { "id": "VIS-1008-1", "patientId": "PT-1008", "daysAgo": 60, "department": "General Medicine", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit: routine check-up, all values within demo ranges.", "outcome": "No medicines needed", "fee": 500 },
+    { "id": "VIS-1009-1", "patientId": "PT-1009", "daysAgo": 21, "department": "Geriatrics", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit. Mobility and fall-risk discussion (demo).", "outcome": "Physiotherapy advice given", "fee": 750 },
+    { "id": "VIS-1010-1", "patientId": "PT-1010", "daysAgo": 90, "department": "Endocrinology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit: treatment course started, HbA1c 8.5%.", "outcome": "Started 12-week program", "fee": 700 },
+    { "id": "VIS-1010-2", "patientId": "PT-1010", "daysAgo": 5, "department": "Endocrinology", "doctor": "Dr. Asha Sharma", "notes": "Synthetic demo visit: HbA1c improved to 6.9%, program completed.", "outcome": "Treatment marked complete", "fee": 700 }
+  ],
+  "departments": ["General Medicine", "Endocrinology", "Cardiology", "Pulmonology", "Geriatrics", "Orthopedics"]
+}

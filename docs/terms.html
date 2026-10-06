@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Terms and Conditions draft - Virtual Patient Digital Twin demo.">
+  <meta name="theme-color" content="#111111">
+  <title>Terms &amp; Conditions (Draft) — Virtual Patient Digital Twin</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility-fixes.css">
+</head>
+<body data-page="terms">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="notice-bar" id="globalNotice" role="note">
+    <div class="notice-body">
+      <p><strong>Demo for education only, not medical advice.</strong></p>
+      <p class="small">DRAFT template — not legal advice. Have a lawyer review before publishing.</p>
+    </div>
+    <button type="button" class="btn btn-ghost btn-sm" data-action="dismiss-notice">Understood</button>
+  </div>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="Sushruta Labs logo" height="34">
+      <span>Virtual Patient Digital Twin<span class="brand-sub">Terms — DRAFT</span></span>
+    </a>
+    <div class="topbar-actions">
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme" aria-label="Toggle colour theme">🌙 Dark</button>
+      <a class="btn btn-ghost btn-sm" href="index.html">Home</a>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+  <main id="main" class="main" tabindex="-1" style="max-width:820px;margin:0 auto">
+    <div class="disclaimer-box" data-disclaimer></div>
+    <section class="card" aria-labelledby="termsTitle">
+      <div class="card-title"><h1 id="termsTitle">Terms &amp; Conditions — DRAFT</h1><span class="tag tag-demo">DRAFT — LAWYER REVIEW REQUIRED</span></div>
+      <p class="card-sub">Operator: [PLACEHOLDER: legal / business name], [PLACEHOLDER: address], [PLACEHOLDER: email], [PLACEHOLDER: phone]. Effective date: [PLACEHOLDER].</p>
+      <h2>1. What this site is</h2>
+      <p>A frontend-only demonstration with synthetic data (no server, no real medical device, no diagnosis or treatment). Risk scores are demo rules, not validated clinical AI. Certificates are demonstration documents, not medical/legal documents. SMS/calls/payments/teleconsultation are simulated and labelled as such.</p>
+      <h2>2. Acceptable use</h2>
+      <ul>
+        <li>Use synthetic data only; do not enter real patient records.</li>
+        <li>Do not use for diagnosis, treatment, emergency decisions, or medication changes. In an emergency call [PLACEHOLDER: 112/108] and see a qualified professional.</li>
+        <li>Do not misuse demo credentials (DOC-1001 / NUR-1001 / PT-1001 …) or attempt to access other users’ browsers/devices.</li>
+        <li>Minimum age: [PLACEHOLDER: e.g. 18+, or guardian-supervised use].</li>
+      </ul>
+      <h2>3. Accounts and security</h2>
+      <p>Demo PINs and local passkeys are for UI demonstration only and offer no real security. You are responsible for the device/browser you demo on. Use Delete My Data / Reset Demo on shared devices.</p>
+      <h2>4. Intellectual property</h2>
+      <p>App code, logos (Sushruta Labs marks), and synthetic datasets are owned by [PLACEHOLDER: owner] unless stated. You may [PLACEHOLDER: permitted use, e.g. view/demo for evaluation]. No copying of certificates as if they were real medical documents.</p>
+      <h2>5. Disclaimers</h2>
+      <p>Provided “as is” for education only. No warranty of accuracy, availability, or fitness for medical use. AI assistant answers are general information, not diagnoses.</p>
+      <h2>6. Liability</h2>
+      <p>[PLACEHOLDER: limitation of liability clause per counsel — e.g. to the extent permitted by law]. Nothing excludes liability that cannot be excluded by law.</p>
+      <h2>7. Payments / refunds</h2>
+      <p>None — this demo sells nothing and processes no real payments (visit “fees” shown are synthetic labels). If you sell services in future, add a Refund/Cancellation Policy here: [PLACEHOLDER or “not applicable”].</p>
+      <h2>8. Termination</h2>
+      <p>You may stop using the demo anytime (clear storage to remove local data). We may [PLACEHOLDER: suspend demo access for misuse].</p>
+      <h2>9. Governing law</h2>
+      <p>[PLACEHOLDER: e.g. laws of India, courts at (city)]. Grievance contact: [PLACEHOLDER: name/email/address].</p>
+      <h2>10. Changes</h2>
+      <p>We may update these terms; material changes will be [PLACEHOLDER: how notified, e.g. notice on home page]. Continued use after [PLACEHOLDER: date] means acceptance.</p>
+      <p class="fineprint">Not legal advice. Have a lawyer review before publishing.</p>
+      <div class="btn-row"><a class="btn btn-ghost btn-sm" href="privacy.html">Privacy</a><a class="btn btn-primary btn-sm" href="index.html">Home</a></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><strong>Virtual Patient Digital Twin</strong><p>Demo for education only, not medical advice.</p></div>
+      <div><strong>Legal (drafts)</strong><p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p></div>
+      <div><strong>Business details</strong><p>[PLACEHOLDER: legal name]<br>[PLACEHOLDER: address]<br>[PLACEHOLDER: email] · [PLACEHOLDER: phone]</p></div>
+    </div>
+  </footer>
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/sync.js"></script>
+</body>
+</html>
