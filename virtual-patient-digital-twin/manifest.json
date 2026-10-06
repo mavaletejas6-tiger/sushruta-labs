@@ -1,0 +1,16 @@
+{
+  "name": "Virtual Patient Digital Twin",
+  "short_name": "TwinCare Demo",
+  "description": "Offline-first Virtual Patient Digital Twin demo. Education only, not medical advice. Synthetic data only.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0e8a6d",
+  "background_color": "#f6f9fb",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

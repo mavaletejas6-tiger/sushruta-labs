@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Caregiver limited view - consent gated, synthetic demo data. Demo for education only, not medical advice.">
+  <meta name="theme-color" content="#111111">
+  <title>Caregiver — Virtual Patient Digital Twin</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body data-page="caregiver">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <div class="notice-bar" id="globalNotice" role="note">
+
+    <button type="button" class="btn btn-ghost btn-sm" data-action="dismiss-notice">Understood</button>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="" height="34">
+      <span>Caregiver Access<span class="brand-sub">Consent-gated limited view</span></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="conn-badge" data-connection aria-live="polite">Connected</span>
+      <span class="sync-status" data-sync-status aria-live="polite"></span>
+      <span class="pending-sync" data-pending-sync hidden></span>
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme"
+        aria-label="Toggle colour theme">🌙 Dark</button>
+      <a class="btn btn-ghost btn-sm" href="index.html">Home</a>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <div class="disclaimer-box" data-disclaimer></div>
+    <div id="box"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><strong>Data minimisation</strong>
+        <p>Caregivers only see medicines, appointments, emergency alerts and basic wellness — and only while the patient
+          keeps sharing switched on.</p>
+      </div>
+      <div><strong>Safety</strong>
+        <p>Demo for education only, not medical advice. AI suggestions are not medical diagnoses.</p>
+      </div>
+      <div><strong>Status</strong>
+        <p><span class="conn-badge" data-connection>Connected</span> <span class="pending-sync" data-pending-sync
+            hidden></span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/caregiver.js"></script>
+</body>
+
+</html>

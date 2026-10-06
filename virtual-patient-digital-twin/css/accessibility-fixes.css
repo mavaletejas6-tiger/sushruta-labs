@@ -1,0 +1,13 @@
+/* accessibility-fixes.css - WCAG 2.1 AA contrast + keyboard, additive only.
+   No layout change. Darker text on same pastel backgrounds. */
+.risk-green, .pill-paid, .status-resolved { color: #0f5132; }
+.risk-yellow, .tag-syn, .pill-due, .status-open { color: #664d03; }
+.risk-red, .pill-overdue { color: #842029; }
+.btn-warn { color: #111111; }
+/* back-link rendered as <button> keeps link look + keyboard support */
+button.back-link {
+  background: none; border: 0; padding: 0;
+  font: inherit; color: var(--muted); text-decoration: none;
+}
+/* AI FAB as native button: remove default button chrome, keep circle */
+button.ai-fab { font: inherit; padding: 0; }

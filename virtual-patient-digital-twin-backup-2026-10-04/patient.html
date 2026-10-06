@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Patient digital twin dashboard - synthetic demo data. Demo for education only, not medical advice.">
+  <meta name="theme-color" content="#111111">
+  <title>Patient ·sushruta labs </title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="patient">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="notice-bar" id="globalNotice" role="note">
+    
+   
+
+  <header class="topbar">
+    <button type="button" class="btn btn-ghost btn-sm nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="" height="34">
+      <span>sushruta labs <span class="brand-sub" id="brandPatient">Synthetic patient</span></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="conn-badge" data-connection aria-live="polite">🟢 Connected</span>
+      <span class="sync-status" data-sync-status aria-live="polite"></span>
+      <span class="pending-sync" data-pending-sync hidden></span>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme" aria-label="Toggle colour theme">🌙 Dark</button>
+      <button type="button" class="btn btn-danger btn-sm" data-logout hidden id="logoutBtn" data-action="logout">Log out</button>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <!-- ================================================== GATE: login / onboarding / consent -->
+  <main id="main" tabindex="-1">
+    <div id="gate" class="main" style="max-width:820px;margin:0 auto">
+
+      <!-- LOGIN -->
+      <section id="loginCard" class="card" aria-labelledby="loginTitle" hidden>
+        <div class="card-title"><h1 id="loginTitle">Patient Login</h1><span class="tag tag-syn">SYNTHETIC DEMO DATA</span></div>
+        <p class="card-sub">Demo mode needs no password. Enter a demo patient ID or pick one from the list.</p>
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="loginId">Patient ID</label>
+            <input type="text" id="loginId" placeholder="PT-1001" autocomplete="off" inputmode="text" aria-describedby="loginHint">
+            <span class="hint" id="loginHint">Demo IDs: PT-1001 … PT-1010</span>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-lg">Open my dashboard</button>
+            <button type="button" class="btn btn-ghost" id="loginListBtn">Show demo patients</button>
+            <button type="button" class="btn btn-ghost" id="newPatientBtn">Register new patient</button>
+            <a class="btn btn-ghost" href="index.html">Back home</a>
+          </div>
+          <p class="fineprint">New here? “Register new patient” creates the next sequential ID (e.g. PT-1011, PT-1012…) — never random.</p>
+          <p class="fineprint" id="loginMsg" role="alert"></p>
+        </form>
+      </section>
+
+      <!-- ONBOARDING -->
+      <section id="onboardCard" class="card" hidden aria-labelledby="onboardTitle">
+        <div class="card-title"><h1 id="onboardTitle">Patient onboarding</h1><span class="tag tag-demo">DEMO</span></div>
+        <p class="card-sub">Step 1 of 2 — your details. Nothing leaves this browser.</p>
+        <form id="onboardForm" novalidate>
+          <div class="info-box" style="margin-bottom:.8rem">
+            <strong>Patient number: <span class="mono" id="obPatientId">—</span></strong>
+            <span class="hint">Auto-assigned sequentially (PT-1001, PT-1002 … PT-1011 …) — never random.</span>
+          </div>
+          <div class="grid grid-2">
+            <div class="field"><label for="obName">Name</label><input type="text" id="obName" required maxlength="60" placeholder="Your name" autocomplete="name"></div>
+            <div class="field"><label for="obAge">Age</label><input type="number" id="obAge" min="1" max="120" required placeholder="52"></div>
+            <div class="field"><label for="obGender">Gender</label>
+              <select id="obGender"><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select>
+            </div>
+            <div class="field"><label for="obBlood">Blood group <span class="hint">optional</span></label><input type="text" id="obBlood" maxlength="8" placeholder="O+"></div>
+            <div class="field"><label for="obAllergies">Allergies <span class="hint">comma separated, or none</span></label><input type="text" id="obAllergies" placeholder="None"></div>
+            <div class="field"><label for="obPhone">Phone number <span class="hint">required</span></label><input type="tel" id="obPhone" maxlength="20" placeholder="+91-9000000000" autocomplete="tel" inputmode="tel" required aria-describedby="obPhoneHint"><span class="hint" id="obPhoneHint">Digits, spaces, +, - allowed · 7–15 digits. Used for demo SMS/call links only.</span></div>
+            <div class="field"><label for="obEmail">Email address <span class="hint">required</span></label><input type="email" id="obEmail" maxlength="80" placeholder="you@example.com" autocomplete="email" inputmode="email" required aria-describedby="obEmailHint"><span class="hint" id="obEmailHint">Must look like name@example.com. Used for demo mailto: links only.</span></div>
+            <div class="field"><label for="obEmergency">Emergency contact</label><input type="tel" id="obEmergency" maxlength="20" placeholder="+91-9000000101" autocomplete="tel" inputmode="tel"><span class="hint">Optional, but must differ from your phone if given.</span></div>
+            <div class="field"><label for="obLang">Preferred language</label>
+              <select id="obLang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="mr">मराठी</option></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="obWake">Wake phrase</label>
+            <input type="text" id="obWake" maxlength="60" value="help me assistant 3056">
+            <span class="hint">Spoken to trigger the simulated emergency countdown (e.g. “help me assistant 3056”). Voice features only start when you turn them on.</span>
+          </div>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-lg">Continue to consent</button>
+            <button type="button" class="btn btn-ghost" id="obCancel">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- CONSENT -->
+      <section id="consentCard" class="card" hidden aria-labelledby="consentTitle">
+        <div class="card-title"><h1 id="consentTitle">Consent &amp; privacy</h1><span class="tag tag-syn">REQUIRED</span></div>
+        <p class="card-sub">Step 2 of 2 — you must accept before the dashboard continues. You can change or revoke these choices later in Settings.</p>
+        <div class="info-box">
+          <strong>What data is collected and why (demo):</strong>
+          <ul style="margin:.4rem 0 0">
+            <li><strong>Profile &amp; health records</strong> — to build your synthetic digital twin, wellness score and demo risk scores.</li>
+            <li><strong>Wearable readings</strong> — to draw trends and power the explainable rule engine.</li>
+            <li><strong>Medicine logs</strong> — to show adherence and reminders.</li>
+            <li><strong>Everything in this demo is synthetic</strong> — no real medical records are used, stored or transmitted.</li>
+          </ul>
+        </div>
+        <form id="consentForm" novalidate>
+          <div class="check-row"><input type="checkbox" id="cData" required><label for="cData">I consent to my demo data being stored in this browser<span class="hint">Required. Stored locally via IndexedDB/localStorage only.</span></label></div>
+          <div class="check-row"><input type="checkbox" id="cDoctor"><label for="cDoctor">Share with my doctor / care team in this demo<span class="hint">Shows your records in the doctor dashboard.</span></label></div>
+          <div class="check-row"><input type="checkbox" id="cCaregiver"><label for="cCaregiver">Enable caregiver access<span class="hint">A caregiver can then see medicines, appointments, alerts and basic wellness only.</span></label></div>
+          <div class="check-row"><input type="checkbox" id="cMic"><label for="cMic">Allow microphone for voice assistant &amp; wake phrase<span class="hint">Microphone is only started when you press Speak / Start listening.</span></label></div>
+          <div class="check-row"><input type="checkbox" id="cCamera"><label for="cCamera">Allow camera for the tablet-check prototype<span class="hint">On-device only, disabled by default, no cloud upload, no recording unless you enable it.</span></label></div>
+          <div class="check-row"><input type="checkbox" id="cNotif"><label for="cNotif">Allow medicine reminder notifications<span class="hint">Permission is requested only when you enable reminders.</span></label></div>
+          <div class="check-row"><input type="checkbox" id="cAi"><label for="cAi">Use optional AI features (offline assistant, optional local Ollama)<span class="hint">The assistant never diagnoses. Optional local AI stays on your machine.</span></label></div>
+          <p class="fineprint">Demo for education only, not medical advice. You can view, change or revoke consent at any time in Settings.</p>
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-lg" id="consentAccept">Accept</button>
+            <button type="button" class="btn btn-danger" id="consentDecline">Decline</button>
+          </div>
+          <p class="fineprint" id="consentMsg" role="alert"></p>
+        </form>
+      </section>
+    </div>
+
+    <!-- ================================================================ APP -->
+    <div id="app" class="app-shell" hidden>
+      <nav class="sidebar" id="sidebar" aria-label="Patient sections">
+        <h2>My health</h2>
+        <button type="button" class="nav-link" data-view="dashboard" aria-current="page"><span class="nav-ico" aria-hidden="true">🏠</span><span data-i18n="dashboard">Dashboard</span></button>
+        <button type="button" class="nav-link" data-view="medicines"><span class="nav-ico" aria-hidden="true">💊</span><span data-i18n="medicines">Medicines</span></button>
+        <button type="button" class="nav-link" data-view="timeline"><span class="nav-ico" aria-hidden="true">📜</span><span data-i18n="timeline">Timeline</span></button>
+        <button type="button" class="nav-link" data-view="history"><span class="nav-ico" aria-hidden="true">🗂️</span><span data-i18n="history">History</span></button>
+        <button type="button" class="nav-link" data-view="assistant"><span class="nav-ico" aria-hidden="true">🤖</span><span data-i18n="assistant">Assistant</span></button>
+        <h2>Account</h2>
+        <button type="button" class="nav-link" data-view="settings"><span class="nav-ico" aria-hidden="true">⚙️</span><span data-i18n="settings">Settings</span></button>
+        <button type="button" class="nav-link" data-action="logout"><span class="nav-ico" aria-hidden="true">🚪</span><span data-i18n="logout">Log out</span></button>
+        <div style="margin-top:1rem">
+          <button type="button" class="btn btn-danger btn-block btn-sos" data-sos>SOS</button>
+          <p class="fineprint center">Simulated alert only — never calls real services.</p>
+        </div>
+      </nav>
+
+      <main class="main" id="mainApp">
+        <div id="reminderHost" aria-live="polite"></div>
+
+        <!-- ===================================================== DASHBOARD -->
+        <section class="view active" id="view-dashboard" aria-labelledby="dashTitle">
+          <div class="card hero-card">
+            <div class="hero-flex">
+              <div>
+                <p class="muted" style="margin:0" id="greeting">Good day</p>
+                <h1 id="dashTitle">Welcome</h1>
+                <p class="muted" id="dashSub">SYNTHETIC DEMO DATA · Demo for education only, not medical advice.</p>
+                <div class="btn-row">
+                  <span id="dashRiskBadge"></span>
+                  <span class="tag tag-syn">SYNTHETIC DEMO DATA</span>
+                </div>
+              </div>
+              <div class="gauge-wrap">
+                <canvas id="wellnessGauge" width="190" height="120" aria-label="Wellness score gauge"></canvas>
+                <div class="gauge-label" id="wellnessLabel">Wellness Score — /100</div>
+                <div class="fineprint" style="color:inherit;opacity:.85">Demo wellness score — not a clinical measurement.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-4" id="statGrid">
+            <div class="stat-card"><div class="stat-head">❤️ <span data-i18n="heartRate">Heart Rate</span></div><div class="stat-value" id="stHR">–</div><div class="stat-foot" id="stHRFoot">resting –</div></div>
+            <div class="stat-card"><div class="stat-head">🩸 <span data-i18n="bloodSugar">Blood Sugar</span></div><div class="stat-value" id="stSugar">–</div><div class="stat-foot">mg/dL · demo reading</div></div>
+            <div class="stat-card"><div class="stat-head">🫁 <span data-i18n="spo2">SpO2</span></div><div class="stat-value" id="stSpo2">–</div><div class="stat-foot">%</div></div>
+            <div class="stat-card"><div class="stat-head">🩺 <span data-i18n="bp">Blood Pressure</span></div><div class="stat-value" id="stBP">–</div><div class="stat-foot">mmHg · demo</div></div>
+            <div class="stat-card"><div class="stat-head">💤 <span data-i18n="sleep">Sleep</span></div><div class="stat-value" id="stSleep">–</div><div class="stat-foot">hours · quality –</div></div>
+            <div class="stat-card"><div class="stat-head">🚶 <span data-i18n="steps">Steps</span></div><div class="stat-value" id="stSteps">–</div><div class="stat-foot">today</div></div>
+            <div class="stat-card"><div class="stat-head">💊 <span data-i18n="adherence">Medication Adherence</span></div><div class="stat-value" id="stAdh">–</div><div class="stat-foot">last 7 days (demo log)</div></div>
+            <div class="stat-card"><div class="stat-head">📅 <span data-i18n="nextAppointment">Next Appointment</span></div><div class="stat-value" id="stApt" style="font-size:1.15rem">–</div><div class="stat-foot" id="stAptFoot">–</div></div>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <div class="card-title"><h2>Why this risk status</h2><span class="tag tag-demo">EXPLAINABLE</span></div>
+              <div id="riskExplain" class="stack"></div>
+            </div>
+            <div class="card">
+              <div class="card-title"><h2>Alerts for me</h2><span class="tag tag-syn">SYNTHETIC</span></div>
+              <ul class="list" id="alertList"><li class="empty">No alerts.</li></ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2 data-i18n="todayMedicines">Today's Medicines</h2>
+              <a class="btn btn-ghost btn-sm" href="#" data-goto="medicines">Open medicines</a></div>
+            <div id="dashMeds"><p class="empty">Loading…</p></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>Advice from my care team</h2><span class="tag tag-demo">DOCTOR APPROVED</span></div>
+            <ul class="list" id="adviceList"><li class="empty">No advice yet.</li></ul>
+          </div>
+
+          <div class="card" id="continuityCard">
+            <div class="card-title"><h2>🔗 My ongoing care — follow-ups &amp; instructions</h2><span class="tag tag-demo">CONTINUITY</span></div>
+            <p class="card-sub">Your medications, previous instructions and follow-ups in one place — the same information your doctor sees, so nothing is lost between visits.</p>
+            <div class="grid grid-2">
+              <div>
+                <h3 style="margin:.2rem 0">📌 Follow-ups for me</h3>
+                <ul class="list" id="followUpList"><li class="empty">Loading…</li></ul>
+              </div>
+              <div>
+                <h3 style="margin:.2rem 0">📝 Previous instructions</h3>
+                <ul class="list" id="prevInstrList"><li class="empty">Loading…</li></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="abdmCard">
+            <div class="card-title"><h2>🇮🇳 My ABHA / ABDM (demo)</h2><span class="tag tag-syn">NOT REALLY LINKED</span></div>
+            <p class="card-sub">Demo-aligned with Ayushman Bharat Digital Mission concepts (ABHA ID, consent-aware portable record). <strong>No real ABDM connection</strong> — everything stays in this browser.</p>
+            <div class="grid grid-2">
+              <div class="field"><label for="abhaInput">My ABHA ID (demo field)</label>
+                <input type="text" id="abhaInput" class="mono" maxlength="40" placeholder="12-3456-7890-12 or name@abdm" autocomplete="off">
+                <span class="hint">14-digit number or xxx@abdm. Demo format check only.</span>
+                <p class="fineprint" id="abhaMsg" role="alert"></p>
+                <div class="btn-row" style="margin-top:.4rem">
+                  <button type="button" class="btn btn-primary btn-sm" id="abhaSaveBtn">Link ABHA (demo)</button>
+                  <button type="button" class="btn btn-ghost btn-sm" id="abhaUnlinkBtn">Unlink</button>
+                  <button type="button" class="btn btn-ghost btn-sm" id="abdmExportBtn">⬇ Download my ABDM-aligned record</button>
+                </div>
+              </div>
+              <div>
+                <p class="small" id="abhaStatus">Status: not linked (demo)</p>
+                <ul class="small" style="margin:.3rem 0;padding-left:1.1rem">
+                  <li>Your record is shared with the care team only if you consented.</li>
+                  <li>The download bundles demographics, medicines, visits, instructions and follow-ups into one portable JSON.</li>
+                  <li>A real ABDM flow would use ABHA login, Consent Manager and HIP/HIU gateways — not present in this offline demo.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>7-day vitals trend</h2>
+              <div class="range-tabs" role="group" aria-label="Chart range">
+                <button type="button" data-days="7" aria-pressed="true">7 days</button>
+                <button type="button" data-days="30" aria-pressed="false">30 days</button>
+                <button type="button" data-days="90" aria-pressed="false">90 days</button>
+              </div>
+            </div>
+            <div class="grid grid-2">
+              <div class="chart-box"><canvas id="chSugar" aria-label="Blood sugar chart"></canvas></div>
+              <div class="chart-box"><canvas id="chBP" aria-label="Blood pressure chart"></canvas></div>
+              <div class="chart-box"><canvas id="chHR" aria-label="Heart rate chart"></canvas></div>
+              <div class="chart-box"><canvas id="chSleep" aria-label="Sleep chart"></canvas></div>
+            </div>
+            <div class="legend-row">
+              <span><span class="legend-dot" style="background:#6e6e6e"></span>Blood sugar</span>
+              <span><span class="legend-dot" style="background:#1a1a1a"></span>Systolic</span>
+              <span><span class="legend-dot" style="background:#8a8a8a"></span>Diastolic</span>
+              <span><span class="legend-dot" style="background:#4d4d4d"></span>Heart rate</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================== MEDICINES -->
+        <section class="view" id="view-medicines" aria-labelledby="medTitle">
+          <div class="card">
+            <div class="card-title"><h1 id="medTitle" data-i18n="medicines">Medicines</h1>
+              <label class="switch"><input type="checkbox" id="reminderToggle"><span class="track"></span><span class="switch-label">Reminders</span></label></div>
+            <p class="card-sub">Tap a button to log what happened. Logs are stored locally and appear in the doctor dashboard.</p>
+            <div id="medList"><p class="empty">Loading…</p></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>Camera tablet check <span class="tag">PROTOTYPE</span></h2></div>
+            <div class="disclaimer-box">
+              This is evidence of adherence behavior, not proof that medicine was swallowed.
+              On-device only · opt-in · no cloud upload · recording stays off unless you switch it on.
+            </div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-primary" id="camStart">Start camera check</button>
+              <button type="button" class="btn btn-ghost" id="camStop" disabled>Stop</button>
+              <label class="switch"><input type="checkbox" id="camRecord"><span class="track"></span><span class="switch-label">Enable local recording</span></label>
+            </div>
+            <div class="camera-status" id="cameraStatus" role="status">Camera is off.</div>
+            <div class="camera-mode" id="cameraMode"></div>
+            <div class="camera-mode" id="cameraModeNote"></div>
+            <div id="cameraHost" style="margin-top:.6rem"></div>
+            <div class="camera-mode" id="cameraStage" aria-live="polite"></div>
+            <div class="result-box" id="camResult" hidden>
+              <div class="res-status" id="camStatus">–</div>
+              <div class="res-conf" id="camConfidence">Confidence: –</div>
+              <ul class="evidence-list" id="camEvidence"></ul>
+              <p class="fineprint">This is evidence of adherence behavior, not proof that medicine was swallowed.</p>
+            </div>
+            <div class="btn-row" style="margin-top:.7rem">
+              <button type="button" class="btn btn-primary" data-manual="taken">I took my medicine manually</button>
+              <button type="button" class="btn btn-ghost" data-manual="missed">Record as missed</button>
+              <button type="button" class="btn btn-ghost" data-manual="uncertain">Record as uncertain</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>Recent medicine log</h2></div>
+            <div class="table-wrap">
+              <table class="tbl"><thead><tr><th>Medicine</th><th>Scheduled</th><th>Actual</th><th>Status</th><th>Source</th><th>Confidence</th></tr></thead>
+                <tbody id="medLogRows"><tr><td colspan="6" class="empty">No entries yet.</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================== TIMELINE -->
+        <section class="view" id="view-timeline" aria-labelledby="tlTitle">
+          <div class="card">
+            <div class="card-title"><h1 id="tlTitle" data-i18n="timeline">Digital Twin Timeline</h1><span class="tag tag-syn">SYNTHETIC</span></div>
+            <p class="card-sub">The story of this digital twin: registration → medicines → wearable changes → risk changes → alerts → advice → improvement.</p>
+            <ul class="timeline" id="timelineList"><li class="empty">No events.</li></ul>
+          </div>
+          <div class="card">
+            <div class="card-title"><h2>Risk trend (demo)</h2></div>
+            <div class="chart-box"><canvas id="chRiskTrend" aria-label="Risk trend chart"></canvas></div>
+            <p class="fineprint">Re-scored from wearable windows — demo rule-based trend, not a clinical measurement.</p>
+          </div>
+        </section>
+
+                <!-- ======================================================== HISTORY -->
+        <section class="view" id="view-history" aria-labelledby="histTitle">
+          <div class="card">
+            <div class="card-title"><h1 id="histTitle" data-i18n="history">Patient History</h1></div>
+            <div class="chip-row" id="histFilters" role="group" aria-label="History filters">
+              <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" class="chip" data-filter="advice" aria-pressed="false">Advice</button>
+              <button type="button" class="chip" data-filter="medicines" aria-pressed="false">Medicines</button>
+              <button type="button" class="chip" data-filter="visits" aria-pressed="false">Visits</button>
+              <button type="button" class="chip" data-filter="payments" aria-pressed="false">Payments</button>
+              <button type="button" class="chip" data-filter="certificates" aria-pressed="false">Certificates</button>
+              <button type="button" class="chip" data-filter="alerts" aria-pressed="false">Alerts</button>
+              <button type="button" class="chip" data-filter="adherence" aria-pressed="false">Adherence</button>
+              <button type="button" class="chip" data-filter="wellness" aria-pressed="false">Wellness</button>
+              <button type="button" class="chip" data-filter="followups" aria-pressed="false">Follow-ups</button>
+            </div>
+            <div id="histList" style="margin-top:.9rem"><p class="empty">Loading…</p></div>
+          </div>
+        </section>
+
+        <!-- ====================================================== ASSISTANT -->
+        <section class="view" id="view-assistant" aria-labelledby="aiTitle">
+          <div class="card">
+            <div class="card-title">
+              <h1 id="aiTitle" data-i18n="assistant">Offline Assistant</h1>
+              <span class="conn-badge" id="localAIStatus">Local AI: not checked</span>
+            </div>
+            <div class="disclaimer-box">
+              The assistant cannot diagnose or change treatment. It answers from a local knowledge base
+              (and optionally a local Ollama model on your machine). Demo for education only, not medical advice.
+            </div>
+            <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+            <form class="chat-form" id="chatForm">
+              <label class="sr-only" for="chatInput">Ask a question</label>
+              <input type="text" id="chatInput" placeholder="Ask: What is HbA1c? Why is sleep important?" autocomplete="off">
+              <button type="button" class="btn btn-ghost" id="chatMic" aria-label="Speak your question">🎤 Speak</button>
+              <button type="submit" class="btn btn-primary">Ask</button>
+            </form>
+            <div class="chip-row" style="margin-top:.7rem">
+              <button type="button" class="chip" data-q="What is HbA1c?">What is HbA1c?</button>
+              <button type="button" class="chip" data-q="Why is sleep important?">Why is sleep important?</button>
+              <button type="button" class="chip" data-q="What is blood pressure?">What is blood pressure?</button>
+              <button type="button" class="chip" data-q="Why should I take medicines on time?">Medicines on time</button>
+              <button type="button" class="chip" data-q="What does SpO2 mean?">What does SpO2 mean?</button>
+              <button type="button" class="chip" data-q="What should I do if I feel unwell?">Feeling unwell</button>
+              <button type="button" class="chip" data-q="Do I have diabetes?">Do I have diabetes?</button>
+            </div>
+            <div class="btn-row" style="margin-top:.7rem">
+              <button type="button" class="btn btn-ghost btn-sm" id="aiCheck">Check for local AI (Ollama)</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="aiSpeakOn">🔊 Read answers aloud: off</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title"><h2>Browse all questions</h2><span class="tag tag-demo" id="kbCount">LOADING…</span></div>
+            <p class="card-sub">All offline knowledge-base questions, grouped by topic. Tap any question to ask it.</p>
+            <div class="field"><label for="chatSearch">Search questions</label>
+              <input type="search" id="chatSearch" placeholder="e.g. fever, periods, pregnancy, child…" autocomplete="off">
+            </div>
+            <details id="chatBrowse" open>
+              <summary>Topics (tap to expand / collapse)</summary>
+              <div id="chatTopics" style="margin-top:.6rem"><p class="empty">Loading questions…</p></div>
+            </details>
+          </div>
+        </section>
+
+        <!-- ======================================================= SETTINGS -->
+        <section class="view" id="view-settings" aria-labelledby="setTitle">
+          <div class="card">
+            <div class="card-title"><h1 id="setTitle" data-i18n="settings">Settings</h1></div>
+            <div class="grid grid-2">
+              <div>
+                <h2 data-i18n="theme">Theme</h2>
+                <div class="btn-row">
+                  <button type="button" class="chip" data-action="theme" id="setThemeBtn">☀ Light / 🌙 Dark</button>
+                </div>
+                <h2 class="section-gap" data-i18n="language">Language</h2>
+                <div class="btn-row">
+                  <button type="button" class="chip" data-action="lang-en">English</button>
+                  <button type="button" class="chip" data-action="lang-hi">हिन्दी</button>
+                  <button type="button" class="chip" data-action="lang-mr">मराठी</button>
+                </div>
+              </div>
+              <div>
+                <h2>Reminders &amp; voice</h2>
+                <div class="check-row"><input type="checkbox" id="setReminders"><label for="setReminders">Medicine reminders (Notification API if available)</label></div>
+                <div class="check-row"><input type="checkbox" id="setWake"><label for="setWake">Wake phrase listening (only while this page is open)</label></div>
+                <div class="field"><label for="setWakePhrase">Wake phrase</label>
+                  <input type="text" id="setWakePhrase" maxlength="60">
+                  <span class="hint">Example: help me assistant 3056</span>
+                </div>
+                <button type="button" class="btn btn-ghost btn-sm" id="testWake">Test wake phrase now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="contactSettingsCard">
+            <div class="card-title"><h2>📞 My contact — phone &amp; email</h2><span class="tag tag-demo">EDITABLE</span></div>
+            <p class="card-sub">Patient number <span class="mono" id="setPatientId">—</span> · saved locally only. Call links use <span class="mono">tel:</span>, email uses <span class="mono">mailto:</span>.</p>
+            <div class="grid grid-2">
+              <div class="field"><label for="setPhone">Phone number</label><input type="tel" id="setPhone" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="+91-9000000001"><span class="hint">Required · 7–15 digits.</span>
+                <div class="btn-row" style="margin-top:.4rem"><a class="btn btn-ghost btn-sm" id="setPhoneCall" href="#">📞 Call</a><button type="button" class="btn btn-ghost btn-sm" id="setPhoneCopy">Copy</button><button type="button" class="btn btn-ghost btn-sm" id="setPhoneSms">✉️ SMS (demo)</button></div></div>
+              <div class="field"><label for="setEmail">Email address</label><input type="email" id="setEmail" maxlength="80" autocomplete="email" inputmode="email" placeholder="you@example.com"><span class="hint">Required · name@example.com.</span>
+                <div class="btn-row" style="margin-top:.4rem"><a class="btn btn-ghost btn-sm" id="setEmailBtn" href="#">✉️ Email</a><button type="button" class="btn btn-ghost btn-sm" id="setEmailCopy">Copy</button></div></div>
+            </div>
+            <div class="field" style="margin-top:.6rem"><label for="setEmergency">Emergency contact</label><input type="tel" id="setEmergency" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="+91-9000000101"><span class="hint">Optional, must differ from phone.</span>
+              <div class="btn-row" style="margin-top:.4rem"><a class="btn btn-ghost btn-sm" id="setEmgCall" href="#">📞 Call</a><button type="button" class="btn btn-ghost btn-sm" id="setEmgCopy">Copy</button><button type="button" class="btn btn-ghost btn-sm" id="setEmgSms">✉️ SMS (demo)</button></div></div>
+            <p class="fineprint" id="contactSaveMsg" role="alert"></p>
+            <div class="btn-row"><button type="button" class="btn btn-primary btn-sm" id="contactSaveBtn">💾 Save phone &amp; email</button><button type="button" class="btn btn-ghost btn-sm" id="contactResetBtn">Reset</button></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>Consent &amp; privacy</h2></div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-ghost btn-sm" id="viewConsent">View consent</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="changeConsent">Change consent</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="revokeCaregiver">Revoke caregiver access</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="toggleCamera">Disable camera</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="toggleMic">Disable microphone</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="toggleNotif">Disable notifications</button>
+            </div>
+            <p class="fineprint">Camera and microphone can only start when you activate their features; these switches record your preference and block them.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>Your local data</h2></div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-ghost btn-sm" data-action="export">Export Demo Data</button>
+              <button type="button" class="btn btn-ghost btn-sm" id="importBtn">Import Demo Data</button>
+              <button type="button" class="btn btn-danger btn-sm" id="deleteDataBtn">Delete My Data</button>
+              <button type="button" class="btn btn-danger btn-sm" data-action="reset-demo">Reset Demo</button>
+              <input type="file" id="importFile" accept="application/json" hidden>
+            </div>
+            <p class="fineprint" id="storeModeLine">Storage: –</p>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>Connection &amp; sync (simulated)</h2></div>
+            <div class="btn-row">
+              <button type="button" class="btn btn-ghost btn-sm" data-toggle-offline="1">Go offline / Return online</button>
+              <button type="button" class="btn btn-ghost btn-sm" data-sync-now="1">Sync now</button>
+              <span class="conn-badge" data-connection>🟢 Connected</span>
+              <span class="pending-sync" data-pending-sync hidden></span>
+            </div>
+            <p class="fineprint">Offline changes are queued locally. “Sync” marks the local queue as flushed — nothing is uploaded to any server in this demo.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><h2>About &amp; limits</h2></div>
+            <p class="small"><strong>Demo for education only, not medical advice.</strong> AI suggestions are not medical diagnoses. A qualified healthcare professional must make clinical decisions.</p>
+            <div class="btn-row">
+              <a class="btn btn-ghost btn-sm" href="index.html#limitations">Limitations</a>
+              <a class="btn btn-ghost btn-sm" href="index.html#privacy">Privacy</a>
+              <a class="btn btn-ghost btn-sm" href="index.html#about">About</a>
+              <a class="btn btn-ghost btn-sm" href="verification.html?id=CERT-1001">Verify demo certificate</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </main>
+
+  <!-- mobile bottom navigation -->
+  <nav class="bottomnav" aria-label="Primary">
+    <button type="button" data-view="dashboard" aria-current="page"><span class="b-ico" aria-hidden="true">🏠</span>Home</button>
+    <button type="button" data-view="medicines"><span class="b-ico" aria-hidden="true">💊</span>Meds</button>
+    <button type="button" data-view="timeline"><span class="b-ico" aria-hidden="true">📜</span>Timeline</button>
+    <button type="button" data-view="assistant"><span class="b-ico" aria-hidden="true">🤖</span>Ask</button>
+    <button type="button" class="sos-btn" data-sos><span class="b-ico" aria-hidden="true">🚨</span>SOS</button>
+    <button type="button" data-view="settings"><span class="b-ico" aria-hidden="true">⚙️</span>Settings</button>
+  </nav>
+
+  <footer class="footer no-print">
+    <div class="footer-grid">
+      <div><strong>Virtual Patient Digital Twin</strong><p>Demo for education only, not medical advice. SYNTHETIC DEMO DATA.</p></div>
+      <div><strong>Safety</strong><p>AI suggestions are not medical diagnoses. A qualified healthcare professional must make clinical decisions.</p></div>
+      <div><strong>Status</strong><p><span class="conn-badge" data-connection>🟢 Connected</span> <span class="pending-sync" data-pending-sync hidden></span></p></div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/camera.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/clinical.js"></script>
+  <script src="js/patient.js"></script>
+</body>
+</html>

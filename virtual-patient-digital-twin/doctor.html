@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Doctor and nurse triage dashboard - synthetic demo data. Demo for education only, not medical advice.">
+  <meta name="theme-color" content="#111111">
+  <title>Doctor — sushruta labs </title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility-fixes.css">
+  <style>
+    .add-fab {
+      position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 60;
+      width: 3.4rem; height: 3.4rem; border-radius: 50%;
+      font-size: 1.9rem; line-height: 1; font-weight: 800;
+      background: var(--brand, #111); color: #fff; border: none;
+      box-shadow: 0 6px 20px rgba(0,0,0,.28); cursor: pointer;
+    }
+    .add-fab:hover { transform: translateY(-2px); }
+    .add-fab:focus-visible { outline: 3px solid var(--focus, #4d90fe); outline-offset: 2px; }
+    .section-head-row { display: flex; align-items: center; justify-content: space-between; gap: .8rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body data-page="doctor">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <div class="notice-bar" id="globalNotice" role="note">
+   
+    <button type="button" class="btn btn-ghost btn-sm" data-action="dismiss-notice">Understood</button>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="Sushruta Labs logo" height="34">
+      <span>Doctor Dashboard<span class="brand-sub" id="brandStaff">Care team access </span></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="conn-badge" data-connection aria-live="polite">Connected</span>
+      <span class="sync-status" data-sync-status aria-live="polite"></span>
+      <span class="pending-sync" data-pending-sync hidden></span>
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme" aria-label="Toggle colour theme">🌙 Dark</button>
+      <button type="button" class="btn btn-ghost btn-sm" id="lockBtn" hidden data-i18n="lockNow">Lock now</button>
+      <button type="button" class="btn btn-danger btn-sm" id="logoutBtn" hidden data-action="logout">Log out</button>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <div class="disclaimer-box" data-disclaimer></div>
+
+    <!-- ======================================================= LOGIN GATE -->
+    <section id="login" class="card" aria-labelledby="loginTitle" hidden>
+      <div class="card-title">
+        <h1 id="loginTitle">Doctor / Nurse sign in</h1>
+        <span class="tag tag-syn">SYNTHETIC  DATA</span>
+      </div>
+      <p class="card-sub">Demo staff accounts use a PIN. A real WebAuthn passkey can be added from the home page; success is only reported after an actual WebAuthn assertion — we never claim "biometric verified" otherwise.</p>
+
+      <div class="info-box" id="webauthnLine">Checking WebAuthn support…</div>
+
+      <form id="loginForm" novalidate>
+        <div class="grid grid-3">
+          <div class="field">
+            <label for="roleSel">Role</label>
+            <select id="roleSel">
+              <option value="doctor">Doctor</option>
+              <option value="nurse">Nurse / health worker</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="loginId">Staff ID</label>
+            <input type="text" id="loginId" value="DOC-1001" autocomplete="username" spellcheck="false">
+          </div>
+          <div class="field">
+            <label for="loginPin" data-i18n="pin">PIN</label>
+            <input type="password" id="loginPin" value="1234" autocomplete="current-password" inputmode="numeric">
+          </div>
+        </div>
+        <div class="btn-row">
+          <button type="submit" class="btn btn-primary btn-lg">Sign in </button>
+          <button type="button" class="btn btn-ghost" id="passkeyBtn">🔐 Try passkey (WebAuthn)</button>
+          <a class="btn btn-ghost" href="index.html">Back home</a>
+        </div>
+        <p class="fineprint" id="loginMsg" role="alert"> accounts: DOC-1001 / 1234 (doctor) · NUR-1001 / 5678 (nurse).</p>
+        <p class="fineprint">Demo staff ID only, stays in this browser. See <a href="privacy.html">Privacy Policy</a>.</p>
+      </form>
+    </section>
+
+    <!-- ============================================================ BOARD -->
+    <section id="board" hidden aria-label="Triage board">
+      <div class="section-head" style="text-align:left">
+        <div class="section-head-row">
+          <div>
+            <h2 id="boardTitle" style="margin:0">Triage board</h2>
+            <p id="boardSub" style="margin:.2rem 0 0">Rule-based demo triage — RED → YELLOW → GREEN. Not medically validated.</p>
+          </div>
+          <div class="btn-row" style="margin:0">
+            <button type="button" class="btn btn-primary" id="addPatientBtn2" title="Add patient (sequential ID)">＋ Add patient</button>
+            <button type="button" class="btn btn-ghost" id="addStaffBtn" title="Add doctor / staff (sequential ID)">＋ Add doctor</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-4" id="triageStats">
+        <div class="stat-card"><div class="stat-head">Patients</div><div class="stat-value" id="stTotal">0</div><div class="small muted">active in demo store</div></div>
+        <div class="stat-card"><div class="stat-head">🔴 Red</div><div class="stat-value" id="stRed">0</div><div class="small muted">score ≥ 70 (demo)</div></div>
+        <div class="stat-card"><div class="stat-head">🟡 Yellow</div><div class="stat-value" id="stYellow">0</div><div class="small muted">score 40–69 (demo)</div></div>
+        <div class="stat-card"><div class="stat-head">🟢 Green</div><div class="stat-value" id="stGreen">0</div><div class="small muted">score &lt; 40 (demo)</div></div>
+      </div>
+
+      <!-- ==================================================== DEMO PATIENT NUMBERS -->
+      <div class="card" id="demoPatientsCard" style="margin-top:1rem">
+        <div class="card-title">
+          <h2>👥  Patient Numbers (PT-1001 … PT-1010)</h2>
+          <span class="tag tag-demo">QUICK ACCESS</span>
+        </div>
+        <p class="card-sub">Select any  patient number below to open their digital twin profile, risk score, wearable trends, and advice approval workflow:</p>
+        <div id="demoPatientList" style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.8rem"></div>
+      </div>
+
+      <!-- ============================================================ CARE TEAM -->
+      <div class="card" id="careTeamCard" style="margin-top:1rem">
+        <div class="card-title">
+          <h2>🩺 Doctors &amp; care team</h2>
+          <span class="tag tag-demo" id="careTeamCount">0 ACCOUNTS</span>
+        </div>
+        <p class="card-sub">Staff accounts that can sign in to this dashboard — for example <strong>Dr. Asha Sharma</strong>. Accounts you add here are stored in this browser only (synthetic demo data).</p>
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead><tr><th>Staff ID</th><th>Name</th><th>Role</th><th>Speciality</th><th>Manage</th></tr></thead>
+            <tbody id="careTeamRows"><tr><td colspan="5" class="empty">Loading…</td></tr></tbody>
+          </table>
+        </div>
+        <div class="btn-row" style="margin-top:.7rem">
+          <button type="button" class="btn btn-primary btn-sm" id="addStaffBtn3">＋ Add doctor / staff</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1rem">
+        <div class="filter-bar">
+          <div class="field" style="flex:2 1 240px">
+            <label for="fq" data-i18n="searchPatients">Search</label>
+            <input type="search" id="fq" placeholder="Name / ID / condition / risk level" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="fr">Risk</label>
+            <select id="fr">
+              <option value="all">All risks</option>
+              <option value="red">🔴 Red</option>
+              <option value="yellow">🟡 Yellow</option>
+              <option value="green">🟢 Green</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fc">Condition</label>
+            <select id="fc">
+              <option value="">All conditions (39)</option>
+              <option value="healthy">Healthy / stable</option>
+              <optgroup label="Cardiac">
+                <option value="hypertension">Hypertension</option>
+                <option value="heart risk">Heart risk</option>
+              </optgroup>
+              <optgroup label="Metabolic">
+                <option value="diabetes">Diabetes</option>
+                <option value="diabetes + hypertension">Diabetes + Hypertension</option>
+                <option value="obesity">Obesity</option>
+                <option value="high cholesterol">High Cholesterol</option>
+                <option value="hypothyroidism">Hypothyroidism</option>
+                <option value="gout">Gout</option>
+              </optgroup>
+              <optgroup label="Respiratory">
+                <option value="asthma">Asthma</option>
+                <option value="copd">COPD</option>
+                <option value="allergic rhinitis">Allergic Rhinitis</option>
+                <option value="chronic sinusitis">Chronic Sinusitis</option>
+              </optgroup>
+              <optgroup label="Bone &amp; Joint">
+                <option value="osteoarthritis">Osteoarthritis</option>
+                <option value="rheumatoid arthritis">Rheumatoid Arthritis</option>
+                <option value="osteoporosis">Osteoporosis</option>
+                <option value="chronic back pain">Chronic Back Pain</option>
+                <option value="cervical spondylosis">Cervical Spondylosis</option>
+              </optgroup>
+              <optgroup label="Digestive">
+                <option value="fatty liver">Fatty Liver</option>
+                <option value="acid reflux (gerd)">Acid Reflux (GERD)</option>
+                <option value="irritable bowel syndrome">Irritable Bowel Syndrome</option>
+              </optgroup>
+              <optgroup label="Neuro &amp; Sleep">
+                <option value="migraine">Migraine</option>
+                <option value="insomnia">Insomnia</option>
+              </optgroup>
+              <optgroup label="Wellness">
+                <option value="mild depression (support)">Mild Depression (support)</option>
+                <option value="mild anxiety (support)">Mild Anxiety (support)</option>
+              </optgroup>
+              <optgroup label="Skin &amp; Allergy">
+                <option value="eczema">Eczema</option>
+                <option value="psoriasis">Psoriasis</option>
+              </optgroup>
+              <optgroup label="Kidney &amp; Urinary">
+                <option value="chronic kidney disease">Chronic Kidney Disease</option>
+                <option value="recurrent uti">Recurrent UTI</option>
+                <option value="enlarged prostate (bph)">Enlarged Prostate (BPH)</option>
+              </optgroup>
+              <optgroup label="Blood &amp; Deficiency">
+                <option value="anemia">Anemia</option>
+                <option value="iron deficiency">Iron Deficiency</option>
+                <option value="vitamin d deficiency">Vitamin D Deficiency</option>
+              </optgroup>
+              <optgroup label="Women's Health">
+                <option value="pcos">PCOS</option>
+                <option value="menopause care">Menopause Care</option>
+              </optgroup>
+              <optgroup label="Recovery">
+                <option value="post-tb follow-up">Post-TB Follow-up</option>
+                <option value="post-dengue recovery">Post-Dengue Recovery</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fs">Sort</label>
+            <select id="fs">
+              <option value="risk">Risk (worst first)</option>
+              <option value="name">Name A–Z</option>
+              <option value="id">Patient ID</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-row" style="margin-top:.7rem">
+          <button type="button" class="btn btn-primary btn-sm" id="addPatientBtn">➕ Register patient (sequential ID + phone &amp; email)</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="teamBtn">👥 Care team (add doctor / staff)</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="bcBtn">📣 Broadcast advice to a group</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="auditBtn">🧾 Audit log</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="archToggle" aria-pressed="false">🗄 Show archived</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="syncBtn">🔁 Sync now (simulated)</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="offlineBtn">🔌 Simulate offline</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-action="export">Export demo data</button>
+          <button type="button" class="btn btn-ghost btn-sm" data-action="reset-demo">Reset demo</button>
+        </div>
+      </div>
+
+      <div class="grid grid-2" id="patientGrid" style="margin-top:1rem"></div>
+      <p class="empty" id="gridEmpty" hidden>No patients match the current filters.</p>
+
+      <section class="card" id="detail" style="margin-top:1rem" aria-live="polite">
+        <p class="muted">Select a patient to open the one-page summary: demographics, labs, wearables, explainable risk, medicines, adherence, alerts, visits, payments, notes, advice approval and certificate.</p>
+      </section>
+    </section>
+  </main>
+
+  <button type="button" class="add-fab" id="addPatientFab" title="Add patient (sequential ID)" aria-label="Add patient">+</button>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><strong>sushruta labs </strong><p> Sushruta Labs is a digital health platform that uses digital twin technology to connect patients and doctors. Each patient gets a virtual replica built from their health data, including history, vitals, reports and symptoms. Doctors can use it to understand the patient's condition, track changes over time, and plan care without relying on scattered records or repeated in-person visits.</p></div>
+      <div><strong>Safety</strong><p>AI suggestions are not medical diagnoses. A qualified healthcare professional must make clinical decisions.</p></div>
+      <div><strong>Status</strong><p><span class="conn-badge" data-connection>Connected</span> <span class="pending-sync" data-pending-sync hidden></span></p></div>
+      <div><strong>Accounts</strong><p class="mono">DOC-1001 / 1234 · NUR-1001 / 5678</p></div>
+      <div><strong>Legal (drafts)</strong><p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></p></div>
+      <div><strong>Business details</strong><p>[PLACEHOLDER: legal name]<br>[PLACEHOLDER: address]<br>[PLACEHOLDER: email] · [PLACEHOLDER: phone]</p></div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/certificate.js"></script>
+  <script src="js/clinical.js"></script>
+  <script src="js/doctor.js"></script>
+</body>
+</html>

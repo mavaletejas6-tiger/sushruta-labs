@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Demonstration treatment certificate - synthetic demo data. Not a medical or legal document.">
+  <meta name="theme-color" content="#111111">
+  <title>Certificate — Virtual Patient Digital Twin</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/print.css">
+</head>
+
+<body data-page="certificate">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <div class="notice-bar no-print" id="globalNotice" role="note">
+    <div class="notice-body">
+
+    </div>
+    <button type="button" class="btn btn-ghost btn-sm" data-action="dismiss-notice">Understood</button>
+  </div>
+
+  <header class="topbar no-print">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="" height="34">
+      <span>Completion Certificate<span class="brand-sub">Demonstration document</span></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="conn-badge" data-connection aria-live="polite">Connected</span>
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme"
+        aria-label="Toggle colour theme">🌙 Dark</button>
+      <a class="btn btn-ghost btn-sm" href="doctor.html">Doctor</a>
+      <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">🖨 Print / Save PDF</button>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <div class="disclaimer-box no-print" data-disclaimer></div>
+    <div id="cert"></div>
+    <p class="fineprint no-print" id="certAlt"></p>
+  </main>
+
+  <footer class="footer no-print">
+    <div class="footer-grid">
+      <div><strong>Verification</strong>
+        <p>Scan the QR code or open <a href="verification.html">verification.html</a> to check a certificate ID stored
+          in this browser.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/certificate.js"></script>
+  <script>
+    App.boot('certificate').then(async function () {
+      var host = document.getElementById('cert');
+      var id = new URLSearchParams(location.search).get('id');
+      var cert = id ? await Certificate.get(id) : null;
+
+      if (cert) {
+        Certificate.render(cert, host);
+        document.getElementById('certAlt').textContent =
+          'Certificate ' + cert.id + ' for ' + cert.patientName + ' (' + cert.patientId + '), period ' +
+          cert.periodStart + ' to ' + cert.periodEnd + '. DEMONSTRATION CERTIFICATE — not a medical or legal document. ' +
+          'Verify at verification.html?id=' + cert.id;
+        return;
+      }
+
+      var all = await Storage.getCertificates();
+      host.innerHTML = '<section class="card">' +
+        '<div class="card-title"><h1>Certificate not found</h1><span class="tag tag-demo">DEMO</span></div>' +
+        '<p class="card-sub">' + (id
+          ? 'No certificate with ID <span class="mono">' + App.esc(id) + '</span> exists in this browser. Demo certificates live only in the local store of the device that generated them.'
+          : 'Add ?id=CERT-1001 to view a certificate.') + '</p>' +
+        '<p class="fineprint">This certificate is part of a software demonstration and does not verify a real medical treatment. Demo for education only, not medical advice.</p>' +
+        (all.length ? '<h3>Stored in this browser</h3><ul class="list">' + all.map(function (c) {
+          return '<li><div class="li-main"><span class="li-title">' + App.esc(c.id) + ' · ' + App.esc(c.patientName) + '</span>' +
+            '<span class="li-sub">' + App.esc(c.condition || '') + ' · completed ' + App.esc(App.fmtDate(c.completionDate)) + '</span></div>' +
+            '<a class="btn btn-ghost btn-sm" href="' + App.esc(Certificate.urlFor(c.id)) + '">Open</a></li>';
+        }).join('') + '</ul>' : '<p class="empty">No certificates generated yet — create one from the doctor dashboard.</p>') +
+        '<div class="btn-row" style="margin-top:1rem"><a class="btn btn-primary" href="doctor.html">Open doctor dashboard</a>' +
+        '<a class="btn btn-ghost" href="index.html">Home</a></div></section>';
+    }).catch(function (e) {
+      console.error(e);
+      document.getElementById('cert').innerHTML = '<p class="card">Could not load the certificate store: ' + App.esc(e && e.message ? e.message : 'unknown') + '</p>';
+    });
+  </script>
+</body>
+
+</html>

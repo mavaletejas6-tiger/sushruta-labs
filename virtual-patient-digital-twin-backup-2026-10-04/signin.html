@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description"
+    content="Sign in to Virtual Patient Digital Twin - offline-first healthcare demo with synthetic data.">
+  <meta name="theme-color" content="#111111">
+  <title>Sign In · Virtual Patient Digital Twin</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Sign-in page styles */
+    .signin-container {
+      max-width: 680px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .role-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+    .role-card {
+      background: var(--surface);
+      border: 2px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .role-card:hover, .role-card:focus-visible {
+      border-color: var(--brand);
+      box-shadow: var(--shadow);
+      transform: translateY(-2px);
+    }
+    .role-card.selected {
+      border-color: var(--brand);
+      background: var(--surface-2);
+      box-shadow: var(--shadow);
+    }
+    .role-card .role-icon {
+      font-size: 3rem;
+      line-height: 1;
+    }
+    .role-card .role-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .role-card .role-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .signin-form {
+      animation: fadeSlideIn 0.3s ease;
+    }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+    .back-link:hover { color: var(--ink); }
+    .divider {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 1rem 0;
+      position: relative;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: var(--line);
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+    @media (max-width: 500px) {
+      .role-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body data-page="signin">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <!-- Global safety notice -->
+  <div class="notice-bar" id="globalNotice" role="note">
+    <div class="notice-body">
+      <p><strong>Demo for education only, not medical advice.</strong></p>
+      <p><strong>AI suggestions are not medical diagnoses. A qualified healthcare professional must make clinical
+          decisions.</strong></p>
+      <p class="small">This prototype uses synthetic patient data and demonstration-only risk rules. It is not a medical
+        device and must not be used for diagnosis, treatment, emergency decisions, or medication changes.</p>
+    </div>
+    <button type="button" class="btn btn-ghost btn-sm" data-action="dismiss-notice">Understood</button>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="" height="34">
+      <span>Virtual Patient Digital Twin<span class="brand-sub">Connected wellness intelligence for patients and care
+          teams.</span></span>
+    </a>
+    <div class="topbar-actions">
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme"
+        aria-label="Toggle colour theme">🌙 Dark</button>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="signin-container">
+
+      <!-- ===== ROLE SELECTION ===== -->
+      <div id="roleSelection">
+        <div class="section-head" style="text-align:center">
+          <h1 style="font-size:1.6rem;margin-bottom:0.3rem">Sign in</h1>
+          <p style="color:var(--muted);margin:0">Choose how you'd like to continue</p>
+        </div>
+        <div class="role-cards">
+          <div class="role-card" tabindex="0" role="button" aria-label="Sign in as Doctor" data-role="doctor">
+            <span class="role-icon">🩺</span>
+            <span class="role-title">Doctor</span>
+            <p class="role-desc">Triage, risk review, advice approval, certificates &amp; audit log</p>
+          </div>
+          <div class="role-card" tabindex="0" role="button" aria-label="Sign in as Patient" data-role="patient">
+            <span class="role-icon">🧑‍⚕️</span>
+            <span class="role-title">Patient</span>
+            <p class="role-desc">Vitals, medicines, timeline &amp; wellness assistant</p>
+          </div>
+        </div>
+        <p class="fineprint" style="text-align:center">All accounts are synthetic. <a href="index.html#credentials">View demo credentials</a></p>
+      </div>
+
+      <!-- ===== DOCTOR SIGN-IN FORM ===== -->
+      <div id="doctorForm" class="signin-form" hidden>
+        <a class="back-link" id="doctorBack">← Choose a different role</a>
+        <div class="card" style="margin:0">
+          <div class="card-title">
+            <h2 style="font-size:1.3rem;display:flex;align-items:center;gap:0.5rem">🩺 Doctor sign-in</h2>
+            <span class="tag tag-demo">DEMO</span>
+          </div>
+          <p class="card-sub">Enter your staff credentials to access the doctor dashboard.</p>
+          <form id="staffForm" autocomplete="off" style="margin-top:1rem">
+            <div style="margin-bottom:1rem">
+              <label for="staffId" style="display:block;font-weight:600;margin-bottom:0.3rem;font-size:0.92rem">Staff ID</label>
+              <input type="text" id="staffId" class="input" value="DOC-1001" placeholder="e.g. DOC-1001"
+                style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-size:1rem">
+            </div>
+            <div style="margin-bottom:1.2rem">
+              <label for="staffPin" style="display:block;font-weight:600;margin-bottom:0.3rem;font-size:0.92rem">PIN</label>
+              <input type="password" id="staffPin" class="input" value="1234" placeholder="4-digit PIN"
+                style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-size:1rem">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+          </form>
+          <div class="divider">or</div>
+          <button type="button" class="btn btn-ghost btn-block" id="passkeyBtn">🔑 Try passkey</button>
+          <p class="fineprint" style="margin-top:1rem;text-align:center">Demo credentials: <strong>DOC-1001</strong> / PIN <strong>1234</strong></p>
+        </div>
+      </div>
+
+      <!-- ===== PATIENT SIGN-IN FORM ===== -->
+      <div id="patientForm" class="signin-form" hidden>
+        <a class="back-link" id="patientBack">← Choose a different role</a>
+        <div class="card" style="margin:0">
+          <div class="card-title">
+            <h2 style="font-size:1.3rem;display:flex;align-items:center;gap:0.5rem">🧑‍⚕️ Patient dashboard</h2>
+            <span class="tag tag-demo">DEMO</span>
+          </div>
+          <p class="card-sub">Enter your patient ID to view your wellness dashboard.</p>
+          <form id="patientFormEl" autocomplete="off" style="margin-top:1rem">
+            <div style="margin-bottom:1.2rem">
+              <label for="patientId" style="display:block;font-weight:600;margin-bottom:0.3rem;font-size:0.92rem">Patient ID</label>
+              <input type="text" id="patientId" class="input" placeholder="PT-1001"
+                style="width:100%;padding:0.6rem 0.8rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-size:1rem">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Open my dashboard</button>
+          </form>
+          <div class="divider">or</div>
+          <button type="button" class="btn btn-ghost btn-block" id="demoPatientsBtn">👥 Show demo patients</button>
+          <p class="fineprint" style="margin-top:1rem;text-align:center">Demo patients: <strong>PT-1001</strong> through <strong>PT-1010</strong> — no password needed</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- AI Floating Assistant -->
+  <div class="ai-fab" id="aiFab" title="RobotDoctor Assistant">
+    <span class="ai-fab-label">RobotDoctor: Free Offline AI</span>
+    <span class="fab-ico">🤖</span>
+  </div>
+
+  <div class="ai-chat-window" id="aiChatWindow">
+    <div class="ai-chat-head">
+      <h4>🤖 RobotDoctor Assistant</h4>
+      <button type="button" class="btn btn-ghost btn-sm" id="closeAiChat" style="color:white;border-color:white">✕</button>
+    </div>
+    <div class="ai-chat-body" id="aiChatBody">
+      <div class="chat-bubble chat-bot">
+        <div class="chat-who">Assistant</div>
+        <div class="chat-text">Hello! I am RobotDoctor. Ask me any of 180+ health questions — fever, chest pain, BP, cough, stomach, headache, sugar, periods, pregnancy, child health, skin, sleep, emergency (112/108). General guidance only, not a diagnosis.</div>
+      </div>
+    </div>
+    <div class="ai-chat-quick" style="display:flex;gap:.3rem;flex-wrap:wrap;padding:.4rem .6rem">
+      <button type="button" class="btn btn-ghost btn-sm" data-ai-q="I have a fever. When should I worry?">Fever</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-ai-q="I have chest pain. Is it my heart?">Chest pain</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-ai-q="My sugar is above 300. What should I do?">Sugar</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-ai-q="Someone collapsed and is unresponsive. What do I do?">Emergency</button>
+    </div>
+    <div class="ai-chat-footer">
+      <form id="aiChatForm">
+        <input type="text" id="aiChatInput" placeholder="Ask RobotDoctor..." autocomplete="off">
+        <button type="submit" class="btn btn-primary btn-sm">Ask</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="reminderHost" aria-live="polite"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/sync.js"></script>
+  <script src="js/assistant.js"></script>
+  <script>
+    (function () {
+      'use strict';
+      var qs = new URLSearchParams(window.location.search);
+
+      /* ---- Boot ---- */
+      App.boot('signin').then(function () {
+        Sync.init();
+        // Auto-select role from URL param
+        var urlRole = qs.get('role');
+        if (urlRole === 'doctor') selectRole('doctor');
+        else if (urlRole === 'patient') selectRole('patient');
+      });
+
+      /* ---- Language ---- */
+      document.getElementById('langPick').value = App.lang() || 'en';
+      document.getElementById('langPick').addEventListener('change', function (e) {
+        App.setLanguage(e.target.value);
+        document.getElementById('langPick').value = e.target.value;
+      });
+      document.addEventListener('vpdt:lang', function () {
+        document.getElementById('langPick').value = App.lang() || 'en';
+      });
+
+      /* ---- Role selection ---- */
+      var roleCards = document.querySelectorAll('.role-card');
+      var roleSelection = document.getElementById('roleSelection');
+      var doctorForm = document.getElementById('doctorForm');
+      var patientForm = document.getElementById('patientForm');
+
+      roleCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          selectRole(card.getAttribute('data-role'));
+        });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectRole(card.getAttribute('data-role'));
+          }
+        });
+      });
+
+      function selectRole(role) {
+        roleSelection.hidden = true;
+        if (role === 'doctor') {
+          doctorForm.hidden = false;
+          patientForm.hidden = true;
+          document.getElementById('staffId').focus();
+        } else if (role === 'patient') {
+          patientForm.hidden = false;
+          doctorForm.hidden = true;
+          document.getElementById('patientId').focus();
+        }
+      }
+
+      function showRoles() {
+        roleSelection.hidden = false;
+        doctorForm.hidden = true;
+        patientForm.hidden = true;
+      }
+
+      /* ---- Back links ---- */
+      document.getElementById('doctorBack').addEventListener('click', showRoles);
+      document.getElementById('patientBack').addEventListener('click', showRoles);
+
+      /* ---- Doctor sign-in ---- */
+      document.getElementById('staffForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var id = document.getElementById('staffId').value.trim();
+        var pin = document.getElementById('staffPin').value.trim();
+        if (!id) { App.toast('Please enter your Staff ID.', 'error'); return; }
+        if (!pin) { App.toast('Please enter your PIN.', 'error'); return; }
+        var res = await Auth.loginStaff(id, pin);
+        if (res.ok) {
+          App.toast('Welcome, ' + res.staff.name + '!', 'success');
+          window.location.href = 'doctor.html';
+        } else {
+          App.toast(res.message, 'error');
+        }
+      });
+
+      /* ---- Passkey ---- */
+      document.getElementById('passkeyBtn').addEventListener('click', async function () {
+        if (!Auth.supportsWebAuthn()) {
+          App.toast('WebAuthn is not supported in this browser. Use the PIN instead.', 'error');
+          return;
+        }
+        try {
+          var result = await Auth.loginWithPasskey();
+          if (result && result.verified) {
+            // Create session for doctor after passkey
+            Auth.createSession({ role: 'doctor', id: 'DOC-1001', name: 'Dr. Asha Sharma', method: 'passkey' });
+            App.toast('Passkey verified — signing in.', 'success');
+            window.location.href = 'doctor.html';
+          }
+        } catch (err) {
+          App.toast('Passkey sign-in failed: ' + (err && err.message ? err.message : 'unknown error') + '. Use the demo PIN instead.', 'error');
+        }
+      });
+
+      /* ---- Patient sign-in ---- */
+      document.getElementById('patientFormEl').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var pid = document.getElementById('patientId').value.trim();
+        if (!pid) { App.toast('Please enter a Patient ID (e.g. PT-1001).', 'error'); return; }
+        var res = await Auth.loginPatient(pid);
+        if (res.ok) {
+          App.toast('Welcome, ' + res.patient.name + '!', 'success');
+          window.location.href = 'patient.html';
+        } else {
+          App.toast(res.message, 'error');
+        }
+      });
+
+      /* ---- Demo patients modal ---- */
+      document.getElementById('demoPatientsBtn').addEventListener('click', async function () {
+        var patients = await Storage.getAllPatients();
+        var body = document.createElement('div');
+        var rows = patients.filter(function (p) { return (p.status || 'active') !== 'archived'; }).map(function (p) {
+          return '<li style="border-bottom:1px solid var(--line);padding:.5rem 0">' +
+            '<div class="li-main"><span class="li-title">' + App.esc(p.name) + '</span> ' +
+            '<span class="li-sub mono">' + App.esc(p.id) + ' · ' + App.esc(String(p.age)) + ' · ' + App.esc(p.condition || 'Stable') + '</span></div>' +
+            '<button type="button" class="btn btn-primary btn-sm" data-open="' + App.esc(p.id) + '">Open</button></li>';
+        }).join('');
+        body.innerHTML =
+          '<p class="small">SYNTHETIC DEMO DATA — no password needed in demo mode.</p>' +
+          '<ul class="list">' + rows + '</ul>';
+        App.modal({ title: 'Demo patients', bodyNode: body, actions: [{ label: 'Close', value: false }] });
+        body.addEventListener('click', async function (ev) {
+          var b = ev.target.closest('[data-open]');
+          if (!b) return;
+          var res = await Auth.loginPatient(b.getAttribute('data-open'));
+          if (res.ok) window.location.href = 'patient.html';
+          else App.toast(res.message, 'error');
+        });
+      });
+    })();
+
+    /* AI Assistant Integration */
+    (function () {
+      var fab = document.getElementById('aiFab');
+      var win = document.getElementById('aiChatWindow');
+      var close = document.getElementById('closeAiChat');
+      var form = document.getElementById('aiChatForm');
+      var input = document.getElementById('aiChatInput');
+      var body = document.getElementById('aiChatBody');
+
+      fab.addEventListener('click', function () {
+        win.classList.toggle('active');
+        if (win.classList.contains('active')) {
+          Assistant.detectOllama();
+        }
+      });
+      close.addEventListener('click', function () { win.classList.remove('active'); });
+
+      function addBubble(who, text, meta) {
+        var b = document.createElement('div');
+        b.className = 'chat-bubble ' + (who === 'user' ? 'chat-user' : 'chat-bot');
+        var head = document.createElement('div');
+        head.className = 'chat-who';
+        head.textContent = who === 'user' ? 'You' : ('RobotDoctor' + (meta ? ' (' + meta + ')' : ''));
+        var txt = document.createElement('div');
+        txt.className = 'chat-text';
+        txt.textContent = text;
+        b.appendChild(head); b.appendChild(txt);
+        body.appendChild(b);
+        body.scrollTop = body.scrollHeight;
+        return b;
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var q = input.value.trim();
+        if (!q) return;
+        input.value = '';
+        askAI(q);
+      });
+
+      async function askAI(q) {
+        addBubble('user', q);
+
+        var thinking = document.createElement('div');
+        thinking.className = 'chat-bubble chat-bot';
+        thinking.innerHTML = '<div class="chat-who">RobotDoctor</div><div class="chat-text">Thinking…</div>';
+        body.appendChild(thinking);
+        body.scrollTop = body.scrollHeight;
+
+        try {
+          var res = await Assistant.answer(q);
+          thinking.remove();
+          var metaStr = res.source === 'ollama' ? ('Local Model: ' + res.model) : 'Offline KB';
+          addBubble('bot', res.text, metaStr);
+        } catch (err) {
+          thinking.remove();
+          addBubble('bot', 'Sorry, I encountered an error. Please try again.');
+        }
+      }
+
+      document.querySelectorAll('[data-ai-q]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          win.classList.add('active');
+          askAI(btn.getAttribute('data-ai-q'));
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

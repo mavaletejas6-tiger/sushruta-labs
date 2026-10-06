@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Certificate QR verification page - demonstration only, synthetic data.">
+  <meta name="theme-color" content="#111111">
+  <title>Verify Certificate — Virtual Patient Digital Twin</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon-96.png" type="image/png">
+  <link rel="icon" href="assets/images/sushruta-labs-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="verification">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+
+  <div class="notice-bar" id="globalNotice" role="note">
+    <div class="notice-body">
+      <p><strong>Demo for education only, not medical advice.</strong></p>
+      <p class="small">This page verifies a DEMONSTRATION certificate stored in a browser. It does not verify a real medical treatment.</p>
+    </div>
+    <button type="button" class="btn btn-ghost btn-sm" data-action="dismiss-notice">Understood</button>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/sushruta-labs-mark.svg" alt="" height="34">
+      <span>Certificate Verification<span class="brand-sub">QR → verification.html?id=…</span></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="conn-badge" data-connection aria-live="polite">Connected</span>
+      <label class="sr-only" for="langPick">Language</label>
+      <select id="langPick" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="mr">मराठी</option>
+      </select>
+      <button type="button" class="btn btn-ghost btn-sm" id="themeToggle" data-action="theme" aria-label="Toggle colour theme">🌙 Dark</button>
+      <a class="btn btn-ghost btn-sm" href="index.html">Home</a>
+    </div>
+  <div class="corner-logo" aria-hidden="true">
+    <img src="assets/images/sushruta-labs-horizontal.svg" alt="" width="372" height="100">
+  </div>
+  </header>
+
+  <main id="main" class="main" tabindex="-1">
+    <div class="disclaimer-box" data-disclaimer></div>
+    <div id="v"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><strong>What travels in the QR code</strong><p>Only the certificate identifier and this page path — no medical detail is encoded.</p></div>
+      <div><strong>Safety</strong><p>Demo for education only, not medical advice. AI suggestions are not medical diagnoses.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/demo-data.js"></script>
+  <script src="js/risk.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/qr.js"></script>
+  <script src="js/certificate.js"></script>
+  <script>
+    App.boot('verification').then(async function () {
+      var host = document.getElementById('v');
+      var id = new URLSearchParams(location.search).get('id');
+      var cert = id ? await Certificate.get(id) : null;
+
+      if (cert) {
+        host.innerHTML = '<section class="card">' +
+          '<div class="card-title"><h1>✅ Verification status: FOUND</h1><span class="tag tag-demo">LOCAL DEMO STORE</span></div>' +
+          '<p class="card-sub">Certificate <span class="mono">' + App.esc(cert.id) + '</span> was found in this browser\'s local store.</p>' +
+          '<div class="table-wrap"><table class="tbl"><tbody>' +
+          '<tr><th>Certificate ID</th><td class="mono">' + App.esc(cert.id) + '</td></tr>' +
+          '<tr><th>Patient</th><td>' + App.esc(cert.patientName) + ' (' + App.esc(cert.patientId) + '), age ' + App.esc(String(cert.age)) + '</td></tr>' +
+          '<tr><th>Condition (synthetic)</th><td>' + App.esc(cert.condition || '-') + '</td></tr>' +
+          '<tr><th>Treatment period</th><td>' + App.esc(App.fmtDate(cert.periodStart)) + ' → ' + App.esc(App.fmtDate(cert.periodEnd)) + '</td></tr>' +
+          '<tr><th>Completion date</th><td>' + App.esc(App.fmtDate(cert.completionDate)) + '</td></tr>' +
+          '<tr><th>Adherence (demo)</th><td>' + App.esc(String(cert.adherence)) + '%</td></tr>' +
+          '<tr><th>Doctor</th><td>' + App.esc(cert.doctorName) + ' (' + App.esc(cert.doctorId) + ')</td></tr>' +
+          '<tr><th>Generated</th><td>' + App.esc(App.fmtDate(cert.generatedAt)) + '</td></tr>' +
+          '</tbody></table></div>' +
+          '<div class="btn-row" style="margin-top:1rem">' +
+          '<a class="btn btn-primary" href="' + App.esc(Certificate.urlFor(cert.id)) + '">View full certificate</a>' +
+          '<a class="btn btn-ghost" href="doctor.html">Doctor dashboard</a></div>' +
+          '<p class="fineprint">Only the certificate identifier travels in the QR code — no extra medical detail. This certificate is part of a software demonstration and does not verify a real medical treatment. ' +
+          'Demo for education only, not medical advice.</p></section>';
+        return;
+      }
+
+      host.innerHTML = '<section class="card">' +
+        '<div class="card-title"><h1>⚠️ Certificate not found</h1><span class="tag tag-demo">DEMO</span></div>' +
+        '<p class="card-sub">No certificate <span class="mono">' + App.esc(id || '(no id supplied)') + '</span> exists on this device. ' +
+        'Demo certificates live only in the local store of the browser that generated them, so a QR scanned on another device will show this message.</p>' +
+        '<p class="fineprint">This certificate is part of a software demonstration and does not verify a real medical treatment. Demo for education only, not medical advice.</p>' +
+        '<div class="btn-row" style="margin-top:1rem">' +
+        '<a class="btn btn-primary" href="certificate.html?id=CERT-1001">Try the seed certificate</a>' +
+        '<a class="btn btn-ghost" href="index.html">Home</a></div></section>';
+    }).catch(function (e) {
+      console.error(e);
+      document.getElementById('v').innerHTML = '<p class="card">Could not open the local certificate store: ' + App.esc(e && e.message ? e.message : 'unknown') + '</p>';
+    });
+  </script>
+</body>
+</html>

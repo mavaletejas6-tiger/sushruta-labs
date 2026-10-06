@@ -1,0 +1,2752 @@
+{
+  "_notice": "SYNTHETIC DEMO DATA - no real people, no real medical records. Demo for education only, not medical advice.",
+  "version": 1,
+  "patients": [
+    {
+      "id": "PT-1001",
+      "name": "Synthetic Patient 01",
+      "age": 52,
+      "gender": "Female",
+      "bloodGroup": "O+",
+      "phone": "+91-9000000001",
+      "emergencyContact": "+91-9000000101",
+      "language": "en",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [
+        "Penicillin (synthetic)"
+      ],
+      "diagnosis": [
+        "Type 2 Diabetes (synthetic demo)"
+      ],
+      "condition": "Diabetes",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 168,
+          "unit": "mg/dL",
+          "daysAgo": 2,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 138,
+          "unit": "mg/dL",
+          "daysAgo": 2,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 214,
+          "unit": "mg/dL",
+          "daysAgo": 2,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 7.8,
+          "unit": "%",
+          "daysAgo": 12,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 198,
+          "unit": "mg/dL",
+          "daysAgo": 12,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 118,
+          "unit": "mg/dL",
+          "daysAgo": 12,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 44,
+          "unit": "mg/dL",
+          "daysAgo": 12,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 175,
+          "unit": "mg/dL",
+          "daysAgo": 12,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 0.9,
+          "unit": "mg/dL",
+          "daysAgo": 12,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 88,
+          "unit": "mL/min",
+          "daysAgo": 12,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 138,
+          "unit": "mmHg",
+          "daysAgo": 2,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 86,
+          "unit": "mmHg",
+          "daysAgo": 2,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 97,
+          "unit": "%",
+          "daysAgo": 2,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 16,
+          "unit": "/min",
+          "daysAgo": 2,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1001-1",
+          "daysAgo": 46,
+          "department": "General Medicine",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. Advised diet review and regular glucose monitoring.",
+          "outcome": "Follow up in 6 weeks"
+        },
+        {
+          "id": "VIS-1001-2",
+          "daysAgo": 12,
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. HbA1c reviewed, dose continued.",
+          "outcome": "Continue medicines"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1001-1",
+          "daysAhead": 9,
+          "time": "11:30",
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "Teleconsult",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1001-1",
+          "daysAgo": 46,
+          "category": "Consultation",
+          "amount": 600,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1001-2",
+          "daysAgo": 12,
+          "category": "Medicine bill",
+          "amount": 340,
+          "status": "DUE"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1001-1",
+          "daysAgo": 12,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: patient reports good adherence this month. Continue current plan."
+        }
+      ],
+      "advice": [
+        {
+          "id": "ADV-1001-1",
+          "daysAgo": 12,
+          "doctorId": "DOC-1001",
+          "doctorName": "Dr. Asha Sharma",
+          "template": "High glucose after meals",
+          "text": "Synthetic demo advice: please walk for 20 minutes after dinner and review your meal plan at the next visit.",
+          "status": "understood"
+        }
+      ],
+      "alerts": [
+        {
+          "id": "ALR-1001-1",
+          "daysAgo": 3,
+          "level": "yellow",
+          "title": "Elevated post-meal glucose detected",
+          "reason": "Synthetic demo reading of 214 mg/dL crossed the demo threshold of 180 mg/dL.",
+          "action": "Doctor review recommended.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 5,
+          "title": "Medicine started",
+          "detail": "Metformin 500 mg started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 12,
+          "title": "Wearable trend changed",
+          "detail": "Average steps declined below demo threshold.",
+          "type": "wearable"
+        },
+        {
+          "day": 14,
+          "title": "Risk increased",
+          "detail": "Demo risk level moved to YELLOW.",
+          "type": "risk"
+        },
+        {
+          "day": 15,
+          "title": "Doctor alerted",
+          "detail": "Synthetic alert created in doctor dashboard.",
+          "type": "alert"
+        },
+        {
+          "day": 15,
+          "title": "Doctor approved advice",
+          "detail": "Dr. Asha Sharma approved routine advice.",
+          "type": "advice"
+        },
+        {
+          "day": 16,
+          "title": "Patient received advice",
+          "detail": "Advice visible on patient dashboard.",
+          "type": "advice"
+        },
+        {
+          "day": 24,
+          "title": "Risk trend improved",
+          "detail": "Demo risk score decreased after activity increased.",
+          "type": "risk"
+        }
+      ],
+      "treatment": {
+        "condition": "Type 2 Diabetes",
+        "startDaysAgo": 60,
+        "endDaysAgo": 5,
+        "status": "in-progress",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "diabetes",
+        "restingHR": 74,
+        "hrv": 34,
+        "steps": 5400,
+        "sleep": 6.4,
+        "sleepQuality": 62,
+        "spo2": 97,
+        "systolic": 138,
+        "diastolic": 86,
+        "sugar": 165,
+        "rr": 16,
+        "stress": 55,
+        "trend": "mild-up"
+      },
+      "adherence": {
+        "percent": 81,
+        "last7": [
+          "taken",
+          "taken",
+          "missed",
+          "taken",
+          "taken",
+          "uncertain",
+          "taken"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 60,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": false,
+          "microphone": true,
+          "notifications": false,
+          "aiFeatures": true,
+          "caregiverAccess": false
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver A",
+          "phone": "+91-9000000101",
+          "relation": "Daughter (synthetic)",
+          "granted": true,
+          "scope": [
+            "medicines",
+            "appointments",
+            "alerts",
+            "wellness"
+          ]
+        }
+      },
+      "email": "pt-1001@demo.local"
+    },
+    {
+      "id": "PT-1002",
+      "name": "Synthetic Patient 02",
+      "age": 48,
+      "gender": "Male",
+      "bloodGroup": "B+",
+      "phone": "+91-9000000002",
+      "emergencyContact": "+91-9000000102",
+      "language": "hi",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [],
+      "diagnosis": [
+        "Hypertension (synthetic demo)"
+      ],
+      "condition": "Hypertension",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 104,
+          "unit": "mg/dL",
+          "daysAgo": 4,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 96,
+          "unit": "mg/dL",
+          "daysAgo": 4,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 132,
+          "unit": "mg/dL",
+          "daysAgo": 4,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 5.6,
+          "unit": "%",
+          "daysAgo": 20,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 186,
+          "unit": "mg/dL",
+          "daysAgo": 20,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 104,
+          "unit": "mg/dL",
+          "daysAgo": 20,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 46,
+          "unit": "mg/dL",
+          "daysAgo": 20,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 150,
+          "unit": "mg/dL",
+          "daysAgo": 20,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 1,
+          "unit": "mg/dL",
+          "daysAgo": 20,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 92,
+          "unit": "mL/min",
+          "daysAgo": 20,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 152,
+          "unit": "mmHg",
+          "daysAgo": 4,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 94,
+          "unit": "mmHg",
+          "daysAgo": 4,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 98,
+          "unit": "%",
+          "daysAgo": 4,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 15,
+          "unit": "/min",
+          "daysAgo": 4,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1002-1",
+          "daysAgo": 34,
+          "department": "Cardiology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. BP reviewed, salt reduction advised.",
+          "outcome": "Repeat BP in 4 weeks"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1002-1",
+          "daysAhead": 5,
+          "time": "10:00",
+          "department": "Cardiology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "In-person",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1002-1",
+          "daysAgo": 34,
+          "category": "Consultation",
+          "amount": 800,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1002-2",
+          "daysAgo": 20,
+          "category": "Medicine bill",
+          "amount": 260,
+          "status": "OVERDUE"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1002-1",
+          "daysAgo": 34,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: home BP readings trending high in the evening."
+        }
+      ],
+      "advice": [],
+      "alerts": [
+        {
+          "id": "ALR-1002-1",
+          "daysAgo": 2,
+          "level": "yellow",
+          "title": "Blood pressure trend increased",
+          "reason": "Synthetic demo BP trend crossed the configured demo rule threshold.",
+          "action": "Doctor review recommended.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 4,
+          "title": "Medicine started",
+          "detail": "Telmisartan + Amlodipine started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 18,
+          "title": "Wearable trend changed",
+          "detail": "Resting heart rate trend moved up in demo data.",
+          "type": "wearable"
+        },
+        {
+          "day": 26,
+          "title": "Risk increased",
+          "detail": "Demo risk level moved to YELLOW.",
+          "type": "risk"
+        },
+        {
+          "day": 27,
+          "title": "Doctor alerted",
+          "detail": "Synthetic BP alert created.",
+          "type": "alert"
+        },
+        {
+          "day": 29,
+          "title": "Risk trend improved",
+          "detail": "Demo score improved slightly after salt reduction.",
+          "type": "risk"
+        }
+      ],
+      "treatment": {
+        "condition": "Hypertension",
+        "startDaysAgo": 40,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "hypertension",
+        "restingHR": 78,
+        "hrv": 28,
+        "steps": 6200,
+        "sleep": 6.9,
+        "sleepQuality": 66,
+        "spo2": 98,
+        "systolic": 150,
+        "diastolic": 94,
+        "sugar": 104,
+        "rr": 15,
+        "stress": 60,
+        "trend": "bp-up"
+      },
+      "adherence": {
+        "percent": 76,
+        "last7": [
+          "taken",
+          "missed",
+          "taken",
+          "taken",
+          "missed",
+          "taken",
+          "uncertain"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 40,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": false,
+          "camera": false,
+          "microphone": false,
+          "notifications": true,
+          "aiFeatures": true,
+          "caregiverAccess": false
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver B",
+          "phone": "+91-9000000102",
+          "relation": "Spouse (synthetic)",
+          "granted": false,
+          "scope": [
+            "medicines",
+            "appointments"
+          ]
+        }
+      },
+      "email": "pt-1002@demo.local"
+    },
+    {
+      "id": "PT-1003",
+      "name": "Synthetic Patient 03",
+      "age": 61,
+      "gender": "Male",
+      "bloodGroup": "A+",
+      "phone": "+91-9000000003",
+      "emergencyContact": "+91-9000000103",
+      "language": "en",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [
+        "Sulfa drugs (synthetic)"
+      ],
+      "diagnosis": [
+        "Known coronary artery disease - synthetic demo",
+        "Dyslipidemia (synthetic demo)"
+      ],
+      "condition": "Heart risk",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 118,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 106,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 156,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 6.1,
+          "unit": "%",
+          "daysAgo": 15,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 224,
+          "unit": "mg/dL",
+          "daysAgo": 15,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 146,
+          "unit": "mg/dL",
+          "daysAgo": 15,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 38,
+          "unit": "mg/dL",
+          "daysAgo": 15,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 210,
+          "unit": "mg/dL",
+          "daysAgo": 15,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 1.1,
+          "unit": "mg/dL",
+          "daysAgo": 15,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 76,
+          "unit": "mL/min",
+          "daysAgo": 15,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 146,
+          "unit": "mmHg",
+          "daysAgo": 5,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 88,
+          "unit": "mmHg",
+          "daysAgo": 5,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 96,
+          "unit": "%",
+          "daysAgo": 5,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 17,
+          "unit": "/min",
+          "daysAgo": 5,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1003-1",
+          "daysAgo": 21,
+          "department": "Cardiology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. Lipids reviewed, walking plan discussed.",
+          "outcome": "Continue medicines, review in 6 weeks"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1003-1",
+          "daysAhead": 14,
+          "time": "15:00",
+          "department": "Cardiology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "In-person",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1003-1",
+          "daysAgo": 21,
+          "category": "Consultation",
+          "amount": 1200,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1003-2",
+          "daysAgo": 15,
+          "category": "Hospital visit",
+          "amount": 4500,
+          "status": "DUE"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1003-1",
+          "daysAgo": 21,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: LDL above demo target, statin continued."
+        }
+      ],
+      "advice": [],
+      "alerts": [
+        {
+          "id": "ALR-1003-1",
+          "daysAgo": 6,
+          "level": "yellow",
+          "title": "Reduced HRV with elevated resting heart rate",
+          "reason": "Synthetic wearable trend crossed the demo rule threshold.",
+          "action": "Doctor review recommended.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 6,
+          "title": "Medicine started",
+          "detail": "Statin + antiplatelet started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 20,
+          "title": "Wearable trend changed",
+          "detail": "HRV declined in synthetic wearable series.",
+          "type": "wearable"
+        },
+        {
+          "day": 22,
+          "title": "Risk increased",
+          "detail": "Demo heart-risk level moved to YELLOW.",
+          "type": "risk"
+        },
+        {
+          "day": 23,
+          "title": "Doctor alerted",
+          "detail": "Synthetic alert created.",
+          "type": "alert"
+        }
+      ],
+      "treatment": {
+        "condition": "Coronary artery disease (synthetic)",
+        "startDaysAgo": 60,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "heart",
+        "restingHR": 82,
+        "hrv": 22,
+        "steps": 4300,
+        "sleep": 6.1,
+        "sleepQuality": 58,
+        "spo2": 96,
+        "systolic": 146,
+        "diastolic": 88,
+        "sugar": 118,
+        "rr": 17,
+        "stress": 66,
+        "trend": "hrv-down"
+      },
+      "adherence": {
+        "percent": 88,
+        "last7": [
+          "taken",
+          "taken",
+          "taken",
+          "uncertain",
+          "taken",
+          "taken",
+          "taken"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 60,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": false,
+          "microphone": false,
+          "notifications": false,
+          "aiFeatures": false,
+          "caregiverAccess": true
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver C",
+          "phone": "+91-9000000103",
+          "relation": "Son (synthetic)",
+          "granted": true,
+          "scope": [
+            "medicines",
+            "appointments",
+            "alerts",
+            "wellness"
+          ]
+        }
+      },
+      "email": "pt-1003@demo.local"
+    },
+    {
+      "id": "PT-1004",
+      "name": "Synthetic Patient 04",
+      "age": 57,
+      "gender": "Male",
+      "bloodGroup": "AB+",
+      "phone": "+91-9000000004",
+      "emergencyContact": "+91-9000000104",
+      "language": "en",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [],
+      "diagnosis": [
+        "Type 2 Diabetes - poorly controlled (synthetic demo)"
+      ],
+      "condition": "Diabetes",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 236,
+          "unit": "mg/dL",
+          "daysAgo": 1,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 168,
+          "unit": "mg/dL",
+          "daysAgo": 1,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 268,
+          "unit": "mg/dL",
+          "daysAgo": 1,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 8.9,
+          "unit": "%",
+          "daysAgo": 10,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 212,
+          "unit": "mg/dL",
+          "daysAgo": 10,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 132,
+          "unit": "mg/dL",
+          "daysAgo": 10,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 36,
+          "unit": "mg/dL",
+          "daysAgo": 10,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 245,
+          "unit": "mg/dL",
+          "daysAgo": 10,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 1,
+          "unit": "mg/dL",
+          "daysAgo": 10,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 84,
+          "unit": "mL/min",
+          "daysAgo": 10,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 144,
+          "unit": "mmHg",
+          "daysAgo": 1,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 90,
+          "unit": "mmHg",
+          "daysAgo": 1,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 96,
+          "unit": "%",
+          "daysAgo": 1,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 18,
+          "unit": "/min",
+          "daysAgo": 1,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1004-1",
+          "daysAgo": 30,
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. HbA1c 8.9% discussed, adherence concerns noted.",
+          "outcome": "Review glucose diary in 4 weeks"
+        },
+        {
+          "id": "VIS-1004-2",
+          "daysAgo": 10,
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. Dose unchanged, lifestyle advice given.",
+          "outcome": "Follow up"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1004-1",
+          "daysAhead": 4,
+          "time": "12:00",
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "Teleconsult",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1004-1",
+          "daysAgo": 30,
+          "category": "Consultation",
+          "amount": 700,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1004-2",
+          "daysAgo": 10,
+          "category": "Medicine bill",
+          "amount": 520,
+          "status": "OVERDUE"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1004-1",
+          "daysAgo": 10,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: repeated elevated post-meal readings with missed evening doses."
+        }
+      ],
+      "advice": [],
+      "alerts": [
+        {
+          "id": "ALR-1004-1",
+          "daysAgo": 3,
+          "level": "yellow",
+          "title": "Repeated elevated blood glucose detected",
+          "reason": "3 consecutive synthetic readings above the demo threshold.",
+          "action": "Doctor review recommended.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 5,
+          "title": "Medicine started",
+          "detail": "Metformin + Glimepiride started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 10,
+          "title": "Wearable trend changed",
+          "detail": "Steps declined and sleep worsened in demo data.",
+          "type": "wearable"
+        },
+        {
+          "day": 15,
+          "title": "Risk increased",
+          "detail": "Demo diabetes risk moved to YELLOW.",
+          "type": "risk"
+        },
+        {
+          "day": 16,
+          "title": "Doctor alerted",
+          "detail": "Synthetic glucose alert created in doctor dashboard.",
+          "type": "alert"
+        },
+        {
+          "day": 20,
+          "title": "Risk increased",
+          "detail": "Demo risk moved to RED after high glucose event.",
+          "type": "risk"
+        }
+      ],
+      "treatment": {
+        "condition": "Type 2 Diabetes",
+        "startDaysAgo": 45,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "diabetes-worsening",
+        "restingHR": 84,
+        "hrv": 24,
+        "steps": 3600,
+        "sleep": 5.8,
+        "sleepQuality": 52,
+        "spo2": 96,
+        "systolic": 144,
+        "diastolic": 90,
+        "sugar": 210,
+        "rr": 18,
+        "stress": 70,
+        "trend": "glucose-up"
+      },
+      "adherence": {
+        "percent": 72,
+        "last7": [
+          "taken",
+          "missed",
+          "taken",
+          "missed",
+          "taken",
+          "missed",
+          "uncertain"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 45,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": true,
+          "microphone": true,
+          "notifications": true,
+          "aiFeatures": true,
+          "caregiverAccess": false
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver D",
+          "phone": "+91-9000000104",
+          "relation": "Wife (synthetic)",
+          "granted": false,
+          "scope": [
+            "medicines",
+            "appointments",
+            "alerts",
+            "wellness"
+          ]
+        }
+      },
+      "email": "pt-1004@demo.local"
+    },
+    {
+      "id": "PT-1005",
+      "name": "Synthetic Patient 05",
+      "age": 34,
+      "gender": "Female",
+      "bloodGroup": "O-",
+      "phone": "+91-9000000005",
+      "emergencyContact": "+91-9000000105",
+      "language": "mr",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [
+        "Dust allergy (synthetic)"
+      ],
+      "diagnosis": [
+        "Mild persistent asthma (synthetic demo)"
+      ],
+      "condition": "Asthma",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 98,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 88,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 124,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 5.1,
+          "unit": "%",
+          "daysAgo": 6,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 168,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 92,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 58,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 110,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 0.7,
+          "unit": "mg/dL",
+          "daysAgo": 6,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 102,
+          "unit": "mL/min",
+          "daysAgo": 6,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 116,
+          "unit": "mmHg",
+          "daysAgo": 6,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 74,
+          "unit": "mmHg",
+          "daysAgo": 6,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 97,
+          "unit": "%",
+          "daysAgo": 6,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 19,
+          "unit": "/min",
+          "daysAgo": 6,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1005-1",
+          "daysAgo": 25,
+          "department": "Pulmonology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. Inhaler technique reviewed.",
+          "outcome": "Continue inhaler"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1005-1",
+          "daysAhead": 21,
+          "time": "14:30",
+          "department": "Pulmonology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "Teleconsult",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1005-1",
+          "daysAgo": 25,
+          "category": "Consultation",
+          "amount": 550,
+          "status": "PAID"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1005-1",
+          "daysAgo": 25,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: occasional night symptoms reported."
+        }
+      ],
+      "advice": [],
+      "alerts": [
+        {
+          "id": "ALR-1005-1",
+          "daysAgo": 5,
+          "level": "yellow",
+          "title": "Night-time respiratory symptoms recorded",
+          "reason": "Synthetic symptom log shows 2 nights of wheeze entries.",
+          "action": "Doctor review recommended.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 3,
+          "title": "Medicine started",
+          "detail": "Inhaler therapy started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 17,
+          "title": "Wearable trend changed",
+          "detail": "Sleep quality dip recorded in demo data.",
+          "type": "wearable"
+        },
+        {
+          "day": 25,
+          "title": "Risk increased",
+          "detail": "Demo respiratory risk moved to YELLOW.",
+          "type": "risk"
+        }
+      ],
+      "treatment": {
+        "condition": "Asthma (synthetic)",
+        "startDaysAgo": 30,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "asthma",
+        "restingHR": 72,
+        "hrv": 40,
+        "steps": 8200,
+        "sleep": 7.1,
+        "sleepQuality": 70,
+        "spo2": 97,
+        "systolic": 116,
+        "diastolic": 74,
+        "sugar": 98,
+        "rr": 19,
+        "stress": 42,
+        "trend": "stable"
+      },
+      "adherence": {
+        "percent": 84,
+        "last7": [
+          "taken",
+          "taken",
+          "taken",
+          "missed",
+          "taken",
+          "taken",
+          "uncertain"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 30,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": false,
+          "camera": false,
+          "microphone": false,
+          "notifications": false,
+          "aiFeatures": true,
+          "caregiverAccess": false
+        },
+        "caregiver": {
+          "name": "",
+          "phone": "",
+          "relation": "",
+          "granted": false,
+          "scope": []
+        }
+      },
+      "email": "pt-1005@demo.local"
+    },
+    {
+      "id": "PT-1006",
+      "name": "Synthetic Patient 06",
+      "age": 68,
+      "gender": "Male",
+      "bloodGroup": "B-",
+      "phone": "+91-9000000006",
+      "emergencyContact": "+91-9000000106",
+      "language": "en",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [],
+      "diagnosis": [
+        "COPD - moderate (synthetic demo)",
+        "Ex-smoker (synthetic)"
+      ],
+      "condition": "COPD",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 112,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 102,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 148,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 5.9,
+          "unit": "%",
+          "daysAgo": 7,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 190,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 110,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 42,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 160,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 1,
+          "unit": "mg/dL",
+          "daysAgo": 7,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 70,
+          "unit": "mL/min",
+          "daysAgo": 7,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 134,
+          "unit": "mmHg",
+          "daysAgo": 7,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 82,
+          "unit": "mmHg",
+          "daysAgo": 7,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 91,
+          "unit": "%",
+          "daysAgo": 1,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 24,
+          "unit": "/min",
+          "daysAgo": 1,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1006-1",
+          "daysAgo": 18,
+          "department": "Pulmonology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. Spirometry discussed, smoking cessation reinforced.",
+          "outcome": "Review if symptoms worsen"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1006-1",
+          "daysAhead": 3,
+          "time": "09:45",
+          "department": "Pulmonology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "In-person",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1006-1",
+          "daysAgo": 18,
+          "category": "Consultation",
+          "amount": 900,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1006-2",
+          "daysAgo": 7,
+          "category": "Medicine bill",
+          "amount": 780,
+          "status": "DUE"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1006-1",
+          "daysAgo": 1,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: SpO2 dipped in demo wearable data, advised clinic review."
+        }
+      ],
+      "advice": [],
+      "alerts": [
+        {
+          "id": "ALR-1006-1",
+          "daysAgo": 1,
+          "level": "red",
+          "title": "Low SpO2 with raised respiratory rate",
+          "reason": "Synthetic demo readings: SpO2 91% and respiratory rate 24/min crossed demo thresholds.",
+          "action": "Doctor review required.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 4,
+          "title": "Medicine started",
+          "detail": "Inhaler + steroid short course (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 16,
+          "title": "Wearable trend changed",
+          "detail": "SpO2 declined and respiratory rate rose.",
+          "type": "wearable"
+        },
+        {
+          "day": 17,
+          "title": "Risk increased",
+          "detail": "Demo respiratory risk moved to RED.",
+          "type": "risk"
+        },
+        {
+          "day": 17,
+          "title": "Doctor alerted",
+          "detail": "Synthetic red alert created in doctor dashboard.",
+          "type": "alert"
+        }
+      ],
+      "treatment": {
+        "condition": "COPD (synthetic)",
+        "startDaysAgo": 50,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "copd",
+        "restingHR": 88,
+        "hrv": 18,
+        "steps": 2600,
+        "sleep": 5.9,
+        "sleepQuality": 50,
+        "spo2": 92,
+        "systolic": 134,
+        "diastolic": 82,
+        "sugar": 112,
+        "rr": 23,
+        "stress": 68,
+        "trend": "spo2-down"
+      },
+      "adherence": {
+        "percent": 79,
+        "last7": [
+          "taken",
+          "taken",
+          "missed",
+          "taken",
+          "uncertain",
+          "taken",
+          "taken"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 50,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": false,
+          "microphone": false,
+          "notifications": true,
+          "aiFeatures": false,
+          "caregiverAccess": true
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver E",
+          "phone": "+91-9000000106",
+          "relation": "Daughter (synthetic)",
+          "granted": true,
+          "scope": [
+            "medicines",
+            "appointments",
+            "alerts",
+            "wellness"
+          ]
+        }
+      },
+      "email": "pt-1006@demo.local"
+    },
+    {
+      "id": "PT-1007",
+      "name": "Synthetic Patient 07",
+      "age": 55,
+      "gender": "Female",
+      "bloodGroup": "A-",
+      "phone": "+91-9000000007",
+      "emergencyContact": "+91-9000000107",
+      "language": "hi",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [
+        "Latex (synthetic)"
+      ],
+      "diagnosis": [
+        "Type 2 Diabetes (synthetic demo)",
+        "Hypertension (synthetic demo)"
+      ],
+      "condition": "Diabetes + Hypertension",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 204,
+          "unit": "mg/dL",
+          "daysAgo": 2,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 152,
+          "unit": "mg/dL",
+          "daysAgo": 2,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 246,
+          "unit": "mg/dL",
+          "daysAgo": 2,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 8.4,
+          "unit": "%",
+          "daysAgo": 14,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 220,
+          "unit": "mg/dL",
+          "daysAgo": 14,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 138,
+          "unit": "mg/dL",
+          "daysAgo": 14,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 40,
+          "unit": "mg/dL",
+          "daysAgo": 14,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 230,
+          "unit": "mg/dL",
+          "daysAgo": 14,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 1.1,
+          "unit": "mg/dL",
+          "daysAgo": 14,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 68,
+          "unit": "mL/min",
+          "daysAgo": 14,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 166,
+          "unit": "mmHg",
+          "daysAgo": 2,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 102,
+          "unit": "mmHg",
+          "daysAgo": 2,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 96,
+          "unit": "%",
+          "daysAgo": 2,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 18,
+          "unit": "/min",
+          "daysAgo": 2,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1007-1",
+          "daysAgo": 14,
+          "department": "General Medicine",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. BP 166/102 recorded, medicines reviewed.",
+          "outcome": "Urgent follow-up advised (demo)"
+        },
+        {
+          "id": "VIS-1007-2",
+          "daysAgo": 60,
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit: initial treatment started.",
+          "outcome": "Started treatment"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1007-1",
+          "daysAhead": 2,
+          "time": "16:00",
+          "department": "General Medicine",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "In-person",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1007-1",
+          "daysAgo": 14,
+          "category": "Consultation",
+          "amount": 650,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1007-2",
+          "daysAgo": 30,
+          "category": "Hospital visit",
+          "amount": 3200,
+          "status": "OVERDUE"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1007-1",
+          "daysAgo": 14,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: BP trend rising across last 4 home readings."
+        }
+      ],
+      "advice": [],
+      "alerts": [
+        {
+          "id": "ALR-1007-1",
+          "daysAgo": 1,
+          "level": "red",
+          "title": "Blood pressure trend increased",
+          "reason": "Synthetic BP trend crossed the configured demo rule threshold.",
+          "action": "Doctor review required.",
+          "status": "open",
+          "synthetic": true
+        },
+        {
+          "id": "ALR-1007-2",
+          "daysAgo": 4,
+          "level": "yellow",
+          "title": "Low medication adherence",
+          "reason": "Synthetic adherence log shows 4 missed doses in 7 days.",
+          "action": "Nurse follow-up recommended.",
+          "status": "open",
+          "synthetic": true
+        }
+      ],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 5,
+          "title": "Medicine started",
+          "detail": "Metformin + antihypertensives started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 10,
+          "title": "Wearable trend changed",
+          "detail": "Systolic BP trend rising in demo wearable series.",
+          "type": "wearable"
+        },
+        {
+          "day": 15,
+          "title": "Risk increased",
+          "detail": "Demo risk moved to YELLOW.",
+          "type": "risk"
+        },
+        {
+          "day": 16,
+          "title": "Doctor alerted",
+          "detail": "Synthetic alert created in doctor dashboard.",
+          "type": "alert"
+        },
+        {
+          "day": 28,
+          "title": "Risk increased",
+          "detail": "Demo risk moved to RED.",
+          "type": "risk"
+        }
+      ],
+      "treatment": {
+        "condition": "Diabetes + Hypertension",
+        "startDaysAgo": 60,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "diabetes-hypertension",
+        "restingHR": 86,
+        "hrv": 20,
+        "steps": 3900,
+        "sleep": 5.7,
+        "sleepQuality": 48,
+        "spo2": 96,
+        "systolic": 164,
+        "diastolic": 100,
+        "sugar": 198,
+        "rr": 18,
+        "stress": 74,
+        "trend": "bp-up-glucose-up"
+      },
+      "adherence": {
+        "percent": 64,
+        "last7": [
+          "missed",
+          "taken",
+          "missed",
+          "missed",
+          "taken",
+          "uncertain",
+          "missed"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 60,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": true,
+          "microphone": true,
+          "notifications": true,
+          "aiFeatures": true,
+          "caregiverAccess": true
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver F",
+          "phone": "+91-9000000107",
+          "relation": "Husband (synthetic)",
+          "granted": true,
+          "scope": [
+            "medicines",
+            "appointments",
+            "alerts",
+            "wellness"
+          ]
+        }
+      },
+      "email": "pt-1007@demo.local"
+    },
+    {
+      "id": "PT-1008",
+      "name": "Synthetic Patient 08",
+      "age": 29,
+      "gender": "Female",
+      "bloodGroup": "O+",
+      "phone": "+91-9000000008",
+      "emergencyContact": "+91-9000000108",
+      "language": "en",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [],
+      "diagnosis": [],
+      "condition": "Healthy",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 92,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 84,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 118,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 4.9,
+          "unit": "%",
+          "daysAgo": 8,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 162,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 88,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 62,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 96,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 0.7,
+          "unit": "mg/dL",
+          "daysAgo": 8,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 108,
+          "unit": "mL/min",
+          "daysAgo": 8,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 112,
+          "unit": "mmHg",
+          "daysAgo": 8,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 70,
+          "unit": "mmHg",
+          "daysAgo": 8,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 99,
+          "unit": "%",
+          "daysAgo": 8,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 14,
+          "unit": "/min",
+          "daysAgo": 8,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1008-1",
+          "daysAgo": 60,
+          "department": "General Medicine",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit: routine check-up, all values within demo ranges.",
+          "outcome": "No medicines needed"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1008-1",
+          "daysAhead": 60,
+          "time": "11:00",
+          "department": "General Medicine",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "Teleconsult",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1008-1",
+          "daysAgo": 60,
+          "category": "Consultation",
+          "amount": 500,
+          "status": "PAID"
+        }
+      ],
+      "doctorNotes": [],
+      "advice": [],
+      "alerts": [],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 40,
+          "title": "Routine check-up",
+          "detail": "All synthetic values within demo ranges.",
+          "type": "info"
+        }
+      ],
+      "treatment": {
+        "condition": "Wellness check",
+        "startDaysAgo": 60,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "healthy",
+        "restingHR": 64,
+        "hrv": 58,
+        "steps": 10400,
+        "sleep": 7.8,
+        "sleepQuality": 86,
+        "spo2": 99,
+        "systolic": 112,
+        "diastolic": 70,
+        "sugar": 92,
+        "rr": 14,
+        "stress": 28,
+        "trend": "stable"
+      },
+      "adherence": {
+        "percent": 100,
+        "last7": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 60,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": false,
+          "camera": false,
+          "microphone": false,
+          "notifications": false,
+          "aiFeatures": true,
+          "caregiverAccess": false
+        },
+        "caregiver": {
+          "name": "",
+          "phone": "",
+          "relation": "",
+          "granted": false,
+          "scope": []
+        }
+      },
+      "email": "pt-1008@demo.local"
+    },
+    {
+      "id": "PT-1009",
+      "name": "Synthetic Patient 09",
+      "age": 76,
+      "gender": "Female",
+      "bloodGroup": "B+",
+      "phone": "+91-9000000009",
+      "emergencyContact": "+91-9000000109",
+      "language": "mr",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [
+        "Diclofenac (synthetic)"
+      ],
+      "diagnosis": [
+        "Osteoarthritis (synthetic demo)",
+        "Age-related wellness follow-up (synthetic demo)"
+      ],
+      "condition": "Elderly wellness",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 108,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 98,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 142,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 5.8,
+          "unit": "%",
+          "daysAgo": 9,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 194,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 108,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 52,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 148,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 1,
+          "unit": "mg/dL",
+          "daysAgo": 9,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 62,
+          "unit": "mL/min",
+          "daysAgo": 9,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 138,
+          "unit": "mmHg",
+          "daysAgo": 9,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 78,
+          "unit": "mmHg",
+          "daysAgo": 9,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 97,
+          "unit": "%",
+          "daysAgo": 9,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 16,
+          "unit": "/min",
+          "daysAgo": 9,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1009-1",
+          "daysAgo": 21,
+          "department": "Geriatrics",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit. Mobility and fall-risk discussion (demo).",
+          "outcome": "Physiotherapy advice given"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1009-1",
+          "daysAhead": 7,
+          "time": "10:30",
+          "department": "Geriatrics",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "In-person",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1009-1",
+          "daysAgo": 21,
+          "category": "Consultation",
+          "amount": 750,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1009-2",
+          "daysAgo": 9,
+          "category": "Medicine bill",
+          "amount": 410,
+          "status": "PAID"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1009-1",
+          "daysAgo": 21,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: caregiver involved in medicine reminders."
+        }
+      ],
+      "advice": [],
+      "alerts": [],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 3,
+          "title": "Medicine started",
+          "detail": "Supportive medicines started (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 21,
+          "title": "Caregiver access enabled",
+          "detail": "Caregiver consent recorded in demo.",
+          "type": "consent"
+        },
+        {
+          "day": 28,
+          "title": "Risk trend improved",
+          "detail": "Demo wellness score improved with daily walks.",
+          "type": "risk"
+        }
+      ],
+      "treatment": {
+        "condition": "Osteoarthritis (synthetic)",
+        "startDaysAgo": 45,
+        "endDaysAgo": null,
+        "status": "ongoing",
+        "summary": []
+      },
+      "wearableProfile": {
+        "scenario": "elderly",
+        "restingHR": 70,
+        "hrv": 30,
+        "steps": 4800,
+        "sleep": 7,
+        "sleepQuality": 68,
+        "spo2": 97,
+        "systolic": 138,
+        "diastolic": 78,
+        "sugar": 108,
+        "rr": 16,
+        "stress": 40,
+        "trend": "mild-up"
+      },
+      "adherence": {
+        "percent": 92,
+        "last7": [
+          "taken",
+          "taken",
+          "taken",
+          "taken",
+          "uncertain",
+          "taken",
+          "taken"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 45,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": false,
+          "microphone": true,
+          "notifications": true,
+          "aiFeatures": true,
+          "caregiverAccess": true
+        },
+        "caregiver": {
+          "name": "Synthetic Caregiver G",
+          "phone": "+91-9000000109",
+          "relation": "Son (synthetic)",
+          "granted": true,
+          "scope": [
+            "medicines",
+            "appointments",
+            "alerts",
+            "wellness"
+          ]
+        }
+      },
+      "email": "pt-1009@demo.local"
+    },
+    {
+      "id": "PT-1010",
+      "name": "Synthetic Patient 10",
+      "age": 45,
+      "gender": "Male",
+      "bloodGroup": "A+",
+      "phone": "+91-9000000010",
+      "emergencyContact": "+91-9000000110",
+      "language": "en",
+      "wakePhrase": "help me assistant 3056",
+      "allergies": [],
+      "diagnosis": [
+        "Type 2 Diabetes - treatment completed (synthetic demo)"
+      ],
+      "condition": "Stable",
+      "labs": {
+        "bloodGlucose": {
+          "label": "Blood glucose (random)",
+          "value": 128,
+          "unit": "mg/dL",
+          "daysAgo": 3,
+          "range": "70-140"
+        },
+        "fastingGlucose": {
+          "label": "Fasting glucose",
+          "value": 112,
+          "unit": "mg/dL",
+          "daysAgo": 3,
+          "range": "70-100"
+        },
+        "postMealGlucose": {
+          "label": "Post-meal glucose",
+          "value": 158,
+          "unit": "mg/dL",
+          "daysAgo": 3,
+          "range": "<180"
+        },
+        "hba1c": {
+          "label": "HbA1c",
+          "value": 6.9,
+          "unit": "%",
+          "daysAgo": 5,
+          "range": "4.0-5.6"
+        },
+        "totalCholesterol": {
+          "label": "Total cholesterol",
+          "value": 178,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "<200"
+        },
+        "ldl": {
+          "label": "LDL",
+          "value": 96,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "<100"
+        },
+        "hdl": {
+          "label": "HDL",
+          "value": 50,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": ">50"
+        },
+        "triglycerides": {
+          "label": "Triglycerides",
+          "value": 134,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "<150"
+        },
+        "creatinine": {
+          "label": "Creatinine",
+          "value": 0.9,
+          "unit": "mg/dL",
+          "daysAgo": 5,
+          "range": "0.6-1.1"
+        },
+        "egfr": {
+          "label": "eGFR",
+          "value": 94,
+          "unit": "mL/min",
+          "daysAgo": 5,
+          "range": ">90"
+        },
+        "systolicBP": {
+          "label": "Systolic BP",
+          "value": 124,
+          "unit": "mmHg",
+          "daysAgo": 3,
+          "range": "<120"
+        },
+        "diastolicBP": {
+          "label": "Diastolic BP",
+          "value": 80,
+          "unit": "mmHg",
+          "daysAgo": 3,
+          "range": "<80"
+        },
+        "spo2": {
+          "label": "SpO2",
+          "value": 98,
+          "unit": "%",
+          "daysAgo": 3,
+          "range": "95-100"
+        },
+        "respiratoryRate": {
+          "label": "Respiratory rate",
+          "value": 15,
+          "unit": "/min",
+          "daysAgo": 3,
+          "range": "12-20"
+        }
+      },
+      "medicines": [],
+      "visits": [
+        {
+          "id": "VIS-1010-1",
+          "daysAgo": 90,
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit: treatment course started, HbA1c 8.5%.",
+          "outcome": "Started 12-week program"
+        },
+        {
+          "id": "VIS-1010-2",
+          "daysAgo": 5,
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "notes": "Synthetic demo visit: HbA1c improved to 6.9%, program completed.",
+          "outcome": "Treatment marked complete"
+        }
+      ],
+      "appointments": [
+        {
+          "id": "APT-1010-1",
+          "daysAhead": 90,
+          "time": "11:15",
+          "department": "Endocrinology",
+          "doctor": "Dr. Asha Sharma",
+          "mode": "Teleconsult",
+          "status": "booked"
+        }
+      ],
+      "payments": [
+        {
+          "id": "PAY-1010-1",
+          "daysAgo": 90,
+          "category": "Consultation",
+          "amount": 700,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1010-2",
+          "daysAgo": 5,
+          "category": "Consultation",
+          "amount": 700,
+          "status": "PAID"
+        },
+        {
+          "id": "PAY-1010-3",
+          "daysAgo": 5,
+          "category": "Medicine bill",
+          "amount": 960,
+          "status": "PAID"
+        }
+      ],
+      "doctorNotes": [
+        {
+          "id": "NOTE-1010-1",
+          "daysAgo": 5,
+          "author": "Dr. Asha Sharma",
+          "text": "Synthetic demo note: treatment course completed successfully, maintenance plan given."
+        }
+      ],
+      "advice": [
+        {
+          "id": "ADV-1010-1",
+          "daysAgo": 5,
+          "doctorId": "DOC-1001",
+          "doctorName": "Dr. Asha Sharma",
+          "template": "Low activity",
+          "text": "Synthetic demo advice: continue walking 30 minutes daily and keep your evening meal light.",
+          "status": "understood"
+        }
+      ],
+      "alerts": [],
+      "timeline": [
+        {
+          "day": 1,
+          "title": "Registration",
+          "detail": "Patient registered in the demo system.",
+          "type": "info"
+        },
+        {
+          "day": 1,
+          "title": "Treatment started",
+          "detail": "Diabetes program started (synthetic). HbA1c 8.5%.",
+          "type": "med"
+        },
+        {
+          "day": 30,
+          "title": "Medicine changed",
+          "detail": "Metformin dose adjusted by doctor (synthetic).",
+          "type": "med"
+        },
+        {
+          "day": 45,
+          "title": "Wearable trend changed",
+          "detail": "Daily steps increased above 8,000 in demo data.",
+          "type": "wearable"
+        },
+        {
+          "day": 60,
+          "title": "Risk trend improved",
+          "detail": "Demo risk moved from YELLOW to GREEN.",
+          "type": "risk"
+        },
+        {
+          "day": 85,
+          "title": "Doctor approved advice",
+          "detail": "Lifestyle maintenance advice approved.",
+          "type": "advice"
+        },
+        {
+          "day": 90,
+          "title": "Treatment completed",
+          "detail": "HbA1c changed from 8.5% to 6.9% (synthetic).",
+          "type": "success"
+        }
+      ],
+      "treatment": {
+        "condition": "Type 2 Diabetes",
+        "startDaysAgo": 90,
+        "endDaysAgo": 5,
+        "status": "complete",
+        "summary": [
+          {
+            "label": "HbA1c",
+            "from": "8.5%",
+            "to": "6.9%"
+          },
+          {
+            "label": "Fasting glucose",
+            "from": "168 mg/dL",
+            "to": "112 mg/dL"
+          },
+          {
+            "label": "Resting heart rate",
+            "from": "82 bpm",
+            "to": "70 bpm"
+          },
+          {
+            "label": "Daily steps",
+            "from": "4,100",
+            "to": "8,600"
+          }
+        ]
+      },
+      "certId": "CERT-1001",
+      "wearableProfile": {
+        "scenario": "recovered",
+        "restingHR": 70,
+        "hrv": 46,
+        "steps": 8600,
+        "sleep": 7.4,
+        "sleepQuality": 80,
+        "spo2": 98,
+        "systolic": 124,
+        "diastolic": 80,
+        "sugar": 126,
+        "rr": 15,
+        "stress": 34,
+        "trend": "improving"
+      },
+      "adherence": {
+        "percent": 95,
+        "last7": [
+          "taken",
+          "taken",
+          "taken",
+          "taken",
+          "taken",
+          "uncertain",
+          "taken"
+        ]
+      },
+      "consent": {
+        "given": true,
+        "dateDaysAgo": 90,
+        "items": {
+          "dataCollection": true,
+          "doctorSharing": true,
+          "caregiverSharing": true,
+          "camera": false,
+          "microphone": false,
+          "notifications": true,
+          "aiFeatures": true,
+          "caregiverAccess": false
+        },
+        "caregiver": {
+          "name": "",
+          "phone": "",
+          "relation": "",
+          "granted": false,
+          "scope": []
+        }
+      },
+      "email": "pt-1010@demo.local"
+    }
+  ],
+  "staff": [
+    {
+      "id": "DOC-1001",
+      "name": "Dr. Asha Sharma",
+      "role": "doctor",
+      "pin": "1234",
+      "speciality": "General Medicine (synthetic demo account)"
+    },
+    {
+      "id": "NUR-1001",
+      "name": "Nurse Kavya Rao",
+      "role": "nurse",
+      "pin": "5678",
+      "speciality": "Community Health (synthetic demo account)"
+    }
+  ]
+}
